@@ -1,0 +1,94 @@
+
+Gurobi 6.5.1 (mac64) logging started Fri Apr 15 19:13:53 2016
+
+Optimize a model with 11 rows, 27 columns and 51 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e+00, 5e+06]
+  Bounds range    [1e+00, 1e+00]
+  RHS range       [2e+05, 2e+05]
+Found heuristic solution: objective 2.0025e+07
+Presolve time: 0.00s
+Presolved: 11 rows, 27 columns, 51 nonzeros
+
+Loaded MIP start with objective 1.4515e+07
+
+Variable types: 24 continuous, 3 integer (3 binary)
+Optimize a model with 11 rows, 27 columns and 51 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+06]
+  Objective range [2e+00, 5e+06]
+  Bounds range    [1e+00, 3e+05]
+  RHS range       [2e+05, 2e+05]
+Presolved: 11 rows, 27 columns, 51 nonzeros
+
+Root barrier log...
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 2.400e+01
+ Factor NZ  : 6.600e+01
+ Factor Ops : 5.060e+02 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   5.31923277e+11 -1.11365161e+07  3.94e+04 1.78e-15  7.19e+05     0s
+   1   4.62706882e+10  1.04860684e+07  3.43e+03 4.66e-10  7.99e+04     0s
+   2   2.05452391e+08  1.27607813e+07  1.44e+01 9.31e-10  8.24e+03     0s
+   3   2.38941661e+07  1.28752486e+07  1.24e+00 1.78e-15  4.94e+02     0s
+   4   1.89566398e+07  1.28795824e+07  8.80e-01 9.31e-10  2.40e+02     0s
+   5   1.87137660e+07  1.29127043e+07  8.62e-01 9.31e-10  2.23e+02     0s
+   6   1.78855186e+07  1.33225997e+07  6.96e-01 2.79e-09  9.52e+02     0s
+   7   1.43939499e+07  1.30228510e+07  1.62e-01 1.78e-15  4.85e+03     0s
+   8   1.33838747e+07  1.33643350e+07  3.82e-17 2.51e-08  3.15e+02     0s
+   9   1.33751515e+07  1.33745697e+07  4.16e-17 9.31e-10  9.38e+00     0s
+  10   1.33750002e+07  1.33749996e+07  2.78e-17 8.88e-16  9.38e-03     0s
+  11   1.33750000e+07  1.33750000e+07  6.77e-17 9.31e-10  9.45e-09     0s
+
+Barrier solved model in 11 iterations and 0.01 seconds
+Optimal objective 1.33750000e+07
+
+
+Root relaxation: objective 1.337500e+07, 13 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1.3375e+07    0    1 1.4515e+07 1.3375e+07  7.85%     -    0s
+     0     0 1.3375e+07    0    2 1.4515e+07 1.3375e+07  7.85%     -    0s
+     0     0 1.3379e+07    0    1 1.4515e+07 1.3379e+07  7.83%     -    0s
+     0     0 1.3385e+07    0    1 1.4515e+07 1.3385e+07  7.78%     -    0s
+     0     0 1.3459e+07    0    2 1.4515e+07 1.3459e+07  7.27%     -    0s
+     0     0     cutoff    0      1.4515e+07 1.4515e+07  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Implied bound: 2
+  Flow cover: 4
+
+Explored 0 nodes (29 simplex iterations) in 0.02 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.451500000000e+07, best bound 1.451500000000e+07, gap 0.0%
+
+Gurobi 6.5.1 (mac64) logging started Fri Apr 15 20:26:04 2016
+
+Optimize a model with 4 rows, 8 columns and 8 nonzeros
+Coefficient statistics:
+  Matrix range    [1e+00, 1e+00]
+  Objective range [1e+00, 5e+00]
+  Bounds range    [1e+00, 1e+00]
+  RHS range       [5e+00, 2e+01]
+Found heuristic solution: objective 51
+Presolve removed 4 rows and 8 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.100000000000e+01, best bound 5.100000000000e+01, gap 0.0%
