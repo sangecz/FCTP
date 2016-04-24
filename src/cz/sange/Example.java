@@ -7,7 +7,7 @@ import java.io.*;
  * INPUT format
  3 8                                                        // numWarehouses numCustomers
  5000000 4000000 4500000                                    // fixed costs for warehouses
- 1000000 800000 1250000                                    // capacities for warehouses
+ 1000000 800000 1250000                                    // sources for warehouses
  200000 200000 200000 200000 250000 250000 250000 250000    // demands for customers
  4 5 5 4 4 4.2 3.3 5                                        // transport costs from warehouses to customers
  2.5 3.5 4.5 3 2.2 4 2.6 5
@@ -18,9 +18,10 @@ import java.io.*;
 public class Example {
 
     private int [] demands;
-    private int [] capacities;
-    private int [] fixedCosts;
+    private int [] sources;
+//    private int [] fixedCosts;
     private double[][] transportCosts;
+    private double[][] fixedTransportCosts;
 
     public static void main(String[] args) {
 
@@ -53,17 +54,17 @@ public class Example {
             int c = (int) st.nval;
             st.nextToken();
 
-            // fixedCosts costs by warehouse
-            fixedCosts = new int[w];
-            for (int i = 0; i < w; i++) {
-                fixedCosts[i] = (int) st.nval;
-                st.nextToken();
-            }
+//            // fixedCosts costs by warehouse
+//            fixedCosts = new int[w];
+//            for (int i = 0; i < w; i++) {
+//                fixedCosts[i] = (int) st.nval;
+//                st.nextToken();
+//            }
 
-            // capacities by warehouse
-            capacities = new int[w];
+            // sources by warehouse
+            sources = new int[w];
             for (int i = 0; i < w; i++) {
-                capacities[i] = (int) st.nval;
+                sources[i] = (int) st.nval;
                 st.nextToken();
             }
 
@@ -82,6 +83,15 @@ public class Example {
                     st.nextToken();
                 }
             }
+
+            // fixed transport costs
+            fixedTransportCosts = new double[w][c];
+            for (int i = 0; i < w; i++) {
+                for (int j = 0; j < c; j++) {
+                    fixedTransportCosts[i][j] = st.nval;
+                    st.nextToken();
+                }
+            }
         }
 
     }
@@ -89,7 +99,7 @@ public class Example {
     private void solve() {
         try {
 
-            int numWarehouses = capacities.length;
+            int numWarehouses = sources.length;
             int numCustomers = demands.length;
 
             //// model
@@ -97,17 +107,19 @@ public class Example {
             GRBModel model = new GRBModel(env) ;
             model.set(GRB.StringAttr.ModelName, "FCTP");
 
-            //// vars
-            GRBVar [] open = new GRBVar[numWarehouses];
-            for (int p = 0; p < numWarehouses; ++p) {
-                open[p] = model.addVar(0, 1, fixedCosts[p], GRB.BINARY, "Open" + p);
+            GRBVar [][] open = new GRBVar[numWarehouses][numCustomers];
+            for (int w = 0; w < numWarehouses; ++w) {
+                for (int c = 0; c < numCustomers; ++c) {
+                    open[w][c] =
+                            model.addVar(0, 1, fixedTransportCosts[w][c], GRB.BINARY, "Open " + w + "->" + c);
+                }
             }
 
             GRBVar [][] transport = new GRBVar[numWarehouses][numCustomers];
             for (int w = 0; w < numWarehouses; ++w) {
                 for (int c = 0; c < numCustomers; ++c) {
                     transport[w][c] =
-                            model.addVar(0, GRB.INFINITY, transportCosts[w][c], GRB.CONTINUOUS, "trans(" + w + ", " + c + ")");
+                        model.addVar(0, GRB.INFINITY, transportCosts[w][c], GRB.CONTINUOUS, "trans(" + w + ", " + c + ")");
                 }
             }
 
@@ -117,45 +129,68 @@ public class Example {
             //// update vars
             model.update();
 
+            /// set objective
+//            GRBLinExpr expr = new GRBLinExpr();
+//            for (int w = 0; w < numWarehouses; w++) {
+//                for (int c = 0; c < numCustomers; c++) {
+//                    expr.addTerm(fixedTransportCosts[w][c], open[w][c]);
+//                    expr.addTerm(transportCosts[w][c], transport[w][c]);
+//                }
+//            }
+//            model.setObjective(expr, GRB.MINIMIZE);
+
             //// constraints
-            // capacities constraints
+            // sources constraints
             for (int w = 0; w < numWarehouses; ++w) {
-                GRBLinExpr ptot = new GRBLinExpr();
+                GRBLinExpr sourcesSum = new GRBLinExpr();
                 for (int c = 0; c < numCustomers; ++c) {
-                    ptot.addTerm(1.0, transport[w][c]);
+                    sourcesSum.addTerm(1.0, transport[w][c]);
                 }
-                GRBLinExpr limit = new GRBLinExpr();
-                limit.addTerm(capacities[w], open[w]);
-                model.addConstr(ptot, GRB.LESS_EQUAL, limit, "Capacity " + w);
+                model.addConstr(sourcesSum, GRB.EQUAL, sources[w], "Capacity " + w);
             }
             // demand constraints
             for (int c = 0; c < numCustomers; ++c) {
-                GRBLinExpr dtot = new GRBLinExpr();
+                GRBLinExpr demandsSum = new GRBLinExpr();
                 for (int w = 0; w < numWarehouses; ++w) {
-                    dtot.addTerm(1.0, transport[w][c]);
+                    demandsSum.addTerm(1.0, transport[w][c]);
                 }
-                model.addConstr(dtot, GRB.GREATER_EQUAL, demands[c], "Demand" + c);
+                model.addConstr(demandsSum, GRB.EQUAL, demands[c], "Demand" + c);
+            }
+            // M constraints
+            for (int w = 0; w < numWarehouses; ++w) {
+                for (int c = 0; c < numCustomers; ++c) {
+                    double M = Math.min(sources[w], demands[c]);
+                    GRBLinExpr expr = new GRBLinExpr();
+                    expr.addTerm(M, open[w][c]);
+                    model.addConstr(transport[w][c], GRB.LESS_EQUAL, expr, "mins...");
+                }
             }
 
             //// prep
-            // open all paths
-            for (int p = 0; p < numWarehouses; ++p) {
-                open[p].set(GRB.DoubleAttr.Start, 1.0);
+//             open all paths
+            for (int w = 0; w < numWarehouses; ++w) {
+                for (int c = 0; c < numCustomers; ++c) {
+                    open[w][c].set(GRB.DoubleAttr.Start, 1.0);
+                }
             }
             // find max cfixed cost
             System.out.println("Initial guess:");
             double maxFixed = -GRB.INFINITY;
             for (int w = 0; w < numWarehouses; ++w) {
-                if (fixedCosts[w] > maxFixed){
-                    maxFixed = fixedCosts[w];
+                for (int c = 0; c < numCustomers; ++c) {
+                    if (fixedTransportCosts[w][c] > maxFixed) {
+                        maxFixed = fixedTransportCosts[w][c];
+                    }
                 }
             }
             // close most expensive
             for (int w = 0; w < numWarehouses; ++w) {
-                if (fixedCosts[w] == maxFixed) {
-                    open[w].set(GRB.DoubleAttr.Start, 0.0);
-                    System.out.println("Closing w: " + w + "\n");
-                    break;
+                for (int c = 0; c < numCustomers; ++c) {
+                    if (fixedTransportCosts[w][c] == maxFixed) {
+                        open[w][c].set(GRB.DoubleAttr.Start, 0.0);
+                        System.out.println("Closing w: " + w + "\n");
+                        break;
+                    }
                 }
             }
 
@@ -169,16 +204,21 @@ public class Example {
             System.out.println("\nTOTAL COSTS: " + model.get(GRB.DoubleAttr.ObjVal));
             System.out.println("SOLUTION:");
             for (int w = 0; w < numWarehouses; ++w) {
-                // if is open
-                if(open[w].get(GRB.DoubleAttr.X) == 1.0) {
-                    System.out.println("w: " + w + " open:");
-                    for (int c = 0; c < numCustomers; ++c) {
-                        if(transport[w][c].get(GRB.DoubleAttr.X) > 0.0001){
-                            System.out.println("    Transport " + transport[w][c].get(GRB.DoubleAttr.X) + " units to customer " + c);
+                for (int c = 0; c < numCustomers; ++c) {
+                    // if is open
+//                if(open[w].get(GRB.DoubleAttr.X) == 1.0) {
+                    if (open[w][c].get(GRB.DoubleAttr.X) == 1.0) {
+                        System.out.println("Path (" + w + "," + c + ") open, transport:");
+//                    for (int c = 0; c < numCustomers; ++c) {
+                        if (transport[w][c].get(GRB.DoubleAttr.X) > 0.0001) {
+                            System.out.println("\t" + Math.round(transport[w][c].get(GRB.DoubleAttr.X))
+                                    + " units for VP: " + transportCosts[w][c]
+                                    + " and FP: " + fixedTransportCosts[w][c] + " to customer " + c);
                         }
+//                    }
+                    } else {
+                        System.out.println("Path (" + w + "," + c + ") closed.");
                     }
-                } else {
-                    System.out.println("Warehouse " + w + " closed!");
                 }
             }
 
