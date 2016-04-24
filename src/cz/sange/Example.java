@@ -5,13 +5,17 @@ import java.io.*;
 
 /**
  * INPUT format
- 3 8                                                        // numWarehouses numCustomers
- 5000000 4000000 4500000                                    // fixed costs for warehouses
- 1000000 800000 1250000                                    // sources for warehouses
- 200000 200000 200000 200000 250000 250000 250000 250000    // demands for customers
- 4 5 5 4 4 4.2 3.3 5                                        // transport costs from warehouses to customers
- 2.5 3.5 4.5 3 2.2 4 2.6 5
- 2 4 5 2.5 2.6 3.8 2.9 5.5
+ 4 3                                            // numWarehouses numCustomers
+ 10 30 40 20                                    // sources for warehouses
+ 20 50 30                                       // demands for customers
+ 2.0 3.0 4.0                                    // transport costs matrix numWarehouses x numCustomers
+ 3.0 2.0 1.0
+ 1.0 4.0 3.0
+ 4.0 5.0 2.0
+ 10.0 30.0 20.0                                 // fixed costs matrix numWarehouses x numCustomers
+ 10.0 30.0 20.0
+ 10.0 30.0 20.0
+ 10.0 30.0 20.0
  *
  */
 
@@ -75,7 +79,7 @@ public class Example {
                 st.nextToken();
             }
 
-            // trasport costs
+            // transport costs
             transportCosts = new double[w][c];
             for (int i = 0; i < w; i++) {
                 for (int j = 0; j < c; j++) {
@@ -161,6 +165,7 @@ public class Example {
                 for (int c = 0; c < numCustomers; ++c) {
                     double M = Math.min(sources[w], demands[c]);
                     GRBLinExpr expr = new GRBLinExpr();
+                    // upper bound pro transport[w][c] neboli x_{i,j}
                     expr.addTerm(M, open[w][c]);
                     model.addConstr(transport[w][c], GRB.LESS_EQUAL, expr, "mins...");
                 }
@@ -173,7 +178,7 @@ public class Example {
                     open[w][c].set(GRB.DoubleAttr.Start, 1.0);
                 }
             }
-            // find max cfixed cost
+            // find max fixed cost
             System.out.println("Initial guess:");
             double maxFixed = -GRB.INFINITY;
             for (int w = 0; w < numWarehouses; ++w) {
@@ -184,18 +189,18 @@ public class Example {
                 }
             }
             // close most expensive
-            for (int w = 0; w < numWarehouses; ++w) {
+            branch: for (int w = 0; w < numWarehouses; ++w) {
                 for (int c = 0; c < numCustomers; ++c) {
                     if (fixedTransportCosts[w][c] == maxFixed) {
                         open[w][c].set(GRB.DoubleAttr.Start, 0.0);
-                        System.out.println("Closing w: " + w + "\n");
-                        break;
+                        System.out.println("Closing path: (" + w + "," + c + ") of FP=" + maxFixed + "\n");
+                        break branch;
                     }
                 }
             }
 
             // relaxation
-            model.getEnv().set(GRB.IntParam.Method, GRB.METHOD_BARRIER);
+//            model.getEnv().set(GRB.IntParam.Method, GRB.METHOD_BARRIER);
 
             // solve
             model.optimize();
