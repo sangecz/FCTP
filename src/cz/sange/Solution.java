@@ -7,7 +7,6 @@ public class Solution {
 
     private int status;
     private double objVal;
-    private double unbdRay;
     private int [][] y;
     private double [][] x;
     private double [][] w;
@@ -31,14 +30,6 @@ public class Solution {
 
     public void setObjVal(double objVal) {
         this.objVal = objVal;
-    }
-
-    public double getUnbdRay() {
-        return unbdRay;
-    }
-
-    public void setUnbdRay(double unbdRay) {
-        this.unbdRay = unbdRay;
     }
 
     public int[][] getY() {
