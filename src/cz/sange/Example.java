@@ -2,6 +2,7 @@ package cz.sange;
 
 import gurobi.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -70,11 +71,16 @@ public class Example {
 
     private void bendersAlg() throws GRBException{
 
-        Solution initialSol = standardMIP(null);
-        int [][] y = initialSol.getY();
+        int[][] y = getInitialY();
 
-        double cutConst;
-        double[][] cutCoef = new double[numWarehouses][numCustomers];
+        int cnt = 0;
+        int cntUnb = 0;
+        double [] cutConst = new double[MAX_ITERATIONS];
+        double [] cutConstUnb = new double[MAX_ITERATIONS];
+        double[][] cutCoefCommon = null;
+        double[] spSols = new double[MAX_ITERATIONS];
+        double[][][] cutCoef = new double[MAX_ITERATIONS][numCustomers][numWarehouses];
+        double[][][] cutCoefUnb = new double[MAX_ITERATIONS][numCustomers][numWarehouses];
 
         boolean converged = false;
         int iter = 0;
@@ -87,15 +93,17 @@ public class Example {
         double UB = Double.MAX_VALUE;
 
         boolean unbounded = false;
-        // FIXME co je tam to K, L ??? (benders.pdf str. 2)
         while ((UB - LB) > EPS) {
             // {benders subproblem}
-            Solution subProbSol = bendersDSP(y); // FIXME kde brat spravna y ????
+            // FIXME infesible ->> RMP protoze z0 == 220 a u,v,w daji pak 250 a to v nerovnici tezko snizuju ... 220 <= fixed + 250 + coef
+            Solution subProbSol = bendersDSP(y);
 
             if (subProbSol.getStatus() == GRB.Status.UNBOUNDED) {
+                cntUnb++;
                 unbounded = true;
                 // add extreme rays
             } else if (subProbSol.getStatus() == GRB.Status.OPTIMAL){
+                cnt++;
                 unbounded = false;
                 double sum = 0;
                 for (int i = 0; i < numWarehouses; i++) {
@@ -103,6 +111,7 @@ public class Example {
                         sum += fixedTransportCosts[i][j] * y[i][j];
                     }
                 }
+                spSols[iter] = subProbSol.getObjVal();
                 // updates UB
                 bound = sum + subProbSol.getObjVal();
                 if(bound < UB) {
@@ -110,7 +119,7 @@ public class Example {
                     for (int i = 0; i < numWarehouses; i++) {
                         System.arraycopy(y[i], 0, ybest[i], 0, numCustomers);
                     }
-                    System.out.println("ybest["+iter+"] " + Arrays.deepToString(ybest));
+                    System.out.println("ybest#"+iter+ " arr: " + Arrays.deepToString(ybest));
                }
             } else {
                 System.err.println("!UNBOUNDED and !OPTIMAL");
@@ -125,19 +134,30 @@ public class Example {
             for (int j = 0; j < numCustomers; j++) {
                 demandsSum += demands[j] * subProbSol.getV()[j];
             }
-            cutConst = suppliesSum + demandsSum;
-
+            cutCoefCommon = new double[numWarehouses][numCustomers];
             for (int i = 0; i < numWarehouses; i++) {
                 for (int j = 0; j < numCustomers; j++) {
-                    cutCoef[i][j] = -xup[i][j] * subProbSol.getW()[i][j];
+                    cutCoefCommon[i][j] = -xup[i][j] * subProbSol.getW()[i][j];
                 }
             }
+            if (unbounded) {
+                cutConstUnb[iter] = suppliesSum + demandsSum;
+                cutCoefUnb[iter] = cutCoefCommon;
+            } else {
+                cutConst[iter] = suppliesSum + demandsSum;
+                cutCoef[iter] = cutCoefCommon;
+            }
+
             // {benders master problem}
             // benders relaxed master problem:   min_y
             //                                    s.t.    z >= sum{(i,j) in WxC}f_{i,j}*u_{i,j} + sum(i in W)(-s_i)*u__i^(k) + sum{j in C}d_j*v__j^(k) + sum{(i,j) in WxC}(-M_{i,j}*w__{i,j}^(k))*y_{i,j}
             //                                    s.t.    sum(i in W)(-s_i)*u__i^(l) + sum(j in C)d_j*v__j^(l) + sum{(i,j) in WxC}(-M_{i,j}*w__{i,j}^(l))*y_{i,j} <= 0
             Solution masProbSol;
-            masProbSol = bendersRMP(unbounded, cutConst, cutCoef);
+            if(unbounded) {
+                masProbSol = bendersRMP(cntUnb, true, cutConstUnb, cutCoefUnb, null);
+            } else {
+                masProbSol = bendersRMP(cnt, false, cutConst, cutCoef, spSols);
+            }
             // fixing y for DSP
             y = masProbSol.getY();
 
@@ -175,6 +195,33 @@ public class Example {
         }
 
         displaySolution(fctpSol);
+    }
+
+    private int[][] getInitialY() throws GRBException {
+//        Solution initialSol = standardMIP(null);
+//        return initialSol.getY();
+        int [][] y = new int[numWarehouses][numCustomers]; // init zeros
+        for (int i = 0; i < numWarehouses; i++) {
+            for (int j = 0; j < numCustomers; j++) {
+                y[i][j] = 1;
+            }
+        }
+//        int w = 0, c = 0;
+//        double maxFixed = 0;
+//        for (int i = 0; i < numWarehouses; i++) {
+//            for (int j = 0; j < numCustomers; j++) {
+//                double fixed = fixedTransportCosts[i][j];
+//                if(fixed > maxFixed) {
+//                    maxFixed = fixed;
+//                    w = i;
+//                    c = j;
+//                }
+//            }
+//        }
+        // close most fixed expensive path
+//        y[1][0] = 0;
+        return y;
+
     }
 
 //    private Solution bendersModifiedSubproblem(int [][] y) throws GRBException {
@@ -281,8 +328,8 @@ public class Example {
         }
     }
 
-    private Solution bendersRMP(boolean unbounded, double cutConst,
-                                double [][] cutCoef) throws GRBException {
+    private Solution bendersRMP(int curIter, boolean unbounded, double [] cutConst,
+                                double [][][] cutCoefList, double [] z) throws GRBException {
         //// model
         GRBEnv env = new GRBEnv("bendersRMP.log") ;
         GRBModel model = new GRBModel(env) ;
@@ -302,38 +349,52 @@ public class Example {
         //// update vars
         model.update();
 
-        // FIXME proc toto rozdeleni ???
         if (!unbounded) {
-            //// objective fnc
-            /// cut(cutset)
-            GRBLinExpr fixedSum = new GRBLinExpr();
-            GRBLinExpr cutcoeffSum = new GRBLinExpr();
-            for (int i = 0; i < numWarehouses; i++) {
-                for (int j = 0; j < numCustomers; j++) {
-                    fixedSum.addTerm(fixedTransportCosts[i][j], y[i][j]);
-                    cutcoeffSum.addTerm(cutCoef[i][j], y[i][j]);
+            model.set(GRB.IntAttr.ModelSense, 1);
+
+            for(int iter = 0; iter < curIter; iter++) {
+                double [][] cutCoef = cutCoefList[iter];
+
+                GRBLinExpr fixedSum = new GRBLinExpr();
+                for (int i = 0; i < numWarehouses; i++) {
+                    for (int j = 0; j < numCustomers; j++) {
+                        fixedSum.addTerm(fixedTransportCosts[i][j], y[i][j]);
+                    }
                 }
+
+                GRBLinExpr cutcoeffSum = new GRBLinExpr();
+                for (int i = 0; i < numWarehouses; i++) {
+                    for (int j = 0; j < numCustomers; j++) {
+                        cutcoeffSum.addTerm(cutCoef[i][j], y[i][j]);
+                    }
+                }
+
+                // for each iteration
+                GRBLinExpr cut = new GRBLinExpr();
+                cut.add(fixedSum);
+                cut.addConstant(cutConst[iter]);
+                cut.add(cutcoeffSum);
+                model.addConstr(cut, GRB.LESS_EQUAL, z[iter], "RMP cut");
             }
-            GRBLinExpr cut = new GRBLinExpr();
-            cut.add(fixedSum);
-            cut.addConstant(cutConst);
-            cut.add(cutcoeffSum);
-            model.setObjective(cut, GRB.MINIMIZE);
         } else {
             model.set(GRB.IntAttr.ModelSense, 1);
 
-            /// unboundedcut(unbcutset)
-            GRBLinExpr cutcoeffUnbSum = new GRBLinExpr();
-            for (int i = 0; i < numWarehouses; i++) {
-                for (int j = 0; j < numCustomers; j++) {
-                    cutcoeffUnbSum.addTerm(cutCoef[i][j], y[i][j]);
+            for(int iter = 0; iter < curIter; iter++) {
+                double [][] cutCoef = cutCoefList[iter];
+                GRBLinExpr cutcoeffUnbSum = new GRBLinExpr();
+                for (int i = 0; i < numWarehouses; i++) {
+                    for (int j = 0; j < numCustomers; j++) {
+                        cutcoeffUnbSum.addTerm(cutCoef[i][j], y[i][j]);
+                    }
                 }
-            }
-            GRBLinExpr unboundedcut = new GRBLinExpr();
-            unboundedcut.addConstant(cutConst);
-            unboundedcut.add(cutcoeffUnbSum);
 
-            model.addConstr(unboundedcut, GRB.LESS_EQUAL, 0, "unboundedcut");
+                GRBLinExpr unboundedcut = new GRBLinExpr();
+                unboundedcut.addConstant(cutConst[iter]);
+                unboundedcut.add(cutcoeffUnbSum);
+
+                model.addConstr(unboundedcut, GRB.LESS_EQUAL, 0, "RMP unboundedcut");
+            }
+
         }
 
         // solve
@@ -365,7 +426,7 @@ public class Example {
         GRBModel model = new GRBModel(env) ;
         // To obtain extreme rays for unbounded models:
         model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
-        model.getEnv().set(GRB.IntParam.Method, 1);
+        model.getEnv().set(GRB.IntParam.Method, 0);
         model.set(GRB.StringAttr.ModelName, "FCTP");
 
         //// variables
@@ -564,19 +625,27 @@ public class Example {
         //// solve
         model.optimize();
 
+
         Solution sol = new Solution();
 
         int[][] ySol = new int[numWarehouses][numCustomers];
+        double[][] xSol = new double[numWarehouses][numCustomers];
         for (int i = 0; i < numWarehouses; i++) {
             for (int j = 0; j < numCustomers; j++) {
                 if (!fixedY) {
                     ySol[i][j] = (int) y[i][j].get(GRB.DoubleAttr.X);
+                    xSol[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
                 } else {
                     ySol[i][j] = y_fx[i][j];
                 }
             }
         }
         sol.setY(ySol);
+        sol.setX(xSol);
+        sol.setObjVal(model.get(GRB.DoubleAttr.ObjVal));
+
+        displaySolution(sol);
+
 
         // Dispose o f model and environment
         model.dispose();

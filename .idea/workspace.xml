@@ -4,8 +4,11 @@
     <list default="true" id="a6644f73-2273-4c0c-b4a5-ba618c8a660f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Example.class" afterPath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Example.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersDSP.log" afterPath="$PROJECT_DIR$/bendersDSP.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersRMP.log" afterPath="$PROJECT_DIR$/bendersRMP.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/03.in" afterPath="$PROJECT_DIR$/src/cz/sange/03.in" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Example.java" afterPath="$PROJECT_DIR$/src/cz/sange/Example.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Solution.java" afterPath="$PROJECT_DIR$/src/cz/sange/Solution.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standardMIP.log" afterPath="$PROJECT_DIR$/standardMIP.log" />
     </list>
     <ignored path="FCTP-ILP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,33 +34,16 @@
       <file leaf-file-name="Example.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cz/sange/Example.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="262">
+              <caret line="348" column="24" selection-start-line="348" selection-start-column="24" selection-end-line="348" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5948#6030#0" expanded="false" />
+                <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+                <element signature="e#7765#7847#0" expanded="false" />
                 <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-                <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
                 <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
                 <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
                 <element signature="method#read#0;class#Example#0" expanded="false" />
-                <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-                <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-              <folding>
-                <element signature="e#659#660#0" expanded="true" />
-                <element signature="e#685#686#0" expanded="true" />
-                <element signature="e#837#838#0" expanded="true" />
-                <element signature="e#861#862#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,9 +102,9 @@
         <option value="$PROJECT_DIR$/src/cz/sange/01.in" />
         <option value="$PROJECT_DIR$/../FCTP-correct.mod" />
         <option value="$PROJECT_DIR$/src/cz/sange/02.in" />
-        <option value="$PROJECT_DIR$/src/cz/sange/03.in" />
         <option value="$PROJECT_DIR$/example.log" />
         <option value="$PROJECT_DIR$/src/cz/sange/Solution.java" />
+        <option value="$PROJECT_DIR$/src/cz/sange/03.in" />
         <option value="$PROJECT_DIR$/src/cz/sange/Example.java" />
       </list>
     </option>
@@ -129,10 +115,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="23" />
-    <option name="width" value="1212" />
-    <option name="height" value="1035" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -145,7 +129,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -158,14 +142,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
@@ -178,6 +155,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -836,12 +814,16 @@
       <workItem from="1460723608227" duration="4735000" />
       <workItem from="1460734109828" duration="8587000" />
       <workItem from="1461482389636" duration="37576000" />
-      <workItem from="1461768322864" duration="8460000" />
+      <workItem from="1461768322864" duration="14889000" />
+      <workItem from="1461830140250" duration="1644000" />
+      <workItem from="1461833648581" duration="2326000" />
+      <workItem from="1461845411678" duration="1165000" />
+      <workItem from="1462049085996" duration="7901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64018000" />
+    <option name="totallyTimeSpent" value="83483000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -853,18 +835,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1212" height="1035" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055336" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24602333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27920792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -875,7 +857,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44120708" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44356436" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -896,7 +878,57 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>172</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>402</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>158</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>354</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>142</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>129</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cz/sange/Example.java</url>
+          <line>351</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -911,14 +943,114 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5948#6030#0" expanded="false" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
             <element signature="method#read#0;class#Example#0" expanded="false" />
-            <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-            <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
+            <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
+            <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
+            <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
+            <element signature="method#read#0;class#Example#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
+            <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
+            <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
+            <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
+            <element signature="method#read#0;class#Example#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -930,8 +1062,6 @@
           <folding>
             <element signature="e#659#660#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -966,14 +1096,12 @@
           <caret line="167" column="47" selection-start-line="167" selection-start-column="47" selection-end-line="167" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5948#6030#0" expanded="false" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
             <element signature="method#read#0;class#Example#0" expanded="false" />
-            <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-            <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -992,14 +1120,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5948#6030#0" expanded="false" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
             <element signature="method#read#0;class#Example#0" expanded="false" />
-            <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-            <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1010,14 +1136,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5948#6030#0" expanded="false" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
             <element signature="method#read#0;class#Example#0" expanded="false" />
-            <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-            <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1025,11 +1149,28 @@
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Main.java" />
     <entry file="file://$PROJECT_DIR$/../FCTP-ILP.mod" />
     <entry file="file://$PROJECT_DIR$/../FCTP-correct.mod" />
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
+    <entry file="file://$PROJECT_DIR$/example.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="14">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/gurobi651/mac64/lib/gurobi.jar!/gurobi/GRB.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="265" column="27" selection-start-line="265" selection-start-column="27" selection-end-line="265" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1037,6 +1178,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1049,48 +1198,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/gurobi651/mac64/lib/gurobi.jar!/gurobi/GRB.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="265" column="27" selection-start-line="265" selection-start-column="27" selection-end-line="265" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Example.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="262">
+          <caret line="348" column="24" selection-start-line="348" selection-start-column="24" selection-end-line="348" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5948#6030#0" expanded="false" />
+            <element signature="method#getInitialY#0;class#Example#0" expanded="false" />
+            <element signature="e#7765#7847#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Example#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Example#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Example#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Example#0" expanded="false" />
             <element signature="method#read#0;class#Example#0" expanded="false" />
-            <marker date="1461778080000" expanded="false" signature="10142:12830" placeholder="{...}" />
-            <marker date="1461778080000" expanded="false" signature="12896:16848" placeholder="{...}" />
           </folding>
         </state>
       </provider>
