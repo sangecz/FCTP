@@ -2,7 +2,6 @@ package cz.sange;
 
 import gurobi.*;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -21,7 +20,7 @@ import java.util.Arrays;
  *
  */
 
-public class Example {
+public class Benders {
 
     private static int MAX_ITERATIONS = 50;
     private static double EPS = 0.0001;
@@ -45,24 +44,24 @@ public class Example {
             e.printStackTrace();
         }
 
-        Example example = new Example();
+        Benders benders = new Benders();
 
         try {
-            example.read();
+            benders.read();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // check supply-demand balance
-        example.checkSuppliesDemandsBalance();
+        benders.checkSuppliesDemandsBalance();
 
         // prepare bbig-M upperbounds on x
-        example.prepareUpperbounds();
+        benders.prepareUpperbounds();
 
         try {
-//            example.standardMIP(null);
+//            benders.standardMIP(null);
 
-            example.bendersAlg();
+            benders.bendersAlg();
         } catch (GRBException e) {
             e.printStackTrace();
         }
@@ -73,14 +72,22 @@ public class Example {
 
         int[][] y = getInitialY();
 
+        // # bounded reseni
         int cnt = 0;
+        // # unbounded reseni
         int cntUnb = 0;
+        // sumy u, v pro bounded
         double [] cutConst = new double[MAX_ITERATIONS];
+        // sumy u, v pro unbounded
         double [] cutConstUnb = new double[MAX_ITERATIONS];
+        // koeficienty sumy -xup*w*y
         double[][] cutCoefCommon = null;
-        double[] spSols = new double[MAX_ITERATIONS];
+        // pro bounded
         double[][][] cutCoef = new double[MAX_ITERATIONS][numCustomers][numWarehouses];
+        // pro unbounded
         double[][][] cutCoefUnb = new double[MAX_ITERATIONS][numCustomers][numWarehouses];
+        // reseni podproblemů
+        double[] spSols = new double[MAX_ITERATIONS];
 
         boolean converged = false;
         int iter = 0;
@@ -95,16 +102,19 @@ public class Example {
         boolean unbounded = false;
         while ((UB - LB) > EPS) {
             // {benders subproblem}
-            // FIXME infesible ->> RMP protoze z0 == 220 a u,v,w daji pak 250 a to v nerovnici tezko snizuju ... 220 <= fixed + 250 + coef
+            // FIXME infesible po 1.provedeni ->> RMP protoze z0 == 220 a u,v,w daji pak 250 a to v nerovnici tezko snizuju ... 220 <= fixed + 250 + coef
             Solution subProbSol = bendersDSP(y);
 
             if (subProbSol.getStatus() == GRB.Status.UNBOUNDED) {
+                // inkrement # unbounded reseni
                 cntUnb++;
                 unbounded = true;
                 // add extreme rays
             } else if (subProbSol.getStatus() == GRB.Status.OPTIMAL){
+                // inkrement # bounded reseni
                 cnt++;
                 unbounded = false;
+                //
                 double sum = 0;
                 for (int i = 0; i < numWarehouses; i++) {
                     for (int j = 0; j < numCustomers; j++) {
@@ -113,7 +123,7 @@ public class Example {
                 }
                 spSols[iter] = subProbSol.getObjVal();
                 // updates UB
-                bound = sum + subProbSol.getObjVal();
+                bound = subProbSol.getObjVal();
                 if(bound < UB) {
                     UB = bound;
                     for (int i = 0; i < numWarehouses; i++) {
@@ -149,9 +159,6 @@ public class Example {
             }
 
             // {benders master problem}
-            // benders relaxed master problem:   min_y
-            //                                    s.t.    z >= sum{(i,j) in WxC}f_{i,j}*u_{i,j} + sum(i in W)(-s_i)*u__i^(k) + sum{j in C}d_j*v__j^(k) + sum{(i,j) in WxC}(-M_{i,j}*w__{i,j}^(k))*y_{i,j}
-            //                                    s.t.    sum(i in W)(-s_i)*u__i^(l) + sum(j in C)d_j*v__j^(l) + sum{(i,j) in WxC}(-M_{i,j}*w__{i,j}^(l))*y_{i,j} <= 0
             Solution masProbSol;
             if(unbounded) {
                 masProbSol = bendersRMP(cntUnb, true, cutConstUnb, cutCoefUnb, null);
@@ -197,116 +204,20 @@ public class Example {
         displaySolution(fctpSol);
     }
 
+    /**
+     * Open all paths - feasible
+     * @return
+     * @throws GRBException
+     */
     private int[][] getInitialY() throws GRBException {
-//        Solution initialSol = standardMIP(null);
-//        return initialSol.getY();
         int [][] y = new int[numWarehouses][numCustomers]; // init zeros
         for (int i = 0; i < numWarehouses; i++) {
             for (int j = 0; j < numCustomers; j++) {
                 y[i][j] = 1;
             }
         }
-//        int w = 0, c = 0;
-//        double maxFixed = 0;
-//        for (int i = 0; i < numWarehouses; i++) {
-//            for (int j = 0; j < numCustomers; j++) {
-//                double fixed = fixedTransportCosts[i][j];
-//                if(fixed > maxFixed) {
-//                    maxFixed = fixed;
-//                    w = i;
-//                    c = j;
-//                }
-//            }
-//        }
-        // close most fixed expensive path
-//        y[1][0] = 0;
         return y;
-
     }
-
-//    private Solution bendersModifiedSubproblem(int [][] y) throws GRBException {
-//
-//        //// model
-//        GRBEnv env = new GRBEnv("bendersModifiedSubproblem.log") ;
-//        GRBModel model = new GRBModel(env) ;
-//        // To obtain extreme rays for unbounded models:
-//        model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
-//        model.getEnv().set(GRB.IntParam.Method, 1);
-//        model.set(GRB.StringAttr.ModelName, "FCTP");
-//
-//        //// variables
-//        GRBVar [] u = new GRBVar[numWarehouses];
-//        for (int i = 0; i < numWarehouses; ++i) {
-//            u[i] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "capacity constraint dual " + i);
-//        }
-//
-//        GRBVar [] v = new GRBVar[numCustomers];
-//        for (int j = 0; j < numCustomers; ++j) {
-//            v[j] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "demand constraint dual " + j);
-//        }
-//
-//        GRBVar [][] w = new GRBVar[numWarehouses][numCustomers];
-//        for (int i = 0; i < numWarehouses; ++i) {
-//            for (int j = 0; j < numCustomers; ++j) {
-//                w[i][j] =
-//                        model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "trans(" + i + ", " + j + ")");
-//            }
-//        }
-//
-//        //// maximize
-//        model.set(GRB.IntAttr.ModelSense, -1);
-//
-//        //// integrate variables
-//        model.update();
-//
-//        //// constraints
-//        GRBLinExpr  supply = new GRBLinExpr();
-//        for (int i = 0; i < numWarehouses; ++i) {
-//            supply.addTerm(-supplies[i],  u[i]);  // sum{i in W}(-s_i)*u_i
-//        }
-//
-//        GRBLinExpr  demand = new GRBLinExpr();
-//        for (int j = 0; j < numCustomers; ++j) {
-//            demand.addTerm(demands[j],  v[j]);  // sum{j in C}(d_j*v_j)
-//        }
-//
-//        GRBLinExpr e = new GRBLinExpr();
-//        for (int i = 0; i < numWarehouses; ++i) {
-//            for (int j = 0; j < numCustomers; ++j) {
-//                e.addTerm(-xup[i][j] * y[i][j], w[i][j]);  // sum{(i,j) in WxC)(-xup_{i,j}*y_{i,j})*w_{i,j}
-//            }
-//        }
-//
-//        GRBLinExpr modifiedsubobj = new GRBLinExpr();
-//        modifiedsubobj.add(supply);
-//        modifiedsubobj.add(demand);
-//        modifiedsubobj.add(e);
-//        model.addConstr(modifiedsubobj, GRB.EQUAL, 1, "modifiedsubobj");
-//
-//        // modifiedsubconstr
-//        GRBLinExpr modifiedsubconstr = new GRBLinExpr();
-//        for (int i = 0; i < numWarehouses; ++i) {
-//            for (int j = 0; j < numCustomers; ++j) {
-//                modifiedsubconstr.addTerm(-1.0, u[i]);
-//                modifiedsubconstr.addTerm(1.0, v[j]);
-//                modifiedsubconstr.addTerm(-1.0, w[i][j]);
-//                model.addConstr(modifiedsubconstr, GRB.LESS_EQUAL, 0, "modifiedsubconstr");
-//            }
-//        }
-//
-//        // solve
-//        model.optimize();
-//
-//        int status = model.get(GRB.IntAttr.Status);
-//
-//        // Dispose o f model and environment
-//        model.dispose();
-//        env.dispose();
-//
-//        Solution z = new Solution();
-//        z.setStatus(status);
-//        return z;
-//    }
 
     private void displaySolution(Solution fctpSol) {
         // print result
@@ -328,17 +239,28 @@ public class Example {
         }
     }
 
+    /**
+     * Benders relaxed master problem
+     * @param curIter aktualni iterace pro bounded i unbounded zvlastni countery
+     * @param unbounded bounded/unbounded boolean
+     * @param cutConst sumy u, v
+     * @param cutCoefList koef. do sumy -xup*w*y
+     * @param z predchozi DSP reseni
+     * @return
+     * @throws GRBException
+     */
     private Solution bendersRMP(int curIter, boolean unbounded, double [] cutConst,
                                 double [][][] cutCoefList, double [] z) throws GRBException {
         //// model
-        GRBEnv env = new GRBEnv("bendersRMP.log") ;
-        GRBModel model = new GRBModel(env) ;
-        // To obtain extreme rays for unbounded models:
+        GRBEnv env = new GRBEnv("bendersRMP.log");
+        GRBModel model = new GRBModel(env);
+        // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
         model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
-        model.getEnv().set(GRB.IntParam.Method, 1);
+        // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
+        model.getEnv().set(GRB.IntParam.Method, 0);
         model.set(GRB.StringAttr.ModelName, "FCTP");
 
-        GRBVar [][] y = new GRBVar[numWarehouses][numCustomers];
+        GRBVar[][] y = new GRBVar[numWarehouses][numCustomers];
         for (int i = 0; i < numWarehouses; ++i) {
             for (int j = 0; j < numCustomers; ++j) {
                 y[i][j] =
@@ -349,11 +271,11 @@ public class Example {
         //// update vars
         model.update();
 
+        model.set(GRB.IntAttr.ModelSense, 1);
         if (!unbounded) {
-            model.set(GRB.IntAttr.ModelSense, 1);
-
-            for(int iter = 0; iter < curIter; iter++) {
-                double [][] cutCoef = cutCoefList[iter];
+            // for each iteration
+            for (int iter = 0; iter < curIter; iter++) {
+                double[][] cutCoef = cutCoefList[iter];
 
                 GRBLinExpr fixedSum = new GRBLinExpr();
                 for (int i = 0; i < numWarehouses; i++) {
@@ -369,18 +291,17 @@ public class Example {
                     }
                 }
 
-                // for each iteration
                 GRBLinExpr cut = new GRBLinExpr();
                 cut.add(fixedSum);
                 cut.addConstant(cutConst[iter]);
                 cut.add(cutcoeffSum);
-                model.addConstr(cut, GRB.LESS_EQUAL, z[iter], "RMP cut");
+                // cut: (sum fixed*y) + (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= z
+                model.addConstr(z[iter], GRB.GREATER_EQUAL, cut, "RMP cut");
             }
         } else {
-            model.set(GRB.IntAttr.ModelSense, 1);
-
-            for(int iter = 0; iter < curIter; iter++) {
-                double [][] cutCoef = cutCoefList[iter];
+            // for each iteration
+            for (int iter = 0; iter < curIter; iter++) {
+                double[][] cutCoef = cutCoefList[iter];
                 GRBLinExpr cutcoeffUnbSum = new GRBLinExpr();
                 for (int i = 0; i < numWarehouses; i++) {
                     for (int j = 0; j < numCustomers; j++) {
@@ -391,21 +312,24 @@ public class Example {
                 GRBLinExpr unboundedcut = new GRBLinExpr();
                 unboundedcut.addConstant(cutConst[iter]);
                 unboundedcut.add(cutcoeffUnbSum);
-
+                // cut:  (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= 0
                 model.addConstr(unboundedcut, GRB.LESS_EQUAL, 0, "RMP unboundedcut");
             }
-
         }
 
         // solve
         model.optimize();
 
         int status = model.get(GRB.IntAttr.Status);
-        double objVal = model.get(GRB.DoubleAttr.ObjVal);
-        int [][] solY = new int[numWarehouses][numCustomers];
-        for (int i = 0; i < numWarehouses; i++) {
-            for (int j = 0; j < numCustomers; j++) {
-                solY[i][j] = (int) y[i][j].get(GRB.DoubleAttr.X);  // 0 or 1
+        double objVal = 0;
+        int[][] solY = null;
+        if (status == GRB.Status.OPTIMAL) {
+            objVal = model.get(GRB.DoubleAttr.ObjVal);
+            solY = new int[numWarehouses][numCustomers];
+            for (int i = 0; i < numWarehouses; i++) {
+                for (int j = 0; j < numCustomers; j++) {
+                    solY[i][j] = (int) y[i][j].get(GRB.DoubleAttr.X);  // 0 or 1
+                }
             }
         }
 
@@ -413,19 +337,29 @@ public class Example {
         model.dispose();
         env.dispose();
 
+        // retrieve and store solution
         Solution sol = new Solution();
         sol.setStatus(status);
-        sol.setObjVal(objVal);
-        sol.setY(solY);
+        if (status == GRB.Status.OPTIMAL) {
+            sol.setObjVal(objVal);
+            sol.setY(solY);
+        }
         return sol;
     }
 
+    /**
+     * Benders dual subproblem
+     * @param y fixnute y
+     * @return reseni POJO
+     * @throws GRBException
+     */
     private Solution bendersDSP(int [][] y) throws GRBException {
         //// model
         GRBEnv env = new GRBEnv("bendersDSP.log") ;
         GRBModel model = new GRBModel(env) ;
-        // To obtain extreme rays for unbounded models:
+        // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
         model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
+        // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
         model.getEnv().set(GRB.IntParam.Method, 0);
         model.set(GRB.StringAttr.ModelName, "FCTP");
 
@@ -450,11 +384,6 @@ public class Example {
 
         //// integrate variables
         model.update();
-
-        //// equations
-        // Benders' subproblem:   max_{u,v,w} sum{i in W}(-s_i)*u_i + sum{j in C}(d_j*v_j) + sum{(i,j) in WxC)(-xup_{i,j}*y_{i,j})*w_{i,j}
-        //                          s.t.  -u_i + v_j - w_{i,j} <= c_{i,j}
-        //                          s.t.  u_i >= 0,   v_j >= 0,   w_{i,j}>= 0
 
         //// objective function
         GRBLinExpr  supply = new GRBLinExpr();
@@ -484,23 +413,25 @@ public class Example {
         //// constraints
         for (int i = 0; i < numWarehouses; ++i) {
             for (int j = 0; j < numCustomers; ++j) {
-                GRBLinExpr subconstr = new GRBLinExpr();
-                subconstr.addTerm(-1.0, u[i]);
-                subconstr.addTerm(1.0, v[j]);
-                subconstr.addTerm(-1.0, w[i][j]);
-                model.addConstr(subconstr, GRB.LESS_EQUAL, transportCosts[i][j], "subconstr");
+                GRBLinExpr subConstr = new GRBLinExpr();
+                subConstr.addTerm(-1.0, u[i]);
+                subConstr.addTerm(1.0, v[j]);
+                subConstr.addTerm(-1.0, w[i][j]);
+                // -u_i + v_j - w_ij <= c_ij
+                model.addConstr(subConstr, GRB.LESS_EQUAL, transportCosts[i][j], "subconstr");
             }
         }
 
         // solve
         model.optimize();
 
-        Solution z = new Solution();
+        // retrieve and store solution
         int status = model.get(GRB.IntAttr.Status);
         boolean unbounded = status == GRB.Status.UNBOUNDED;
         double objVal = model.get(GRB.DoubleAttr.ObjVal);
 
         // gets (un)bounded values for u,v,w for use in RMP
+        // https://www.gurobi.com/documentation/6.5/refman/unbdray.html#attr:UnbdRay
         double [][] wSol = new double[numWarehouses][numCustomers];
         double [] uSol = new double[numWarehouses];
         double [] vSol = new double[numCustomers];
@@ -516,13 +447,90 @@ public class Example {
         model.dispose();
         env.dispose();
 
-
+        Solution z = new Solution();
         z.setStatus(status);
         z.setObjVal(objVal);
         z.setW(wSol);
         z.setU(uSol);
         z.setV(vSol);
         return z;
+    }
+
+    private void prepareUpperbounds() {
+        xup = new int[numWarehouses][numCustomers];
+
+        for (int w = 0; w < numWarehouses; w++) {
+            for (int c = 0; c < numCustomers; c++) {
+                xup[w][c] = Math.min(supplies[w], demands[c]);
+            }
+        }
+    }
+
+    private void checkSuppliesDemandsBalance() {
+
+        int sumDemands = 0;
+        for (int i = 0; i < demands.length; i++) {
+            sumDemands += demands[i];
+        }
+        int sumSupplies = 0;
+        for (int j = 0; j < supplies.length; j++) {
+            sumSupplies += supplies[j];
+        }
+
+        if(sumDemands != sumSupplies) {
+            System.err.println("Demands - Supplies not in balance");
+            System.exit(1);
+        }
+    }
+
+    private void read() throws IOException {
+        final StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+
+        while (st.nextToken() != StreamTokenizer.TT_EOF) {
+
+            // # warehouses
+            int w = (int) st.nval;
+            st.nextToken();
+            // # customers
+            int c = (int) st.nval;
+            st.nextToken();
+
+            // supplies by warehouse
+            supplies = new int[w];
+            for (int i = 0; i < w; i++) {
+                supplies[i] = (int) st.nval;
+                st.nextToken();
+            }
+
+            // demands by customer
+            demands = new int[c];
+            for (int i = 0; i < c; i++) {
+                demands[i] = (int) st.nval;
+                st.nextToken();
+            }
+
+            // transport costs
+            transportCosts = new double[w][c];
+            for (int i = 0; i < w; i++) {
+                for (int j = 0; j < c; j++) {
+                    transportCosts[i][j] = st.nval;
+                    st.nextToken();
+                }
+            }
+
+            // fixed transport costs
+            fixedTransportCosts = new double[w][c];
+            for (int i = 0; i < w; i++) {
+                for (int j = 0; j < c; j++) {
+                    fixedTransportCosts[i][j] = st.nval;
+                    st.nextToken();
+                }
+            }
+        }
+
+        numWarehouses = supplies.length;
+        numCustomers = demands.length;
+
     }
 
     private Solution standardMIP(int[][] y_fx) throws GRBException {
@@ -625,9 +633,7 @@ public class Example {
         //// solve
         model.optimize();
 
-
-        Solution sol = new Solution();
-
+        // retrieve and store solution
         int[][] ySol = new int[numWarehouses][numCustomers];
         double[][] xSol = new double[numWarehouses][numCustomers];
         for (int i = 0; i < numWarehouses; i++) {
@@ -640,6 +646,8 @@ public class Example {
                 }
             }
         }
+
+        Solution sol = new Solution();
         sol.setY(ySol);
         sol.setX(xSol);
         sol.setObjVal(model.get(GRB.DoubleAttr.ObjVal));
@@ -651,82 +659,5 @@ public class Example {
         model.dispose();
         env.dispose();
         return sol;
-    }
-
-    private void prepareUpperbounds() {
-        xup = new int[numWarehouses][numCustomers];
-
-        for (int w = 0; w < numWarehouses; w++) {
-            for (int c = 0; c < numCustomers; c++) {
-                xup[w][c] = Math.min(supplies[w], demands[c]);
-            }
-        }
-    }
-
-    private void checkSuppliesDemandsBalance() {
-
-        int sumDemands = 0;
-        for (int i = 0; i < demands.length; i++) {
-            sumDemands += demands[i];
-        }
-        int sumSupplies = 0;
-        for (int j = 0; j < supplies.length; j++) {
-            sumSupplies += supplies[j];
-        }
-
-        if(sumDemands != sumSupplies) {
-            System.err.println("Demands - Supplies not in balance");
-            System.exit(1);
-        }
-    }
-
-    private void read() throws IOException {
-        final StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
-
-        while (st.nextToken() != StreamTokenizer.TT_EOF) {
-
-            // # warehouses
-            int w = (int) st.nval;
-            st.nextToken();
-            // # customers
-            int c = (int) st.nval;
-            st.nextToken();
-
-            // supplies by warehouse
-            supplies = new int[w];
-            for (int i = 0; i < w; i++) {
-                supplies[i] = (int) st.nval;
-                st.nextToken();
-            }
-
-            // demands by customer
-            demands = new int[c];
-            for (int i = 0; i < c; i++) {
-                demands[i] = (int) st.nval;
-                st.nextToken();
-            }
-
-            // transport costs
-            transportCosts = new double[w][c];
-            for (int i = 0; i < w; i++) {
-                for (int j = 0; j < c; j++) {
-                    transportCosts[i][j] = st.nval;
-                    st.nextToken();
-                }
-            }
-
-            // fixed transport costs
-            fixedTransportCosts = new double[w][c];
-            for (int i = 0; i < w; i++) {
-                for (int j = 0; j < c; j++) {
-                    fixedTransportCosts[i][j] = st.nval;
-                    st.nextToken();
-                }
-            }
-        }
-
-        numWarehouses = supplies.length;
-        numCustomers = demands.length;
-
     }
 }
