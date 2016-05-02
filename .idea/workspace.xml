@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6644f73-2273-4c0c-b4a5-ba618c8a660f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example.log" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cz/sange/Example.java" afterPath="$PROJECT_DIR$/src/cz/sange/Benders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Example.class" afterPath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Example.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersDSP.log" afterPath="$PROJECT_DIR$/bendersDSP.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersMasterProblem.log" afterPath="$PROJECT_DIR$/bendersMasterProblem.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersRMP.log" afterPath="$PROJECT_DIR$/bendersRMP.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bendersSubproblem.log" afterPath="$PROJECT_DIR$/bendersSubproblem.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/standardMIP.log" afterPath="$PROJECT_DIR$/standardMIP.log" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/01.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/02.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/03.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/04.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/05.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/06.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/07.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/08.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/09.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/10.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/11.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/12.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/13.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/14.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Example.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/ProblemGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Solution.class" afterPath="" />
     </list>
     <ignored path="FCTP-ILP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,14 +47,13 @@
       <file leaf-file-name="Benders.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2534">
-              <caret line="252" column="92" selection-start-line="252" selection-start-column="92" selection-end-line="252" selection-end-column="92" />
+            <state relative-caret-position="872">
+              <caret line="440" column="69" selection-start-line="440" selection-start-column="62" selection-end-line="440" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
                 <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
                 <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-                <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
                 <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
                 <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
                 <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -867,12 +874,12 @@
       <workItem from="1461830140250" duration="1644000" />
       <workItem from="1461833648581" duration="2326000" />
       <workItem from="1461845411678" duration="1165000" />
-      <workItem from="1462049085996" duration="19521000" />
+      <workItem from="1462049085996" duration="19805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95103000" />
+    <option name="totallyTimeSpent" value="95387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,8 +891,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2049505" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -900,7 +907,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16453674" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16453674" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -946,7 +953,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -999,7 +1005,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1052,7 +1057,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1105,7 +1109,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1131,7 +1134,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1149,7 +1151,6 @@
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1334,14 +1335,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2534">
-          <caret line="252" column="92" selection-start-line="252" selection-start-column="92" selection-end-line="252" selection-end-column="92" />
+        <state relative-caret-position="872">
+          <caret line="440" column="69" selection-start-line="440" selection-start-column="62" selection-end-line="440" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#read#0;class#Benders#0" expanded="false" />
@@ -1379,6 +1379,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>angular</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
