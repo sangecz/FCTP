@@ -55,11 +55,11 @@ public class Benders {
         // check supply-demand balance
         benders.checkSuppliesDemandsBalance();
 
-        // prepare bbig-M upperbounds on x
+        // prepare big-M upperbounds on x
         benders.prepareUpperbounds();
 
         try {
-//            benders.standardMIP(null);
+//            benders.displaySolution(benders.standardMIP(null));
 
             benders.bendersAlg();
         } catch (GRBException e) {
@@ -100,19 +100,16 @@ public class Benders {
         double UB = Double.MAX_VALUE;
 
         boolean unbounded = false;
-        while ((UB - LB) > EPS) {
+        while (!converged) {
             // {benders subproblem}
-            // FIXME infesible po 1.provedeni ->> RMP protoze z0 == 220 a u,v,w daji pak 250 a to v nerovnici tezko snizuju ... 220 <= fixed + 250 + coef
             Solution subProbSol = bendersDSP(y);
 
             if (subProbSol.getStatus() == GRB.Status.UNBOUNDED) {
                 // inkrement # unbounded reseni
-                cntUnb++;
                 unbounded = true;
                 // add extreme rays
             } else if (subProbSol.getStatus() == GRB.Status.OPTIMAL){
                 // inkrement # bounded reseni
-                cnt++;
                 unbounded = false;
                 //
                 double sum = 0;
@@ -123,7 +120,7 @@ public class Benders {
                 }
                 spSols[iter] = subProbSol.getObjVal();
                 // updates UB
-                bound = subProbSol.getObjVal();
+                bound = sum + subProbSol.getObjVal();
                 if(bound < UB) {
                     UB = bound;
                     for (int i = 0; i < numWarehouses; i++) {
@@ -151,20 +148,17 @@ public class Benders {
                 }
             }
             if (unbounded) {
-                cutConstUnb[iter] = suppliesSum + demandsSum;
-                cutCoefUnb[iter] = cutCoefCommon;
+                cutConstUnb[cntUnb] = suppliesSum + demandsSum;
+                cutCoefUnb[cntUnb] = cutCoefCommon;
+                cntUnb++;
             } else {
-                cutConst[iter] = suppliesSum + demandsSum;
-                cutCoef[iter] = cutCoefCommon;
+                cutConst[cnt] = suppliesSum + demandsSum;
+                cutCoef[cnt] = cutCoefCommon;
+                cnt++;
             }
 
             // {benders master problem}
-            Solution masProbSol;
-            if(unbounded) {
-                masProbSol = bendersRMP(cntUnb, true, cutConstUnb, cutCoefUnb, null);
-            } else {
-                masProbSol = bendersRMP(cnt, false, cutConst, cutCoef, spSols);
-            }
+            Solution masProbSol = bendersRMP(cnt, cntUnb, cutConst, cutConstUnb, cutCoef, cutCoefUnb, spSols);
             // fixing y for DSP
             y = masProbSol.getY();
 
@@ -221,7 +215,7 @@ public class Benders {
 
     private void displaySolution(Solution fctpSol) {
         // print result
-        System.out.println("\nTOTAL COSTS: " + fctpSol.getObjVal());
+        System.out.println("\nTOTAL COSTS: " + Math.round(fctpSol.getObjVal()));
         System.out.println("SOLUTION:");
         for (int w = 0; w < numWarehouses; ++w) {
             for (int c = 0; c < numCustomers; ++c) {
@@ -241,24 +235,20 @@ public class Benders {
 
     /**
      * Benders relaxed master problem
-     * @param curIter aktualni iterace pro bounded i unbounded zvlastni countery
-     * @param unbounded bounded/unbounded boolean
-     * @param cutConst sumy u, v
-     * @param cutCoefList koef. do sumy -xup*w*y
-     * @param z predchozi DSP reseni
-     * @return
      * @throws GRBException
      */
-    private Solution bendersRMP(int curIter, boolean unbounded, double [] cutConst,
-                                double [][][] cutCoefList, double [] z) throws GRBException {
+    private Solution bendersRMP(int cnt, int cntUnb, double [] cutConst,  double [] cutConstUnb,
+                                double [][][] cutCoefList, double [][][] cutCoefListUnb, double [] z) throws GRBException {
         //// model
         GRBEnv env = new GRBEnv("bendersRMP.log");
         GRBModel model = new GRBModel(env);
         // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
-        model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
+//        model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
         // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
-        model.getEnv().set(GRB.IntParam.Method, 0);
+        model.getEnv().set(GRB.IntParam.Method, 1);
         model.set(GRB.StringAttr.ModelName, "FCTP");
+
+        GRBVar z0 = model.addVar(0, 1, 0, GRB.CONTINUOUS, "RMP obj");
 
         GRBVar[][] y = new GRBVar[numWarehouses][numCustomers];
         for (int i = 0; i < numWarehouses; ++i) {
@@ -269,52 +259,57 @@ public class Benders {
         }
 
         //// update vars
+//        model.set(GRB.IntAttr.ModelSense, 1);
         model.update();
 
-        model.set(GRB.IntAttr.ModelSense, 1);
-        if (!unbounded) {
-            // for each iteration
-            for (int iter = 0; iter < curIter; iter++) {
-                double[][] cutCoef = cutCoefList[iter];
+        GRBLinExpr obj = new GRBLinExpr();
 
-                GRBLinExpr fixedSum = new GRBLinExpr();
-                for (int i = 0; i < numWarehouses; i++) {
-                    for (int j = 0; j < numCustomers; j++) {
-                        fixedSum.addTerm(fixedTransportCosts[i][j], y[i][j]);
-                    }
+
+        // for each iteration
+        for (int iter = 0; iter < cnt; iter++) {
+            double[][] cutCoef = cutCoefList[iter];
+
+            GRBLinExpr fixedSum = new GRBLinExpr();
+            for (int i = 0; i < numWarehouses; i++) {
+                for (int j = 0; j < numCustomers; j++) {
+                    fixedSum.addTerm(fixedTransportCosts[i][j], y[i][j]);
                 }
-
-                GRBLinExpr cutcoeffSum = new GRBLinExpr();
-                for (int i = 0; i < numWarehouses; i++) {
-                    for (int j = 0; j < numCustomers; j++) {
-                        cutcoeffSum.addTerm(cutCoef[i][j], y[i][j]);
-                    }
-                }
-
-                GRBLinExpr cut = new GRBLinExpr();
-                cut.add(fixedSum);
-                cut.addConstant(cutConst[iter]);
-                cut.add(cutcoeffSum);
-                // cut: (sum fixed*y) + (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= z
-                model.addConstr(z[iter], GRB.GREATER_EQUAL, cut, "RMP cut");
             }
-        } else {
-            // for each iteration
-            for (int iter = 0; iter < curIter; iter++) {
-                double[][] cutCoef = cutCoefList[iter];
-                GRBLinExpr cutcoeffUnbSum = new GRBLinExpr();
-                for (int i = 0; i < numWarehouses; i++) {
-                    for (int j = 0; j < numCustomers; j++) {
-                        cutcoeffUnbSum.addTerm(cutCoef[i][j], y[i][j]);
-                    }
-                }
 
-                GRBLinExpr unboundedcut = new GRBLinExpr();
-                unboundedcut.addConstant(cutConst[iter]);
-                unboundedcut.add(cutcoeffUnbSum);
-                // cut:  (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= 0
-                model.addConstr(unboundedcut, GRB.LESS_EQUAL, 0, "RMP unboundedcut");
+            GRBLinExpr cutcoeffSum = new GRBLinExpr();
+            for (int i = 0; i < numWarehouses; i++) {
+                for (int j = 0; j < numCustomers; j++) {
+                    cutcoeffSum.addTerm(cutCoef[i][j], y[i][j]);
+                }
             }
+
+            GRBLinExpr cut = new GRBLinExpr();
+            cut.add(fixedSum);
+            cut.addConstant(cutConst[iter]);
+            cut.add(cutcoeffSum);
+            // cut: (sum fixed*y) + (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= z
+//            model.addConstr(z0, GRB.GREATER_EQUAL, cut, "RMP cut");
+            obj.add(cut);
+        }
+
+        model.setObjective(obj, GRB.MINIMIZE);
+
+
+        // for each iteration
+        for (int iter = 0; iter < cntUnb; iter++) {
+            double[][] cutCoef = cutCoefListUnb[iter];
+            GRBLinExpr cutcoeffUnbSum = new GRBLinExpr();
+            for (int i = 0; i < numWarehouses; i++) {
+                for (int j = 0; j < numCustomers; j++) {
+                    cutcoeffUnbSum.addTerm(cutCoef[i][j], y[i][j]);
+                }
+            }
+
+            GRBLinExpr unboundedcut = new GRBLinExpr();
+            unboundedcut.addConstant(cutConstUnb[iter]);
+            unboundedcut.add(cutcoeffUnbSum);
+            // cut:  (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= 0
+            model.addConstr(unboundedcut, GRB.LESS_EQUAL, 0, "RMP unboundedcut");
         }
 
         // solve
@@ -537,20 +532,24 @@ public class Benders {
         //// model
         GRBEnv env = new GRBEnv("standardMIP.log") ;
         GRBModel model = new GRBModel(env) ;
+        model.getEnv().set(GRB.IntParam.Method, 1);
         model.set(GRB.StringAttr.ModelName, "FCTP");
 
         //// variables
         boolean fixedY = y_fx != null;
         GRBVar[][] y = null;
-        if (!fixedY) {
+//        if (!fixedY) {
             y = new GRBVar[numWarehouses][numCustomers];
             for (int w = 0; w < numWarehouses; ++w) {
                 for (int c = 0; c < numCustomers; ++c) {
-                    y[w][c] =
-                            model.addVar(0, 1, fixedTransportCosts[w][c], GRB.BINARY, "Open " + w + "->" + c);
+                    if (!fixedY) {
+                        y[w][c] = model.addVar(0, 1, fixedTransportCosts[w][c], GRB.BINARY, "Open " + w + "->" + c);
+                    } else {
+                        y[w][c] = model.addVar(y_fx[w][c], 1, fixedTransportCosts[w][c], GRB.BINARY, "Open " + w + "->" + c);
+                    }
                 }
             }
-        }
+//        }
 
         GRBVar [][] x = new GRBVar[numWarehouses][numCustomers];
         for (int w = 0; w < numWarehouses; ++w) {
@@ -565,6 +564,21 @@ public class Benders {
 
         //// update vars
         model.update();
+//
+//        GRBLinExpr obj = new GRBLinExpr();
+//        for (int i = 0; i < numWarehouses; i++) {
+//            for (int j = 0; j < numCustomers; j++) {
+//                obj.addTerm(transportCosts[i][j], x[i][j]);
+//                if (!fixedY) {
+//                    obj.addTerm(fixedTransportCosts[i][j], y[i][j]);
+//                } else {
+//                    obj.addConstant(fixedTransportCosts[i][j] * y_fx[i][j]);
+//                }
+//            }
+//        }
+
+
+
 
         //// constraints
         // supplies constraints
@@ -643,16 +657,25 @@ public class Benders {
                     xSol[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
                 } else {
                     ySol[i][j] = y_fx[i][j];
+                    xSol[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
                 }
             }
         }
+//        double fixedCosts = 0;
+//        for (int i = 0; i < numWarehouses; i++) {
+//            for (int j = 0; j < numCustomers; j++) {
+//                fixedCosts += ySol
+//            }
+//        }
 
         Solution sol = new Solution();
         sol.setY(ySol);
         sol.setX(xSol);
         sol.setObjVal(model.get(GRB.DoubleAttr.ObjVal));
-
-        displaySolution(sol);
+//        if(fixedY) {
+//
+//        }
+        sol.setStatus(model.get(GRB.IntAttr.Status));
 
 
         // Dispose o f model and environment
