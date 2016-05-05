@@ -16,9 +16,9 @@ public class ProblemGenerator {
 
     public static final int MIN = 1;
     public static final int MAX = 50;
-    public static final int W = 10;
-    public static final int C = 10;
-    public static final String FILENAME = "src/cz/sange/14.in";
+    public static final int W = 4;
+    public static final int C = 4;
+    public static final String FILENAME = "src/cz/sange/04.in";
 
     private static Random random = new Random();
 

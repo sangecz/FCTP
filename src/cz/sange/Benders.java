@@ -1,7 +1,11 @@
 package cz.sange;
 
 import gurobi.*;
+import sun.rmi.runtime.Log;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 /**
@@ -22,11 +26,13 @@ import java.util.Arrays;
 
 public class Benders {
 
-    private static int MAX_ITERATIONS = 50;
+    private static final boolean BENDERS = true;
+
+    private static int MAX_ITERATIONS = 1000;
     private static double EPS = 0.0001;
     private static double CONVERGEND_BOUND = 0.1;
-    public static final int UNBOUNDED = 1000000;
 
+    public static final int UNBOUNDED = 1000000;
     private int [] demands;
     private int [] supplies;
     private double[][] transportCosts;
@@ -38,13 +44,31 @@ public class Benders {
     private GRBModel modelRMP;
     private GRBVar[][] yRMP;
     private boolean firstRunRMP;
-    private GRBLinExpr objRMP;
-
+    private GRBVar z0;
+    private static final String OUT_MIP_LOG = "out-mip.log";
+    private static final String OUT_BENDERS_LOG = "out-benders.log";
+    private static final String BENDERS_LOG = "benders-all.log";
+    private static final String MIP_LOG = "ilp-all.log";
+    private static final String INPUT_PATH = "/Users/sange/GoogleDrive/FEL-ING/KO/semestralka/FCTP-ILP/input/";
+    private LogWriter writer;
 
     public static void main(String[] args) {
-
         try {
-            System.setIn(new FileInputStream(args[0]));
+            Files.walk(Paths.get(INPUT_PATH)).forEach(filePath -> {
+                if (Files.isRegularFile(filePath)) {
+                    processFile(filePath.toString());
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public static void processFile(String fileName) {
+        try {
+            System.setIn(new FileInputStream(fileName));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,16 +88,38 @@ public class Benders {
         benders.prepareUpperbounds();
 
         try {
-//            benders.displaySolution(benders.standardMIP(null));
 
-            benders.bendersAlg();
+            if (BENDERS) {
+                benders.writer = new LogWriter(OUT_BENDERS_LOG);
+            } else {
+                benders.writer = new LogWriter(OUT_MIP_LOG);
+            }
+
+            benders.writer.write("============== file: " + new File(fileName).getName() + "\n");
+
+            Solution sol;
+            long start = System.nanoTime();
+
+            if (BENDERS) {
+                sol = benders.bendersAlg();
+            } else {
+                sol = benders.standardMIP(null);
+            }
+
+            benders.writer.write("============== took: " + (System.nanoTime() - start) + "ns\n");
+            benders.writer.write("============== solution: \n");
+            // print results
+            benders.displaySolution(sol);
+
+            benders.writer.close();
+
         } catch (GRBException e) {
             e.printStackTrace();
         }
 
     }
 
-    private void bendersAlg() throws GRBException{
+    private Solution bendersAlg() throws GRBException{
 
         int[][] y = getInitialY();
 
@@ -181,7 +227,7 @@ public class Benders {
             System.exit(6);
         }
 
-        displaySolution(fctpSol);
+        return fctpSol;
     }
 
     /**
@@ -201,19 +247,19 @@ public class Benders {
 
     private void displaySolution(Solution fctpSol)  {
         // print result
-        System.out.println("\nTOTAL COSTS: " + Math.round(fctpSol.getObjVal()));
-        System.out.println("SOLUTION:");
+        writer.write("\nTOTAL COSTS: " + Math.round(fctpSol.getObjVal()) + "\n");
+        writer.write("SOLUTION:" + "\n");
         for (int w = 0; w < numWarehouses; ++w) {
             for (int c = 0; c < numCustomers; ++c) {
                 if (fctpSol.getY()[w][c] == 1) {
-                    System.out.println("Path (" + w + "," + c + ") open, transport:");
+                    writer.write("Path (" + w + "," + c + ") open, transport:" + "\n");
                     if (fctpSol.getX()[w][c] > EPS) {
-                        System.out.println("\t" + Math.round(fctpSol.getX()[w][c])
+                        writer.write("\t" + Math.round(fctpSol.getX()[w][c])
                                 + " units for VP: " + transportCosts[w][c]
-                                + " and FP: " + fixedTransportCosts[w][c] + " to customer " + c);
+                                + " and FP: " + fixedTransportCosts[w][c] + " to customer " + c + "\n");
                     }
                 } else {
-                    System.out.println("Path (" + w + "," + c + ") closed.");
+                    writer.write("Path (" + w + "," + c + ") closed." + "\n");
                 }
             }
         }
@@ -221,7 +267,7 @@ public class Benders {
 
     private void bendersRMPInit()  throws GRBException {
         //// model
-        envRMP = new GRBEnv("bendersRMP.log");
+        envRMP = new GRBEnv(BENDERS_LOG);
         modelRMP = new GRBModel(envRMP);
         // method: https://www.gurobi.com/documentation/6.5/refman/method.html
         modelRMP.getEnv().set(GRB.IntParam.Method, 1);
@@ -236,7 +282,7 @@ public class Benders {
 
         firstRunRMP = true;
 
-        objRMP = new GRBLinExpr();
+        z0 = modelRMP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "tralala");
     }
 
     private void bendersRMPDestroy()  throws GRBException {
@@ -256,10 +302,6 @@ public class Benders {
            modelRMP.reset();
         } else {
             firstRunRMP = false;
-        }
-
-        if(!boundedDSP) {
-            modelRMP.set(GRB.IntAttr.ModelSense, 1);
         }
 
         //// update vars
@@ -286,15 +328,19 @@ public class Benders {
             }
             cut.add(fixedSum);
             // cut: (sum fixed*y) + (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= z
-//            model.addConstr(z0, GRB.GREATER_EQUAL, cut, "RMP cut");
-            objRMP.add(cut);
+            modelRMP.addConstr(z0, GRB.GREATER_EQUAL, cut, "RMP cut");
+//            objRMP.add(cut);
             // RMP obj
-            modelRMP.setObjective(objRMP, GRB.MINIMIZE);
         } else {
             // unbounded
             // cut:  (sum -supplies*u) + (sum demands*v) + (sum -xup*w*y) <= 0
             modelRMP.addConstr(cut, GRB.LESS_EQUAL, 0, "RMP unboundedcut");
         }
+
+        GRBLinExpr obj = new GRBLinExpr();
+        obj.addTerm(1.0, z0);
+        modelRMP.setObjective(obj, GRB.MINIMIZE);
+
 
         GRBLinExpr ycond1 = new GRBLinExpr();
         for (int j = 0; j < numCustomers; j++) {
@@ -345,7 +391,7 @@ public class Benders {
      */
     private Solution bendersDSP(int [][] y) throws GRBException {
         //// model
-        GRBEnv env = new GRBEnv("bendersDSP.log") ;
+        GRBEnv env = new GRBEnv(BENDERS_LOG) ;
         GRBModel model = new GRBModel(env) ;
         // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
         model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
@@ -475,7 +521,7 @@ public class Benders {
 
     private Solution standardMIP(int[][] y_fx) throws GRBException {
         //// model
-        GRBEnv env = new GRBEnv("standardMIP.log") ;
+        GRBEnv env = new GRBEnv(BENDERS ? BENDERS_LOG : MIP_LOG) ;
         GRBModel model = new GRBModel(env) ;
         model.getEnv().set(GRB.IntParam.Method, 1);
         model.set(GRB.StringAttr.ModelName, "FCTP");
@@ -549,7 +595,7 @@ public class Benders {
                 }
             }
             // find max fixed cost
-            System.out.println("Initial guess:");
+//            writer.write("Initial guess:" + "\n");
             double maxFixed = -GRB.INFINITY;
             for (int w = 0; w < numWarehouses; ++w) {
                 for (int c = 0; c < numCustomers; ++c) {
@@ -564,7 +610,7 @@ public class Benders {
                 for (int c = 0; c < numCustomers; ++c) {
                     if (fixedTransportCosts[w][c] == maxFixed) {
                         y[w][c].set(GRB.DoubleAttr.Start, 0.0);
-                        System.out.println("Closing path: (" + w + "," + c + ") of FP=" + maxFixed + "\n");
+//                        writer.write("Closing path: (" + w + "," + c + ") of FP=" + maxFixed + "\n");
                         break branch;
                     }
                 }

@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6644f73-2273-4c0c-b4a5-ba618c8a660f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/01.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/02.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/03.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/05.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/09.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/10.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/11.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/12.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/20.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/30.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/40.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/50.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/60.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Benders.java" afterPath="$PROJECT_DIR$/src/cz/sange/Benders.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" afterPath="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" />
     </list>
     <ignored path="FCTP-ILP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,40 +46,21 @@
       <file leaf-file-name="Benders.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="296" column="9" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
                 <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
                 <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+                <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
                 <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+                <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
                 <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
                 <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
                 <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-                <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+                <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#491#492#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProblemGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,15 +92,25 @@
         <option value="$PROJECT_DIR$/src/cz/sange/03.in" />
         <option value="$PROJECT_DIR$/src/cz/sange/04.in" />
         <option value="$PROJECT_DIR$/bendersMasterProblem.log" />
-        <option value="$PROJECT_DIR$/bendersRMP.log" />
         <option value="$PROJECT_DIR$/bendersSubproblem.log" />
-        <option value="$PROJECT_DIR$/bendersDSP.log" />
         <option value="$PROJECT_DIR$/example.log" />
         <option value="$PROJECT_DIR$/src/cz/sange/05.in" />
-        <option value="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" />
         <option value="$PROJECT_DIR$/src/cz/sange/Example.java" />
         <option value="$PROJECT_DIR$/src/cz/sange/aaa" />
+        <option value="$PROJECT_DIR$/src/cz/sange/test" />
+        <option value="$PROJECT_DIR$/src/cz/sange/test2" />
+        <option value="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" />
+        <option value="$PROJECT_DIR$/ILP.log" />
+        <option value="$PROJECT_DIR$/bendersDSP.log" />
+        <option value="$PROJECT_DIR$/bendersRMP.log" />
+        <option value="$PROJECT_DIR$/standardMIP.log" />
+        <option value="$PROJECT_DIR$/benders.log" />
+        <option value="$PROJECT_DIR$/src/cz/sange/LogWriter.java" />
+        <option value="$PROJECT_DIR$/ilp-all.log" />
+        <option value="$PROJECT_DIR$/out-mip.log" />
         <option value="$PROJECT_DIR$/src/cz/sange/Benders.java" />
+        <option value="$PROJECT_DIR$/benders-all.log" />
+        <option value="$PROJECT_DIR$/out-benders.log" />
       </list>
     </option>
   </component>
@@ -115,9 +120,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="180" />
     <option name="y" value="23" />
-    <option name="width" value="1182" />
-    <option name="height" value="1021" />
+    <option name="width" value="1712" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -190,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Projects/smarttv/smarttv-commons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/cz/sange/test" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.09276438" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -198,30 +204,18 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/cz/sange/test" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="cz.sange" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="cz.sange.Benders" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/src/cz/sange/03.in" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FCTP-ILP" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="ProblemGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -850,14 +844,30 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="cz.sange.Benders" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/input/01.in" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="FCTP-ILP" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.ProblemGenerator" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ProblemGenerator" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.ProblemGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -886,12 +896,12 @@
       <workItem from="1462291245638" duration="40000" />
       <workItem from="1462291609195" duration="160000" />
       <workItem from="1462339709349" duration="108000" />
-      <workItem from="1462350918046" duration="17187000" />
+      <workItem from="1462350918046" duration="36489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112989000" />
+    <option name="totallyTimeSpent" value="132291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -903,29 +913,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1182" height="1021" extended-state="0" />
-    <editor active="false" />
+    <frame x="180" y="23" width="1712" height="1044" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2049505" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2787944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2710084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19122808" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13053893" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50161463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5010504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -947,7 +957,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="71" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -956,84 +966,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="e#491#492#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -1061,61 +993,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="e#491#492#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1125,7 +1012,7 @@
         <state relative-caret-position="546">
           <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
           <folding>
-            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1157,13 +1044,16 @@
           <caret line="167" column="47" selection-start-line="167" selection-start-column="47" selection-end-line="167" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1181,13 +1071,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1198,13 +1091,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1228,41 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/05.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/06.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/07.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/09.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/10.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/11.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1270,18 +1131,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/04.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bendersMasterProblem.log" />
-    <entry file="file://$PROJECT_DIR$/bendersRMP.log" />
     <entry file="file://$PROJECT_DIR$/bendersSubproblem.log" />
-    <entry file="file://$PROJECT_DIR$/bendersDSP.log" />
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/08.in">
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/60.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1301,16 +1153,8 @@
         <state relative-caret-position="322">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,19 +1182,200 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
+    <entry file="jar:///Library/gurobi651/mac64/lib/gurobi.jar!/gurobi/GRBLinExpr.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="296" column="9" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="9" />
+        <state relative-caret-position="98">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/30.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/20.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/50.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/40.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/08.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/07.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/09.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/05.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bendersDSP.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bendersRMP.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/standardMIP.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/LogWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ILP-all-NEMAZAT.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_benders.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1638">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_ilp.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ilp-all.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out-mip.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out-benders.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/benders-all.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462383332000" expanded="false" signature="20809:22258" placeholder="{...}" />
+            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
           </folding>
         </state>
       </provider>
