@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6644f73-2273-4c0c-b4a5-ba618c8a660f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/01.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/02.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/03.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/05.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/09.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/10.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/11.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/12.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/30.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/40.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cz/sange/60.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/benders-all.log" afterPath="$PROJECT_DIR$/benders-all.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out-benders.log" afterPath="$PROJECT_DIR$/out-benders.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Benders.java" afterPath="$PROJECT_DIR$/src/cz/sange/Benders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" afterPath="$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java" />
     </list>
     <ignored path="FCTP-ILP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,24 +31,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Benders.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Benders.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            <state relative-caret-position="2226">
+              <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
                 <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
                 <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-                <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-                <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+                <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+                <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
                 <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
                 <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+                <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+                <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
                 <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
                 <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-                <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+                <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+                <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="out-mip.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out-mip.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="out-benders.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/out-benders.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +118,8 @@
         <option value="$PROJECT_DIR$/src/cz/sange/LogWriter.java" />
         <option value="$PROJECT_DIR$/ilp-all.log" />
         <option value="$PROJECT_DIR$/out-mip.log" />
-        <option value="$PROJECT_DIR$/src/cz/sange/Benders.java" />
         <option value="$PROJECT_DIR$/benders-all.log" />
+        <option value="$PROJECT_DIR$/src/cz/sange/Benders.java" />
         <option value="$PROJECT_DIR$/out-benders.log" />
       </list>
     </option>
@@ -896,12 +906,12 @@
       <workItem from="1462291245638" duration="40000" />
       <workItem from="1462291609195" duration="160000" />
       <workItem from="1462339709349" duration="108000" />
-      <workItem from="1462350918046" duration="36489000" />
+      <workItem from="1462350918046" duration="37943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132291000" />
+    <option name="totallyTimeSpent" value="133745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -957,7 +967,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="79" />
+      <option name="time" value="81" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -966,13 +976,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -993,16 +996,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1044,16 +1049,18 @@
           <caret line="167" column="47" selection-start-line="167" selection-start-column="47" selection-end-line="167" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1071,16 +1078,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1091,16 +1100,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1304,14 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ILP-all-NEMAZAT.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_benders.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1638">
@@ -1336,22 +1339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out-mip.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out-benders.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/benders-all.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1360,23 +1347,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="2226">
+          <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#bendersAlg#0;class#Benders#0" expanded="false" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
             <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPInit#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMPDestroy#0;class#Benders#0" expanded="false" />
+            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
+            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <marker date="1462432855000" expanded="false" signature="22405:23854" placeholder="{...}" />
+            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
+            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out-mip.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ILP-all-NEMAZAT.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out-benders.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,6 @@
 package cz.sange;
 
 import gurobi.*;
-import sun.rmi.runtime.Log;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -42,8 +41,11 @@ public class Benders {
     private int numCustomers;
     private GRBEnv envRMP;
     private GRBModel modelRMP;
+    private GRBEnv envDSP;
+    private GRBModel modelDSP;
     private GRBVar[][] yRMP;
     private boolean firstRunRMP;
+    private boolean firstRunDSP;
     private GRBVar z0;
     private static final String OUT_MIP_LOG = "out-mip.log";
     private static final String OUT_BENDERS_LOG = "out-benders.log";
@@ -142,7 +144,8 @@ public class Benders {
 
         boolean bounded = false;
 
-        bendersRMPInit();
+        initRMP();
+        initDSP();
 
         while (!converged) {
             // {benders subproblem}
@@ -218,7 +221,8 @@ public class Benders {
             System.exit(5);
         }
 
-        bendersRMPDestroy();
+        destroyDSP();
+        destroyRMP();
 
         // recover solution
         Solution fctpSol = standardMIP(ybest);
@@ -265,7 +269,7 @@ public class Benders {
         }
     }
 
-    private void bendersRMPInit()  throws GRBException {
+    private void initRMP()  throws GRBException {
         //// model
         envRMP = new GRBEnv(BENDERS_LOG);
         modelRMP = new GRBModel(envRMP);
@@ -285,14 +289,18 @@ public class Benders {
         z0 = modelRMP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "tralala");
     }
 
-    private void bendersRMPDestroy()  throws GRBException {
+    private void destroyRMP()  throws GRBException {
         // Dispose o f model and environment
         modelRMP.dispose();
         envRMP.dispose();
     }
 
     /**
-     * Benders relaxed master problem
+     *
+     * @param boundedDSP byl predchozi DSP bounded?
+     * @param cutConst sum -s*u sum d*v
+     * @param cutCoef  koeficienty sum -xup*w
+     * @return
      * @throws GRBException
      */
     private Solution bendersRMP(boolean boundedDSP, double cutConst, double [][] cutCoef) throws GRBException {
@@ -390,36 +398,35 @@ public class Benders {
      * @throws GRBException
      */
     private Solution bendersDSP(int [][] y) throws GRBException {
-        //// model
-        GRBEnv env = new GRBEnv(BENDERS_LOG) ;
-        GRBModel model = new GRBModel(env) ;
-        // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
-        model.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
-        // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
-        model.getEnv().set(GRB.IntParam.Method, 0);
-        model.set(GRB.StringAttr.ModelName, "FCTP");
+
+        if(!firstRunDSP) {
+            // vycisti promenne modelu
+            modelDSP.reset();
+        } else {
+            firstRunDSP = false;
+        }
 
         //// variables
         GRBVar [] u = new GRBVar[numWarehouses];
         for (int i = 0; i < numWarehouses; ++i) {
-            u[i] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "capacity constraint dual " + i);
+            u[i] = modelDSP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "capacity constraint dual " + i);
         }
 
         GRBVar [] v = new GRBVar[numCustomers];
         for (int j = 0; j < numCustomers; ++j) {
-            v[j] = model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "demand constraint dual " + j);
+            v[j] = modelDSP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "demand constraint dual " + j);
         }
 
         GRBVar [][] w = new GRBVar[numWarehouses][numCustomers];
         for (int i = 0; i < numWarehouses; ++i) {
             for (int j = 0; j < numCustomers; ++j) {
                 w[i][j] =
-                        model.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "trans(" + i + ", " + j + ")");
+                        modelDSP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "trans(" + i + ", " + j + ")");
             }
         }
 
         //// integrate variables
-        model.update();
+        modelDSP.update();
 
         //// objective function
         GRBLinExpr  supply = new GRBLinExpr();
@@ -444,7 +451,7 @@ public class Benders {
         subobj.add(supply);
         subobj.add(demand);
         subobj.add(e);
-        model.setObjective(subobj, GRB.MAXIMIZE);
+        modelDSP.setObjective(subobj, GRB.MAXIMIZE);
 
         //// constraints
         for (int i = 0; i < numWarehouses; ++i) {
@@ -454,17 +461,17 @@ public class Benders {
                 subConstr.addTerm(1.0, v[j]);
                 subConstr.addTerm(-1.0, w[i][j]);
                 // -u_i + v_j - w_ij <= c_ij
-                model.addConstr(subConstr, GRB.LESS_EQUAL, transportCosts[i][j], "subconstr");
+                modelDSP.addConstr(subConstr, GRB.LESS_EQUAL, transportCosts[i][j], "subconstr");
             }
         }
 
         // solve
-        model.optimize();
+        modelDSP.optimize();
 
         // retrieve and store solution
-        int status = model.get(GRB.IntAttr.Status);
+        int status = modelDSP.get(GRB.IntAttr.Status);
         boolean unbounded = status == GRB.Status.UNBOUNDED;
-        double objVal = model.get(GRB.DoubleAttr.ObjVal);
+        double objVal = modelDSP.get(GRB.DoubleAttr.ObjVal);
 
         // gets (un)bounded values for u,v,w for use in RMP
         // https://www.gurobi.com/documentation/6.5/refman/unbdray.html#attr:UnbdRay
@@ -479,10 +486,6 @@ public class Benders {
             }
         }
 
-        // Dispose o f model and environment
-        model.dispose();
-        env.dispose();
-
         Solution z = new Solution();
         z.setStatus(status);
         z.setObjVal(objVal);
@@ -490,6 +493,23 @@ public class Benders {
         z.setU(uSol);
         z.setV(vSol);
         return z;
+    }
+
+    private void destroyDSP() throws GRBException {
+        // Dispose o f model and environment
+        modelDSP.dispose();
+        envDSP.dispose();
+    }
+
+    private void initDSP() throws GRBException {
+        //// model
+        envDSP = new GRBEnv(BENDERS_LOG) ;
+        modelDSP = new GRBModel(envDSP) ;
+        // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
+        modelDSP.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
+        // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
+        modelDSP.getEnv().set(GRB.IntParam.Method, 0);
+        modelDSP.set(GRB.StringAttr.ModelName, "FCTP");
     }
 
     private void prepareUpperbounds() {
