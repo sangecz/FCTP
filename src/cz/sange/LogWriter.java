@@ -43,7 +43,7 @@ public class LogWriter {
     public void write (String output) {
         try {
 
-            bw.write(output);
+            bw.write(output + "\n");
 
         } catch (IOException e) {
             e.printStackTrace();

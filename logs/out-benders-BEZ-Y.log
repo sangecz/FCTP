@@ -1,0 +1,2441 @@
+============== file: 01.in
+ybest#0 arr: [[1, 1], [1, 1]]
+iter#0, LB=53.0, UB=63.0
+iter#1, LB=58.0, UB=63.0
+iter#2, LB=60.0, UB=63.0
+ybest#3 arr: [[0, 1], [1, 1]]
+iter#3, LB=60.0, UB=60.0
+============== took: 192406515ns
+============== solution: 
+
+
+TOTAL COSTS: 60
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) open, transport:
+	8 units for VP: 1.0 and FP: 2.0 to customer 1
+Path (1,0) open, transport:
+	5 units for VP: 3.0 and FP: 2.0 to customer 0
+Path (1,1) open, transport:
+	7 units for VP: 4.0 and FP: 5.0 to customer 1
+============== file: 02.in
+ybest#0 arr: [[1, 1], [1, 1]]
+iter#0, LB=33.0, UB=57.0
+iter#1, LB=49.0, UB=57.0
+iter#2, LB=52.0, UB=57.0
+ybest#3 arr: [[1, 0], [1, 1]]
+iter#3, LB=52.0, UB=52.0
+============== took: 16093765ns
+============== solution: 
+
+
+TOTAL COSTS: 52
+SOLUTION:
+Path (0,0) open, transport:
+	15 units for VP: 1.0 and FP: 10.0 to customer 0
+Path (0,1) closed.
+Path (1,0) open, transport:
+	2 units for VP: 1.0 and FP: 6.0 to customer 0
+Path (1,1) open, transport:
+	8 units for VP: 2.0 and FP: 3.0 to customer 1
+============== file: 03.in
+ybest#0 arr: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+iter#0, LB=250.0, UB=460.0
+iter#1, LB=300.0, UB=460.0
+iter#2, LB=310.0, UB=460.0
+iter#3, LB=320.0, UB=460.0
+iter#4, LB=320.0, UB=460.0
+iter#5, LB=320.0, UB=460.0
+iter#6, LB=330.0, UB=460.0
+iter#7, LB=330.0, UB=460.0
+ybest#8 arr: [[0, 1, 0], [0, 0, 1], [0, 1, 0], [1, 0, 1]]
+iter#8, LB=330.0, UB=410.0
+iter#9, LB=330.0, UB=410.0
+iter#10, LB=340.0, UB=410.0
+iter#11, LB=340.0, UB=410.0
+iter#12, LB=340.0, UB=410.0
+iter#13, LB=340.0, UB=410.0
+iter#14, LB=350.0, UB=410.0
+ybest#15 arr: [[1, 0, 0], [0, 1, 0], [1, 0, 1], [0, 1, 0]]
+iter#15, LB=350.0, UB=380.0
+iter#16, LB=350.0, UB=380.0
+ybest#17 arr: [[0, 0, 1], [0, 1, 0], [1, 1, 0], [0, 0, 1]]
+iter#17, LB=350.0, UB=350.0
+============== took: 97922210ns
+============== solution: 
+
+
+TOTAL COSTS: 350
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) open, transport:
+	10 units for VP: 4.0 and FP: 20.0 to customer 2
+Path (1,0) closed.
+Path (1,1) open, transport:
+	30 units for VP: 2.0 and FP: 30.0 to customer 1
+Path (1,2) closed.
+Path (2,0) open, transport:
+	20 units for VP: 1.0 and FP: 10.0 to customer 0
+Path (2,1) open, transport:
+	20 units for VP: 4.0 and FP: 30.0 to customer 1
+Path (2,2) closed.
+Path (3,0) closed.
+Path (3,1) closed.
+Path (3,2) open, transport:
+	20 units for VP: 2.0 and FP: 20.0 to customer 2
+============== file: 04.in
+ybest#0 arr: [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+iter#0, LB=802.0, UB=1244.0
+iter#1, LB=834.0, UB=1244.0
+iter#2, LB=836.0, UB=1244.0
+iter#3, LB=846.0, UB=1244.0
+iter#4, LB=854.0, UB=1244.0
+iter#5, LB=870.0, UB=1244.0
+iter#6, LB=872.0, UB=1244.0
+iter#7, LB=879.0, UB=1244.0
+iter#8, LB=893.0, UB=1244.0
+iter#9, LB=896.0, UB=1244.0
+ybest#10 arr: [[0, 1, 0, 1], [0, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0]]
+iter#10, LB=903.0, UB=1024.0
+ybest#11 arr: [[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0]]
+iter#11, LB=903.0, UB=903.0
+============== took: 52868619ns
+============== solution: 
+
+
+TOTAL COSTS: 903
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) open, transport:
+	28 units for VP: 20.0 and FP: 32.0 to customer 3
+Path (1,0) closed.
+Path (1,1) closed.
+Path (1,2) open, transport:
+	15 units for VP: 6.0 and FP: 2.0 to customer 2
+Path (1,3) closed.
+Path (2,0) closed.
+Path (2,1) open, transport:
+	8 units for VP: 18.0 and FP: 34.0 to customer 1
+Path (2,2) closed.
+Path (2,3) closed.
+Path (3,0) open, transport:
+	2 units for VP: 4.0 and FP: 33.0 to customer 0
+Path (3,1) closed.
+Path (3,2) closed.
+Path (3,3) closed.
+============== file: 05.in
+ybest#0 arr: [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]
+iter#0, LB=1467.0, UB=2017.0
+iter#1, LB=1486.0, UB=2017.0
+iter#2, LB=1491.0, UB=2017.0
+iter#3, LB=1501.0, UB=2017.0
+iter#4, LB=1504.0, UB=2017.0
+iter#5, LB=1506.0, UB=2017.0
+iter#6, LB=1513.0, UB=2017.0
+iter#7, LB=1518.0, UB=2017.0
+iter#8, LB=1521.0, UB=2017.0
+iter#9, LB=1523.0, UB=2017.0
+iter#10, LB=1526.0, UB=2017.0
+iter#11, LB=1528.0, UB=2017.0
+iter#12, LB=1529.0, UB=2017.0
+iter#13, LB=1530.0, UB=2017.0
+iter#14, LB=1560.0, UB=2017.0
+iter#15, LB=1565.0, UB=2017.0
+iter#16, LB=1574.0, UB=2017.0
+iter#17, LB=1576.0, UB=2017.0
+iter#18, LB=1576.9999999999998, UB=2017.0
+iter#19, LB=1580.0, UB=2017.0
+iter#20, LB=1582.0, UB=2017.0
+iter#21, LB=1587.0, UB=2017.0
+iter#22, LB=1588.0, UB=2017.0
+iter#23, LB=1589.0, UB=2017.0
+iter#24, LB=1591.0, UB=2017.0
+iter#25, LB=1599.0, UB=2017.0
+iter#26, LB=1601.0, UB=2017.0
+iter#27, LB=1612.0, UB=2017.0
+iter#28, LB=1617.9999999999995, UB=2017.0
+iter#29, LB=1622.0, UB=2017.0
+iter#30, LB=1624.0, UB=2017.0
+iter#31, LB=1645.0, UB=2017.0
+iter#32, LB=1649.0, UB=2017.0
+iter#33, LB=1651.0, UB=2017.0
+iter#34, LB=1651.0, UB=2017.0
+iter#35, LB=1656.0, UB=2017.0
+ybest#36 arr: [[0, 0, 0, 1, 1], [0, 1, 0, 0, 1], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 0, 0, 0]]
+iter#36, LB=1661.0, UB=1876.0
+iter#37, LB=1680.0, UB=1876.0
+iter#38, LB=1687.0, UB=1876.0
+ybest#39 arr: [[0, 0, 0, 1, 1], [0, 1, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 1, 1, 0], [1, 0, 1, 0, 0]]
+iter#39, LB=1691.0, UB=1707.0
+iter#40, LB=1692.0, UB=1707.0
+iter#41, LB=1704.0, UB=1707.0
+ybest#42 arr: [[0, 0, 0, 1, 1], [0, 1, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 1, 0, 1], [1, 0, 0, 0, 0]]
+iter#42, LB=1704.0, UB=1704.0
+============== took: 781493490ns
+============== solution: 
+
+
+TOTAL COSTS: 1704
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) open, transport:
+	36 units for VP: 5.0 and FP: 44.0 to customer 3
+Path (0,4) open, transport:
+	9 units for VP: 7.0 and FP: 16.0 to customer 4
+Path (1,0) closed.
+Path (1,1) open, transport:
+	30 units for VP: 7.0 and FP: 14.0 to customer 1
+Path (1,2) closed.
+Path (1,3) closed.
+Path (1,4) open, transport:
+	6 units for VP: 2.0 and FP: 20.0 to customer 4
+Path (2,0) closed.
+Path (2,1) closed.
+Path (2,2) closed.
+Path (2,3) closed.
+Path (2,4) open, transport:
+	10 units for VP: 1.0 and FP: 46.0 to customer 4
+Path (3,0) closed.
+Path (3,1) closed.
+Path (3,2) open, transport:
+	10 units for VP: 40.0 and FP: 27.0 to customer 2
+Path (3,3) closed.
+Path (3,4) open, transport:
+	20 units for VP: 14.0 and FP: 49.0 to customer 4
+Path (4,0) open, transport:
+	39 units for VP: 8.0 and FP: 21.0 to customer 0
+Path (4,1) closed.
+Path (4,2) closed.
+Path (4,3) closed.
+Path (4,4) closed.
+============== file: 06.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]
+iter#0, LB=1057.0, UB=1990.0
+iter#1, LB=1064.0, UB=1990.0
+iter#2, LB=1079.0, UB=1990.0
+iter#3, LB=1097.0, UB=1990.0
+iter#4, LB=1109.0, UB=1990.0
+iter#5, LB=1116.0, UB=1990.0
+iter#6, LB=1119.0, UB=1990.0
+iter#7, LB=1121.0, UB=1990.0
+iter#8, LB=1131.0, UB=1990.0
+iter#9, LB=1148.0, UB=1990.0
+iter#10, LB=1151.0, UB=1990.0
+iter#11, LB=1151.0, UB=1990.0
+iter#12, LB=1151.0, UB=1990.0
+iter#13, LB=1152.0, UB=1990.0
+iter#14, LB=1152.0, UB=1990.0
+iter#15, LB=1154.0, UB=1990.0
+iter#16, LB=1155.0, UB=1990.0
+iter#17, LB=1156.0, UB=1990.0
+iter#18, LB=1157.0, UB=1990.0
+iter#19, LB=1157.0, UB=1990.0
+iter#20, LB=1157.0, UB=1990.0
+iter#21, LB=1158.0, UB=1990.0
+iter#22, LB=1159.0, UB=1990.0
+iter#23, LB=1159.0, UB=1990.0
+iter#24, LB=1160.0, UB=1990.0
+ybest#25 arr: [[1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 1], [1, 0, 0, 1, 0, 0], [1, 1, 1, 0, 0, 0]]
+iter#25, LB=1237.0, UB=1558.0
+ybest#26 arr: [[1, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 1, 1, 0, 1, 1]]
+iter#26, LB=1238.0, UB=1253.0
+iter#27, LB=1244.0, UB=1253.0
+iter#28, LB=1253.0, UB=1253.0
+============== took: 574622812ns
+============== solution: 
+
+
+TOTAL COSTS: 1253
+SOLUTION:
+Path (0,0) open, transport:
+	6 units for VP: 13.0 and FP: 28.0 to customer 0
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) closed.
+Path (0,4) closed.
+Path (0,5) closed.
+Path (1,0) open, transport:
+	8 units for VP: 28.0 and FP: 49.0 to customer 0
+Path (1,1) closed.
+Path (1,2) closed.
+Path (1,3) open, transport:
+	4 units for VP: 3.0 and FP: 14.0 to customer 3
+Path (1,4) closed.
+Path (1,5) closed.
+Path (2,0) open, transport:
+	4 units for VP: 6.0 and FP: 4.0 to customer 0
+Path (2,1) closed.
+Path (2,2) closed.
+Path (2,3) closed.
+Path (2,4) closed.
+Path (2,5) closed.
+Path (3,0) closed.
+Path (3,1) open, transport:
+	5 units for VP: 8.0 and FP: 3.0 to customer 1
+Path (3,2) closed.
+Path (3,3) closed.
+Path (3,4) closed.
+Path (3,5) closed.
+Path (4,0) open, transport:
+	13 units for VP: 12.0 and FP: 2.0 to customer 0
+Path (4,1) closed.
+Path (4,2) closed.
+Path (4,3) closed.
+Path (4,4) closed.
+Path (4,5) closed.
+Path (5,0) open, transport:
+	12 units for VP: 21.0 and FP: 5.0 to customer 0
+Path (5,1) open, transport:
+	8 units for VP: 8.0 and FP: 6.0 to customer 1
+Path (5,2) open, transport:
+	5 units for VP: 1.0 and FP: 11.0 to customer 2
+Path (5,3) closed.
+Path (5,4) open, transport:
+	12 units for VP: 7.0 and FP: 27.0 to customer 4
+Path (5,5) open, transport:
+	6 units for VP: 23.0 and FP: 27.0 to customer 5
+============== file: 07.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1]]
+iter#0, LB=3217.0, UB=4346.0
+iter#1, LB=3238.0, UB=4346.0
+iter#2, LB=3273.0, UB=4346.0
+iter#3, LB=3280.0, UB=4346.0
+iter#4, LB=3288.0, UB=4346.0
+iter#5, LB=3293.0, UB=4346.0
+iter#6, LB=3294.0, UB=4346.0
+iter#7, LB=3303.0, UB=4346.0
+iter#8, LB=3310.0, UB=4346.0
+iter#9, LB=3311.0, UB=4346.0
+iter#10, LB=3311.0, UB=4346.0
+iter#11, LB=3313.0, UB=4346.0
+iter#12, LB=3314.0, UB=4346.0
+iter#13, LB=3315.0, UB=4346.0
+iter#14, LB=3315.0, UB=4346.0
+iter#15, LB=3316.0, UB=4346.0
+iter#16, LB=3316.0, UB=4346.0
+iter#17, LB=3317.0, UB=4346.0
+iter#18, LB=3318.0, UB=4346.0
+iter#19, LB=3320.0, UB=4346.0
+iter#20, LB=3326.0, UB=4346.0
+iter#21, LB=3326.0, UB=4346.0
+iter#22, LB=3328.0, UB=4346.0
+iter#23, LB=3329.0, UB=4346.0
+iter#24, LB=3342.0, UB=4346.0
+iter#25, LB=3342.0, UB=4346.0
+iter#26, LB=3343.0, UB=4346.0
+iter#27, LB=3344.0, UB=4346.0
+iter#28, LB=3346.0, UB=4346.0
+iter#29, LB=3346.0, UB=4346.0
+iter#30, LB=3347.0, UB=4346.0
+iter#31, LB=3349.0, UB=4346.0
+iter#32, LB=3350.0, UB=4346.0
+iter#33, LB=3351.0, UB=4346.0
+iter#34, LB=3354.0, UB=4346.0
+iter#35, LB=3355.0, UB=4346.0
+iter#36, LB=3358.0, UB=4346.0
+iter#37, LB=3361.0, UB=4346.0
+iter#38, LB=3365.0, UB=4346.0
+iter#39, LB=3366.0, UB=4346.0
+ybest#40 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 1, 1, 0, 1, 1, 0]]
+iter#40, LB=3370.0, UB=4118.0
+ybest#41 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 1, 1, 0]]
+iter#41, LB=3372.0, UB=3968.0
+iter#42, LB=3373.0, UB=3968.0
+ybest#43 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 1, 1, 0]]
+iter#43, LB=3385.0, UB=3871.0
+iter#44, LB=3387.0, UB=3871.0
+iter#45, LB=3388.0, UB=3871.0
+iter#46, LB=3392.0, UB=3871.0
+ybest#47 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 1, 1, 0]]
+iter#47, LB=3395.0, UB=3830.0
+iter#48, LB=3395.0, UB=3830.0
+iter#49, LB=3401.0, UB=3830.0
+iter#50, LB=3403.0, UB=3830.0
+ybest#51 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 1, 0], [1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0]]
+iter#51, LB=3405.0, UB=3625.0
+iter#52, LB=3406.0, UB=3625.0
+ybest#53 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0]]
+iter#53, LB=3407.0, UB=3558.0
+iter#54, LB=3408.0, UB=3558.0
+ybest#55 arr: [[0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0], [1, 0, 1, 0, 0, 1, 0], [1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0]]
+iter#55, LB=3410.0, UB=3506.0
+iter#56, LB=3413.0, UB=3506.0
+iter#57, LB=3413.0, UB=3506.0
+iter#58, LB=3415.0, UB=3506.0
+iter#59, LB=3416.0, UB=3506.0
+iter#60, LB=3416.0, UB=3506.0
+iter#61, LB=3417.0, UB=3506.0
+iter#62, LB=3418.0, UB=3506.0
+iter#63, LB=3418.0, UB=3506.0
+iter#64, LB=3421.0, UB=3506.0
+iter#65, LB=3423.0, UB=3506.0
+iter#66, LB=3424.0, UB=3506.0
+iter#67, LB=3427.0, UB=3506.0
+iter#68, LB=3431.0, UB=3506.0
+iter#69, LB=3431.0, UB=3506.0
+iter#70, LB=3435.0, UB=3506.0
+iter#71, LB=3435.0, UB=3506.0
+iter#72, LB=3437.0, UB=3506.0
+iter#73, LB=3438.0, UB=3506.0
+iter#74, LB=3438.0, UB=3506.0
+iter#75, LB=3442.0, UB=3506.0
+iter#76, LB=3444.0, UB=3506.0
+iter#77, LB=3445.0, UB=3506.0
+iter#78, LB=3445.0, UB=3506.0
+iter#79, LB=3447.0, UB=3506.0
+iter#80, LB=3448.0, UB=3506.0
+iter#81, LB=3449.0, UB=3506.0
+iter#82, LB=3451.0, UB=3506.0
+iter#83, LB=3455.0, UB=3506.0
+ybest#84 arr: [[0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 1], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0]]
+iter#84, LB=3454.999999999999, UB=3455.0
+============== took: 6434115178ns
+============== solution: 
+
+
+TOTAL COSTS: 3455
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) closed.
+Path (0,4) open, transport:
+	2 units for VP: 40.0 and FP: 3.0 to customer 4
+Path (0,5) closed.
+Path (0,6) closed.
+Path (1,0) closed.
+Path (1,1) closed.
+Path (1,2) closed.
+Path (1,3) closed.
+Path (1,4) open, transport:
+	2 units for VP: 23.0 and FP: 50.0 to customer 4
+Path (1,5) closed.
+Path (1,6) closed.
+Path (2,0) open, transport:
+	20 units for VP: 20.0 and FP: 33.0 to customer 0
+Path (2,1) closed.
+Path (2,2) open, transport:
+	18 units for VP: 16.0 and FP: 14.0 to customer 2
+Path (2,3) closed.
+Path (2,4) closed.
+Path (2,5) closed.
+Path (2,6) closed.
+Path (3,0) open, transport:
+	14 units for VP: 16.0 and FP: 36.0 to customer 0
+Path (3,1) open, transport:
+	24 units for VP: 3.0 and FP: 24.0 to customer 1
+Path (3,2) closed.
+Path (3,3) closed.
+Path (3,4) closed.
+Path (3,5) closed.
+Path (3,6) closed.
+Path (4,0) closed.
+Path (4,1) closed.
+Path (4,2) closed.
+Path (4,3) open, transport:
+	38 units for VP: 23.0 and FP: 43.0 to customer 3
+Path (4,4) closed.
+Path (4,5) open, transport:
+	2 units for VP: 14.0 and FP: 9.0 to customer 5
+Path (4,6) open, transport:
+	2 units for VP: 5.0 and FP: 42.0 to customer 6
+Path (5,0) closed.
+Path (5,1) closed.
+Path (5,2) open, transport:
+	24 units for VP: 8.0 and FP: 38.0 to customer 2
+Path (5,3) closed.
+Path (5,4) closed.
+Path (5,5) closed.
+Path (5,6) closed.
+Path (6,0) closed.
+Path (6,1) closed.
+Path (6,2) closed.
+Path (6,3) closed.
+Path (6,4) open, transport:
+	34 units for VP: 27.0 and FP: 31.0 to customer 4
+Path (6,5) closed.
+Path (6,6) closed.
+============== file: 08.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1]]
+iter#0, LB=2464.0, UB=3876.0
+iter#1, LB=2473.0, UB=3876.0
+iter#2, LB=2483.0, UB=3876.0
+iter#3, LB=2502.0, UB=3876.0
+iter#4, LB=2510.0, UB=3876.0
+iter#5, LB=2518.0, UB=3876.0
+iter#6, LB=2529.0, UB=3876.0
+iter#7, LB=2530.0, UB=3876.0
+iter#8, LB=2530.0, UB=3876.0
+iter#9, LB=2531.0, UB=3876.0
+iter#10, LB=2531.0, UB=3876.0
+iter#11, LB=2533.0, UB=3876.0
+iter#12, LB=2536.0, UB=3876.0
+iter#13, LB=2536.0, UB=3876.0
+iter#14, LB=2542.0, UB=3876.0
+iter#15, LB=2542.0, UB=3876.0
+iter#16, LB=2543.0, UB=3876.0
+iter#17, LB=2543.0, UB=3876.0
+iter#18, LB=2546.0, UB=3876.0
+iter#19, LB=2551.0, UB=3876.0
+iter#20, LB=2555.0, UB=3876.0
+iter#21, LB=2556.0, UB=3876.0
+iter#22, LB=2557.0, UB=3876.0
+iter#23, LB=2558.0, UB=3876.0
+ybest#24 arr: [[1, 0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 1, 1, 1], [0, 0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0]]
+iter#24, LB=2558.0, UB=3507.0
+iter#25, LB=2558.0, UB=3507.0
+iter#26, LB=2558.0, UB=3507.0
+iter#27, LB=2563.0, UB=3507.0
+iter#28, LB=2565.0, UB=3507.0
+iter#29, LB=2565.0, UB=3507.0
+ybest#30 arr: [[1, 0, 0, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1]]
+iter#30, LB=2566.0, UB=3196.0
+iter#31, LB=2566.0, UB=3196.0
+iter#32, LB=2566.0, UB=3196.0
+iter#33, LB=2566.0, UB=3196.0
+iter#34, LB=2567.0, UB=3196.0
+iter#35, LB=2567.0, UB=3196.0
+ybest#36 arr: [[0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0]]
+iter#36, LB=2569.0, UB=2903.0
+ybest#37 arr: [[1, 0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0]]
+iter#37, LB=2571.0, UB=2693.0
+iter#38, LB=2580.0, UB=2693.0
+iter#39, LB=2580.999999999999, UB=2693.0
+iter#40, LB=2581.0, UB=2693.0
+iter#41, LB=2580.9999999999995, UB=2693.0
+iter#42, LB=2582.0, UB=2693.0
+iter#43, LB=2582.9999999999995, UB=2693.0
+iter#44, LB=2585.0, UB=2693.0
+iter#45, LB=2595.0, UB=2693.0
+iter#46, LB=2601.0, UB=2693.0
+iter#47, LB=2602.0, UB=2693.0
+ybest#48 arr: [[1, 0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0]]
+iter#48, LB=2602.9999999999995, UB=2665.0
+iter#49, LB=2604.0, UB=2665.0
+iter#50, LB=2603.9999999999995, UB=2665.0
+ybest#51 arr: [[1, 0, 0, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0]]
+iter#51, LB=2605.0, UB=2642.0
+iter#52, LB=2605.9999999999995, UB=2642.0
+iter#53, LB=2606.9999999999995, UB=2642.0
+ybest#54 arr: [[1, 0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0]]
+iter#54, LB=2607.0, UB=2607.0
+============== took: 4239249787ns
+============== solution: 
+
+
+TOTAL COSTS: 2607
+SOLUTION:
+Path (0,0) open, transport:
+	3 units for VP: 2.0 and FP: 6.0 to customer 0
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) open, transport:
+	1 units for VP: 43.0 and FP: 4.0 to customer 3
+Path (0,4) open, transport:
+	4 units for VP: 6.0 and FP: 12.0 to customer 4
+Path (0,5) closed.
+Path (0,6) closed.
+Path (0,7) closed.
+Path (1,0) closed.
+Path (1,1) closed.
+Path (1,2) open, transport:
+	13 units for VP: 1.0 and FP: 28.0 to customer 2
+Path (1,3) closed.
+Path (1,4) closed.
+Path (1,5) closed.
+Path (1,6) closed.
+Path (1,7) closed.
+Path (2,0) closed.
+Path (2,1) closed.
+Path (2,2) closed.
+Path (2,3) closed.
+Path (2,4) closed.
+Path (2,5) open, transport:
+	20 units for VP: 8.0 and FP: 8.0 to customer 5
+Path (2,6) closed.
+Path (2,7) open, transport:
+	8 units for VP: 5.0 and FP: 7.0 to customer 7
+Path (3,0) closed.
+Path (3,1) closed.
+Path (3,2) open, transport:
+	4 units for VP: 18.0 and FP: 14.0 to customer 2
+Path (3,3) closed.
+Path (3,4) closed.
+Path (3,5) closed.
+Path (3,6) closed.
+Path (3,7) closed.
+Path (4,0) closed.
+Path (4,1) open, transport:
+	5 units for VP: 10.0 and FP: 11.0 to customer 1
+Path (4,2) closed.
+Path (4,3) open, transport:
+	29 units for VP: 42.0 and FP: 31.0 to customer 3
+Path (4,4) closed.
+Path (4,5) open, transport:
+	3 units for VP: 34.0 and FP: 3.0 to customer 5
+Path (4,6) open, transport:
+	13 units for VP: 11.0 and FP: 5.0 to customer 6
+Path (4,7) closed.
+Path (5,0) closed.
+Path (5,1) closed.
+Path (5,2) closed.
+Path (5,3) open, transport:
+	17 units for VP: 18.0 and FP: 13.0 to customer 3
+Path (5,4) closed.
+Path (5,5) closed.
+Path (5,6) closed.
+Path (5,7) closed.
+Path (6,0) closed.
+Path (6,1) closed.
+Path (6,2) closed.
+Path (6,3) closed.
+Path (6,4) closed.
+Path (6,5) open, transport:
+	5 units for VP: 29.0 and FP: 23.0 to customer 5
+Path (6,6) closed.
+Path (6,7) closed.
+Path (7,0) closed.
+Path (7,1) closed.
+Path (7,2) closed.
+Path (7,3) open, transport:
+	3 units for VP: 33.0 and FP: 21.0 to customer 3
+Path (7,4) closed.
+Path (7,5) closed.
+Path (7,6) closed.
+Path (7,7) closed.
+============== file: 09.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1]]
+iter#0, LB=2784.0, UB=4762.0
+iter#1, LB=2787.0, UB=4762.0
+iter#2, LB=2797.0, UB=4762.0
+iter#3, LB=2815.0, UB=4762.0
+iter#4, LB=2817.0, UB=4762.0
+iter#5, LB=2817.0, UB=4762.0
+iter#6, LB=2818.0, UB=4762.0
+iter#7, LB=2819.0, UB=4762.0
+iter#8, LB=2822.0, UB=4762.0
+iter#9, LB=2822.0, UB=4762.0
+iter#10, LB=2823.0, UB=4762.0
+iter#11, LB=2828.0, UB=4762.0
+iter#12, LB=2830.0, UB=4762.0
+iter#13, LB=2830.0, UB=4762.0
+iter#14, LB=2831.0, UB=4762.0
+iter#15, LB=2832.0, UB=4762.0
+iter#16, LB=2837.0, UB=4762.0
+iter#17, LB=2841.0, UB=4762.0
+iter#18, LB=2847.0, UB=4762.0
+iter#19, LB=2850.0, UB=4762.0
+iter#20, LB=2851.0, UB=4762.0
+iter#21, LB=2852.0, UB=4762.0
+iter#22, LB=2854.0, UB=4762.0
+iter#23, LB=2854.0, UB=4762.0
+iter#24, LB=2854.0, UB=4762.0
+iter#25, LB=2854.0, UB=4762.0
+iter#26, LB=2854.0, UB=4762.0
+iter#27, LB=2856.0, UB=4762.0
+iter#28, LB=2857.0, UB=4762.0
+iter#29, LB=2859.0, UB=4762.0
+iter#30, LB=2859.0, UB=4762.0
+iter#31, LB=2863.0, UB=4762.0
+iter#32, LB=2863.0, UB=4762.0
+iter#33, LB=2864.0, UB=4762.0
+iter#34, LB=2864.0, UB=4762.0
+iter#35, LB=2865.0, UB=4762.0
+iter#36, LB=2865.0, UB=4762.0
+iter#37, LB=2865.0, UB=4762.0
+iter#38, LB=2865.0, UB=4762.0
+iter#39, LB=2865.0, UB=4762.0
+iter#40, LB=2865.0, UB=4762.0
+iter#41, LB=2865.0, UB=4762.0
+iter#42, LB=2866.0, UB=4762.0
+iter#43, LB=2866.0, UB=4762.0
+iter#44, LB=2866.0, UB=4762.0
+iter#45, LB=2867.0, UB=4762.0
+iter#46, LB=2869.0, UB=4762.0
+iter#47, LB=2869.0, UB=4762.0
+iter#48, LB=2869.0, UB=4762.0
+iter#49, LB=2872.0, UB=4762.0
+iter#50, LB=2874.0, UB=4762.0
+iter#51, LB=2874.0, UB=4762.0
+iter#52, LB=2875.0, UB=4762.0
+iter#53, LB=2875.0, UB=4762.0
+iter#54, LB=2875.0, UB=4762.0
+iter#55, LB=2875.0, UB=4762.0
+iter#56, LB=2877.0, UB=4762.0
+iter#57, LB=2877.0, UB=4762.0
+iter#58, LB=2878.0, UB=4762.0
+iter#59, LB=2879.0, UB=4762.0
+iter#60, LB=2880.0, UB=4762.0
+iter#61, LB=2881.0, UB=4762.0
+iter#62, LB=2881.0, UB=4762.0
+iter#63, LB=2882.0, UB=4762.0
+iter#64, LB=2882.0, UB=4762.0
+iter#65, LB=2882.0, UB=4762.0
+iter#66, LB=2883.0, UB=4762.0
+iter#67, LB=2889.0, UB=4762.0
+iter#68, LB=2890.0, UB=4762.0
+iter#69, LB=2890.0, UB=4762.0
+iter#70, LB=2891.0, UB=4762.0
+iter#71, LB=2890.9999999999995, UB=4762.0
+iter#72, LB=2892.0, UB=4762.0
+iter#73, LB=2893.0, UB=4762.0
+iter#74, LB=2896.0, UB=4762.0
+iter#75, LB=2897.0, UB=4762.0
+iter#76, LB=2898.0, UB=4762.0
+iter#77, LB=2898.0, UB=4762.0
+iter#78, LB=2898.0, UB=4762.0
+iter#79, LB=2898.0, UB=4762.0
+iter#80, LB=2898.9999999999995, UB=4762.0
+iter#81, LB=2904.0, UB=4762.0
+iter#82, LB=2908.0, UB=4762.0
+iter#83, LB=2908.0, UB=4762.0
+iter#84, LB=2910.0, UB=4762.0
+iter#85, LB=2911.0, UB=4762.0
+iter#86, LB=2910.9999999999995, UB=4762.0
+iter#87, LB=2911.0, UB=4762.0
+iter#88, LB=2913.0, UB=4762.0
+iter#89, LB=2913.0, UB=4762.0
+iter#90, LB=2913.0, UB=4762.0
+iter#91, LB=2914.0, UB=4762.0
+iter#92, LB=2914.0, UB=4762.0
+iter#93, LB=2915.0, UB=4762.0
+iter#94, LB=2915.0, UB=4762.0
+iter#95, LB=2916.0, UB=4762.0
+iter#96, LB=2916.0, UB=4762.0
+iter#97, LB=2916.0, UB=4762.0
+iter#98, LB=2916.0, UB=4762.0
+iter#99, LB=2916.0, UB=4762.0
+iter#100, LB=2915.9999999999995, UB=4762.0
+iter#101, LB=2917.0, UB=4762.0
+iter#102, LB=2916.999999999999, UB=4762.0
+iter#103, LB=2917.0, UB=4762.0
+iter#104, LB=2916.9999999999986, UB=4762.0
+iter#105, LB=2917.0, UB=4762.0
+iter#106, LB=2918.9999999999754, UB=4762.0
+iter#107, LB=2919.0, UB=4762.0
+iter#108, LB=2920.0, UB=4762.0
+iter#109, LB=2919.999999999998, UB=4762.0
+iter#110, LB=2920.0, UB=4762.0
+iter#111, LB=2920.9999999999986, UB=4762.0
+iter#112, LB=2922.0, UB=4762.0
+iter#113, LB=2922.0, UB=4762.0
+ybest#114 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1]]
+iter#114, LB=2923.0, UB=4544.0
+iter#115, LB=2924.0, UB=4544.0
+iter#116, LB=2926.0, UB=4544.0
+iter#117, LB=2926.0, UB=4544.0
+ybest#118 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 1], [1, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 1, 0, 0]]
+iter#118, LB=2927.0, UB=4022.0
+iter#119, LB=2928.0, UB=4022.0
+ybest#120 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1]]
+iter#120, LB=2937.0, UB=3462.0
+iter#121, LB=2937.0, UB=3462.0
+iter#122, LB=2939.0, UB=3462.0
+iter#123, LB=2940.0, UB=3462.0
+iter#124, LB=2941.0, UB=3462.0
+iter#125, LB=2942.0, UB=3462.0
+iter#126, LB=2942.0, UB=3462.0
+iter#127, LB=2944.0, UB=3462.0
+iter#128, LB=2944.0, UB=3462.0
+iter#129, LB=2945.0, UB=3462.0
+iter#130, LB=2945.0, UB=3462.0
+iter#131, LB=2949.0, UB=3462.0
+iter#132, LB=2951.9999999999995, UB=3462.0
+iter#133, LB=2953.0, UB=3462.0
+iter#134, LB=2953.9999999999995, UB=3462.0
+iter#135, LB=2954.0, UB=3462.0
+iter#136, LB=2956.0, UB=3462.0
+iter#137, LB=2956.0, UB=3462.0
+iter#138, LB=2957.0, UB=3462.0
+iter#139, LB=2958.0, UB=3462.0
+iter#140, LB=2958.0, UB=3462.0
+iter#141, LB=2958.0, UB=3462.0
+iter#142, LB=2958.0, UB=3462.0
+iter#143, LB=2959.0, UB=3462.0
+iter#144, LB=2959.0, UB=3462.0
+iter#145, LB=2959.0, UB=3462.0
+iter#146, LB=2960.0, UB=3462.0
+iter#147, LB=2960.0, UB=3462.0
+iter#148, LB=2961.0, UB=3462.0
+iter#149, LB=2961.0, UB=3462.0
+iter#150, LB=2961.0, UB=3462.0
+iter#151, LB=2962.0, UB=3462.0
+iter#152, LB=2962.0, UB=3462.0
+iter#153, LB=2963.0, UB=3462.0
+ybest#154 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#154, LB=2964.0, UB=3341.0
+iter#155, LB=2966.0, UB=3341.0
+iter#156, LB=2967.0, UB=3341.0
+iter#157, LB=2967.0, UB=3341.0
+iter#158, LB=2967.0, UB=3341.0
+iter#159, LB=2967.0, UB=3341.0
+iter#160, LB=2968.0, UB=3341.0
+iter#161, LB=2968.0, UB=3341.0
+iter#162, LB=2969.0, UB=3341.0
+iter#163, LB=2969.999999999999, UB=3341.0
+iter#164, LB=2970.0, UB=3341.0
+iter#165, LB=2970.0, UB=3341.0
+iter#166, LB=2969.9999999999995, UB=3341.0
+iter#167, LB=2970.0, UB=3341.0
+iter#168, LB=2971.0, UB=3341.0
+iter#169, LB=2971.0, UB=3341.0
+iter#170, LB=2970.9999999995384, UB=3341.0
+iter#171, LB=2970.9999999999995, UB=3341.0
+iter#172, LB=2970.9999999999995, UB=3341.0
+iter#173, LB=2971.0, UB=3341.0
+iter#174, LB=2970.9999999999995, UB=3341.0
+iter#175, LB=2971.0, UB=3341.0
+iter#176, LB=2971.9999999999995, UB=3341.0
+iter#177, LB=2972.0, UB=3341.0
+iter#178, LB=2973.0, UB=3341.0
+iter#179, LB=2973.0, UB=3341.0
+ybest#180 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#180, LB=2975.0, UB=3283.0
+iter#181, LB=2977.0, UB=3283.0
+iter#182, LB=2980.0, UB=3283.0
+iter#183, LB=2982.0, UB=3283.0
+iter#184, LB=2985.0, UB=3283.0
+iter#185, LB=2988.0, UB=3283.0
+iter#186, LB=2988.0, UB=3283.0
+iter#187, LB=2989.0, UB=3283.0
+iter#188, LB=2989.0, UB=3283.0
+iter#189, LB=2989.0, UB=3283.0
+iter#190, LB=2989.0, UB=3283.0
+iter#191, LB=2990.0, UB=3283.0
+iter#192, LB=2990.0, UB=3283.0
+iter#193, LB=2990.0, UB=3283.0
+iter#194, LB=2991.0, UB=3283.0
+iter#195, LB=2992.9999999999995, UB=3283.0
+iter#196, LB=2994.0, UB=3283.0
+iter#197, LB=2994.0, UB=3283.0
+iter#198, LB=2995.0, UB=3283.0
+iter#199, LB=2995.0, UB=3283.0
+iter#200, LB=2998.0, UB=3283.0
+iter#201, LB=2999.0, UB=3283.0
+iter#202, LB=2999.0, UB=3283.0
+iter#203, LB=2999.0, UB=3283.0
+iter#204, LB=3000.0, UB=3283.0
+iter#205, LB=3000.0, UB=3283.0
+iter#206, LB=3000.0, UB=3283.0
+iter#207, LB=2999.9999999999995, UB=3283.0
+iter#208, LB=3001.0, UB=3283.0
+iter#209, LB=3001.0, UB=3283.0
+iter#210, LB=3002.0, UB=3283.0
+iter#211, LB=3002.0, UB=3283.0
+iter#212, LB=3003.0, UB=3283.0
+iter#213, LB=3003.9999999999995, UB=3283.0
+iter#214, LB=3004.0, UB=3283.0
+iter#215, LB=3004.9999999999995, UB=3283.0
+ybest#216 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#216, LB=3005.0, UB=3262.0
+iter#217, LB=3005.0, UB=3262.0
+iter#218, LB=3005.9999999999973, UB=3262.0
+iter#219, LB=3006.0, UB=3262.0
+iter#220, LB=3007.0, UB=3262.0
+iter#221, LB=3007.0, UB=3262.0
+iter#222, LB=3007.0, UB=3262.0
+iter#223, LB=3006.9999999999995, UB=3262.0
+iter#224, LB=3008.0, UB=3262.0
+iter#225, LB=3007.999999999999, UB=3262.0
+iter#226, LB=3008.0, UB=3262.0
+iter#227, LB=3009.0, UB=3262.0
+iter#228, LB=3011.0, UB=3262.0
+iter#229, LB=3011.999999999999, UB=3262.0
+iter#230, LB=3012.0, UB=3262.0
+iter#231, LB=3013.0, UB=3262.0
+iter#232, LB=3013.0, UB=3262.0
+iter#233, LB=3012.9999999999995, UB=3262.0
+iter#234, LB=3013.0, UB=3262.0
+iter#235, LB=3014.0, UB=3262.0
+iter#236, LB=3014.0, UB=3262.0
+iter#237, LB=3015.0, UB=3262.0
+iter#238, LB=3015.0, UB=3262.0
+iter#239, LB=3015.0, UB=3262.0
+iter#240, LB=3014.999999999999, UB=3262.0
+iter#241, LB=3015.0, UB=3262.0
+iter#242, LB=3016.0, UB=3262.0
+iter#243, LB=3015.9999999999995, UB=3262.0
+iter#244, LB=3016.0, UB=3262.0
+iter#245, LB=3017.0, UB=3262.0
+iter#246, LB=3017.0, UB=3262.0
+iter#247, LB=3017.0, UB=3262.0
+ybest#248 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0], [0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1]]
+iter#248, LB=3016.9999999999995, UB=3229.0
+iter#249, LB=3017.9999999999995, UB=3229.0
+iter#250, LB=3019.0, UB=3229.0
+iter#251, LB=3019.0, UB=3229.0
+iter#252, LB=3019.0, UB=3229.0
+iter#253, LB=3020.0, UB=3229.0
+ybest#254 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#254, LB=3021.0, UB=3192.0
+iter#255, LB=3022.0, UB=3192.0
+iter#256, LB=3022.0, UB=3192.0
+iter#257, LB=3022.9999999999995, UB=3192.0
+iter#258, LB=3030.0, UB=3192.0
+iter#259, LB=3030.9999999990837, UB=3192.0
+iter#260, LB=3030.9999999999995, UB=3192.0
+iter#261, LB=3032.0, UB=3192.0
+iter#262, LB=3031.999999999999, UB=3192.0
+iter#263, LB=3033.0, UB=3192.0
+iter#264, LB=3034.0, UB=3192.0
+iter#265, LB=3034.9999999999986, UB=3192.0
+iter#266, LB=3036.0, UB=3192.0
+iter#267, LB=3035.9999999999995, UB=3192.0
+iter#268, LB=3038.0, UB=3192.0
+iter#269, LB=3039.0, UB=3192.0
+iter#270, LB=3039.0, UB=3192.0
+iter#271, LB=3040.0, UB=3192.0
+iter#272, LB=3040.0, UB=3192.0
+iter#273, LB=3040.9999999999995, UB=3192.0
+iter#274, LB=3040.9999999999995, UB=3192.0
+iter#275, LB=3042.0, UB=3192.0
+ybest#276 arr: [[0, 0, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 1, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#276, LB=3042.0, UB=3190.0
+iter#277, LB=3042.0, UB=3190.0
+iter#278, LB=3042.0, UB=3190.0
+iter#279, LB=3041.9999999999995, UB=3190.0
+iter#280, LB=3043.0, UB=3190.0
+iter#281, LB=3044.0, UB=3190.0
+iter#282, LB=3045.9999999999995, UB=3190.0
+iter#283, LB=3047.999999999998, UB=3190.0
+ybest#284 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 1, 1, 0], [1, 0, 1, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#284, LB=3050.0, UB=3181.0
+iter#285, LB=3051.9999999999973, UB=3181.0
+iter#286, LB=3053.0, UB=3181.0
+iter#287, LB=3054.0, UB=3181.0
+iter#288, LB=3055.0, UB=3181.0
+iter#289, LB=3055.0, UB=3181.0
+iter#290, LB=3057.0, UB=3181.0
+iter#291, LB=3057.0, UB=3181.0
+iter#292, LB=3057.999999999999, UB=3181.0
+iter#293, LB=3058.0, UB=3181.0
+iter#294, LB=3059.0, UB=3181.0
+ybest#295 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 1], [1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#295, LB=3059.0, UB=3169.0
+iter#296, LB=3060.0, UB=3169.0
+iter#297, LB=3060.0, UB=3169.0
+iter#298, LB=3060.0, UB=3169.0
+iter#299, LB=3061.0, UB=3169.0
+iter#300, LB=3061.0, UB=3169.0
+iter#301, LB=3062.0, UB=3169.0
+iter#302, LB=3062.9999999999995, UB=3169.0
+iter#303, LB=3063.0, UB=3169.0
+iter#304, LB=3062.9999999999995, UB=3169.0
+iter#305, LB=3063.0, UB=3169.0
+iter#306, LB=3064.0, UB=3169.0
+iter#307, LB=3063.9999999999995, UB=3169.0
+iter#308, LB=3064.0, UB=3169.0
+iter#309, LB=3064.0, UB=3169.0
+iter#310, LB=3064.0, UB=3169.0
+iter#311, LB=3064.0, UB=3169.0
+ybest#312 arr: [[0, 0, 1, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 1, 0, 1], [1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#312, LB=3065.0, UB=3158.0
+iter#313, LB=3066.0, UB=3158.0
+iter#314, LB=3066.0, UB=3158.0
+iter#315, LB=3066.0, UB=3158.0
+iter#316, LB=3067.0, UB=3158.0
+iter#317, LB=3066.9999999999986, UB=3158.0
+iter#318, LB=3067.9999999999995, UB=3158.0
+iter#319, LB=3069.0, UB=3158.0
+iter#320, LB=3070.0, UB=3158.0
+iter#321, LB=3070.0, UB=3158.0
+iter#322, LB=3069.9999999999995, UB=3158.0
+iter#323, LB=3071.0, UB=3158.0
+ybest#324 arr: [[0, 0, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1], [1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#324, LB=3072.0, UB=3145.0
+iter#325, LB=3072.9999999999995, UB=3145.0
+iter#326, LB=3073.0, UB=3145.0
+iter#327, LB=3072.9999999999995, UB=3145.0
+iter#328, LB=3073.0, UB=3145.0
+iter#329, LB=3073.0, UB=3145.0
+iter#330, LB=3072.9999999999995, UB=3145.0
+iter#331, LB=3074.0, UB=3145.0
+iter#332, LB=3074.0, UB=3145.0
+iter#333, LB=3075.0000000000005, UB=3145.0
+iter#334, LB=3075.0, UB=3145.0
+iter#335, LB=3074.9999999999964, UB=3145.0
+iter#336, LB=3077.0, UB=3145.0
+iter#337, LB=3078.0, UB=3145.0
+iter#338, LB=3077.9999999999995, UB=3145.0
+iter#339, LB=3079.0, UB=3145.0
+iter#340, LB=3078.999999999999, UB=3145.0
+iter#341, LB=3078.9999999999995, UB=3145.0
+iter#342, LB=3080.0, UB=3145.0
+iter#343, LB=3079.9999999999995, UB=3145.0
+iter#344, LB=3081.0, UB=3145.0
+iter#345, LB=3081.0, UB=3145.0
+iter#346, LB=3082.0, UB=3145.0
+iter#347, LB=3083.0, UB=3145.0
+iter#348, LB=3083.0, UB=3145.0
+iter#349, LB=3083.0, UB=3145.0
+iter#350, LB=3084.0, UB=3145.0
+iter#351, LB=3084.0, UB=3145.0
+iter#352, LB=3083.9999999999995, UB=3145.0
+iter#353, LB=3084.0, UB=3145.0
+iter#354, LB=3084.0, UB=3145.0
+iter#355, LB=3084.0, UB=3145.0
+iter#356, LB=3084.0, UB=3145.0
+iter#357, LB=3084.9999999999986, UB=3145.0
+iter#358, LB=3085.0, UB=3145.0
+iter#359, LB=3085.0, UB=3145.0
+iter#360, LB=3086.0, UB=3145.0
+iter#361, LB=3086.0, UB=3145.0
+iter#362, LB=3086.0, UB=3145.0
+iter#363, LB=3086.0, UB=3145.0
+iter#364, LB=3086.0, UB=3145.0
+iter#365, LB=3086.0, UB=3145.0
+iter#366, LB=3087.0, UB=3145.0
+iter#367, LB=3087.0, UB=3145.0
+iter#368, LB=3087.0, UB=3145.0
+iter#369, LB=3088.0, UB=3145.0
+iter#370, LB=3088.0, UB=3145.0
+iter#371, LB=3088.0, UB=3145.0
+iter#372, LB=3088.0, UB=3145.0
+iter#373, LB=3087.9999999999995, UB=3145.0
+iter#374, LB=3089.0, UB=3145.0
+iter#375, LB=3088.999999999999, UB=3145.0
+iter#376, LB=3089.0, UB=3145.0
+iter#377, LB=3089.0, UB=3145.0
+iter#378, LB=3089.0, UB=3145.0
+iter#379, LB=3090.0, UB=3145.0
+iter#380, LB=3089.9999999999995, UB=3145.0
+iter#381, LB=3090.0, UB=3145.0
+iter#382, LB=3090.0, UB=3145.0
+iter#383, LB=3091.0, UB=3145.0
+iter#384, LB=3091.0, UB=3145.0
+iter#385, LB=3091.0, UB=3145.0
+iter#386, LB=3091.0, UB=3145.0
+iter#387, LB=3092.0, UB=3145.0
+iter#388, LB=3091.9999999999986, UB=3145.0
+iter#389, LB=3093.999999999999, UB=3145.0
+iter#390, LB=3094.0, UB=3145.0
+iter#391, LB=3096.0, UB=3145.0
+iter#392, LB=3096.0, UB=3145.0
+iter#393, LB=3096.9999999999995, UB=3145.0
+iter#394, LB=3098.0, UB=3145.0
+iter#395, LB=3099.0, UB=3145.0
+iter#396, LB=3100.0, UB=3145.0
+iter#397, LB=3101.0, UB=3145.0
+iter#398, LB=3100.9999999999995, UB=3145.0
+iter#399, LB=3101.0, UB=3145.0
+iter#400, LB=3100.9999999999995, UB=3145.0
+iter#401, LB=3101.0, UB=3145.0
+iter#402, LB=3103.0, UB=3145.0
+iter#403, LB=3103.0, UB=3145.0
+iter#404, LB=3104.0, UB=3145.0
+iter#405, LB=3103.9999999999995, UB=3145.0
+iter#406, LB=3104.0, UB=3145.0
+iter#407, LB=3104.0, UB=3145.0
+iter#408, LB=3105.0, UB=3145.0
+iter#409, LB=3104.9999999999995, UB=3145.0
+iter#410, LB=3106.0, UB=3145.0
+iter#411, LB=3106.0, UB=3145.0
+iter#412, LB=3107.0, UB=3145.0
+iter#413, LB=3107.0, UB=3145.0
+iter#414, LB=3108.0, UB=3145.0
+iter#415, LB=3108.0, UB=3145.0
+iter#416, LB=3108.0, UB=3145.0
+iter#417, LB=3110.0, UB=3145.0
+iter#418, LB=3109.9999999999995, UB=3145.0
+iter#419, LB=3111.0, UB=3145.0
+iter#420, LB=3111.0, UB=3145.0
+iter#421, LB=3110.999999999999, UB=3145.0
+iter#422, LB=3112.0, UB=3145.0
+iter#423, LB=3112.0, UB=3145.0
+iter#424, LB=3113.0, UB=3145.0
+ybest#425 arr: [[0, 0, 1, 1, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 1], [1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0]]
+iter#425, LB=3113.0, UB=3127.0
+iter#426, LB=3114.0, UB=3127.0
+iter#427, LB=3114.0, UB=3127.0
+iter#428, LB=3114.0, UB=3127.0
+iter#429, LB=3114.0, UB=3127.0
+iter#430, LB=3113.9999999999995, UB=3127.0
+iter#431, LB=3114.0, UB=3127.0
+iter#432, LB=3115.0, UB=3127.0
+iter#433, LB=3115.0, UB=3127.0
+iter#434, LB=3114.999999999999, UB=3127.0
+iter#435, LB=3115.0, UB=3127.0
+iter#436, LB=3115.0, UB=3127.0
+iter#437, LB=3116.0, UB=3127.0
+iter#438, LB=3116.0, UB=3127.0
+iter#439, LB=3116.0, UB=3127.0
+iter#440, LB=3116.0, UB=3127.0
+iter#441, LB=3115.999999999999, UB=3127.0
+iter#442, LB=3116.0, UB=3127.0
+iter#443, LB=3116.999999999999, UB=3127.0
+iter#444, LB=3116.9999999999986, UB=3127.0
+iter#445, LB=3117.0, UB=3127.0
+iter#446, LB=3117.0, UB=3127.0
+iter#447, LB=3118.0, UB=3127.0
+iter#448, LB=3118.0, UB=3127.0
+iter#449, LB=3118.0, UB=3127.0
+iter#450, LB=3118.0, UB=3127.0
+iter#451, LB=3118.0, UB=3127.0
+iter#452, LB=3119.0, UB=3127.0
+iter#453, LB=3119.0, UB=3127.0
+iter#454, LB=3119.0, UB=3127.0
+iter#455, LB=3119.0, UB=3127.0
+iter#456, LB=3120.0, UB=3127.0
+iter#457, LB=3120.0, UB=3127.0
+iter#458, LB=3120.0, UB=3127.0
+iter#459, LB=3121.0, UB=3127.0
+iter#460, LB=3121.0, UB=3127.0
+iter#461, LB=3121.0, UB=3127.0
+iter#462, LB=3121.0, UB=3127.0
+iter#463, LB=3121.0, UB=3127.0
+iter#464, LB=3122.0, UB=3127.0
+iter#465, LB=3121.9999999999995, UB=3127.0
+iter#466, LB=3122.999999999998, UB=3127.0
+iter#467, LB=3122.9999999999995, UB=3127.0
+iter#468, LB=3123.0, UB=3127.0
+iter#469, LB=3122.9999999999986, UB=3127.0
+iter#470, LB=3123.0, UB=3127.0
+iter#471, LB=3123.0, UB=3127.0
+iter#472, LB=3124.0, UB=3127.0
+iter#473, LB=3124.0, UB=3127.0
+iter#474, LB=3124.0, UB=3127.0
+iter#475, LB=3123.9999999999986, UB=3127.0
+iter#476, LB=3125.0, UB=3127.0
+iter#477, LB=3125.0, UB=3127.0
+iter#478, LB=3125.0, UB=3127.0
+iter#479, LB=3125.0, UB=3127.0
+iter#480, LB=3124.9999999999995, UB=3127.0
+iter#481, LB=3126.0, UB=3127.0
+iter#482, LB=3127.0, UB=3127.0
+============== took: 443159046656ns
+============== solution: 
+
+
+TOTAL COSTS: 3127
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) open, transport:
+	7 units for VP: 7.0 and FP: 8.0 to customer 2
+Path (0,3) open, transport:
+	24 units for VP: 10.0 and FP: 17.0 to customer 3
+Path (0,4) closed.
+Path (0,5) open, transport:
+	2 units for VP: 17.0 and FP: 7.0 to customer 5
+Path (0,6) closed.
+Path (0,7) closed.
+Path (0,8) closed.
+Path (1,0) closed.
+Path (1,1) closed.
+Path (1,2) closed.
+Path (1,3) closed.
+Path (1,4) closed.
+Path (1,5) open, transport:
+	11 units for VP: 12.0 and FP: 50.0 to customer 5
+Path (1,6) open, transport:
+	12 units for VP: 8.0 and FP: 13.0 to customer 6
+Path (1,7) closed.
+Path (1,8) open, transport:
+	15 units for VP: 10.0 and FP: 10.0 to customer 8
+Path (2,0) open, transport:
+	17 units for VP: 18.0 and FP: 1.0 to customer 0
+Path (2,1) open, transport:
+	16 units for VP: 27.0 and FP: 34.0 to customer 1
+Path (2,2) closed.
+Path (2,3) closed.
+Path (2,4) open, transport:
+	8 units for VP: 16.0 and FP: 33.0 to customer 4
+Path (2,5) closed.
+Path (2,6) closed.
+Path (2,7) closed.
+Path (2,8) closed.
+Path (3,0) closed.
+Path (3,1) closed.
+Path (3,2) closed.
+Path (3,3) closed.
+Path (3,4) closed.
+Path (3,5) closed.
+Path (3,6) open, transport:
+	29 units for VP: 7.0 and FP: 41.0 to customer 6
+Path (3,7) closed.
+Path (3,8) closed.
+Path (4,0) closed.
+Path (4,1) closed.
+Path (4,2) closed.
+Path (4,3) closed.
+Path (4,4) closed.
+Path (4,5) open, transport:
+	16 units for VP: 7.0 and FP: 22.0 to customer 5
+Path (4,6) closed.
+Path (4,7) closed.
+Path (4,8) closed.
+Path (5,0) closed.
+Path (5,1) closed.
+Path (5,2) closed.
+Path (5,3) closed.
+Path (5,4) open, transport:
+	8 units for VP: 3.0 and FP: 43.0 to customer 4
+Path (5,5) closed.
+Path (5,6) closed.
+Path (5,7) open, transport:
+	38 units for VP: 5.0 and FP: 1.0 to customer 7
+Path (5,8) closed.
+Path (6,0) open, transport:
+	7 units for VP: 2.0 and FP: 21.0 to customer 0
+Path (6,1) closed.
+Path (6,2) closed.
+Path (6,3) closed.
+Path (6,4) closed.
+Path (6,5) closed.
+Path (6,6) closed.
+Path (6,7) closed.
+Path (6,8) closed.
+Path (7,0) closed.
+Path (7,1) closed.
+Path (7,2) closed.
+Path (7,3) closed.
+Path (7,4) closed.
+Path (7,5) closed.
+Path (7,6) closed.
+Path (7,7) closed.
+Path (7,8) open, transport:
+	18 units for VP: 8.0 and FP: 3.0 to customer 8
+Path (8,0) closed.
+Path (8,1) open, transport:
+	2 units for VP: 19.0 and FP: 5.0 to customer 1
+Path (8,2) closed.
+Path (8,3) open, transport:
+	22 units for VP: 23.0 and FP: 20.0 to customer 3
+Path (8,4) closed.
+Path (8,5) closed.
+Path (8,6) closed.
+Path (8,7) closed.
+Path (8,8) closed.
+============== file: 10.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+iter#0, LB=2523.0, UB=4874.0
+iter#1, LB=2541.0, UB=4874.0
+iter#2, LB=2556.0, UB=4874.0
+iter#3, LB=2564.0, UB=4874.0
+iter#4, LB=2565.0, UB=4874.0
+iter#5, LB=2566.0, UB=4874.0
+iter#6, LB=2567.0, UB=4874.0
+iter#7, LB=2574.0, UB=4874.0
+iter#8, LB=2575.0, UB=4874.0
+iter#9, LB=2579.0, UB=4874.0
+iter#10, LB=2590.0, UB=4874.0
+iter#11, LB=2592.0, UB=4874.0
+iter#12, LB=2595.0, UB=4874.0
+iter#13, LB=2597.0, UB=4874.0
+iter#14, LB=2598.0, UB=4874.0
+iter#15, LB=2602.0, UB=4874.0
+iter#16, LB=2603.0, UB=4874.0
+iter#17, LB=2604.0, UB=4874.0
+iter#18, LB=2605.0, UB=4874.0
+iter#19, LB=2606.0, UB=4874.0
+iter#20, LB=2606.0, UB=4874.0
+iter#21, LB=2606.0, UB=4874.0
+iter#22, LB=2607.0, UB=4874.0
+iter#23, LB=2607.0, UB=4874.0
+iter#24, LB=2608.0, UB=4874.0
+iter#25, LB=2608.0, UB=4874.0
+iter#26, LB=2609.0, UB=4874.0
+iter#27, LB=2609.0, UB=4874.0
+iter#28, LB=2610.0, UB=4874.0
+iter#29, LB=2612.0, UB=4874.0
+iter#30, LB=2612.0, UB=4874.0
+iter#31, LB=2614.0, UB=4874.0
+iter#32, LB=2614.0, UB=4874.0
+iter#33, LB=2615.0, UB=4874.0
+iter#34, LB=2616.0, UB=4874.0
+iter#35, LB=2616.0, UB=4874.0
+iter#36, LB=2616.0, UB=4874.0
+iter#37, LB=2616.0, UB=4874.0
+iter#38, LB=2616.0, UB=4874.0
+iter#39, LB=2617.0, UB=4874.0
+iter#40, LB=2617.0, UB=4874.0
+iter#41, LB=2617.0, UB=4874.0
+iter#42, LB=2618.0, UB=4874.0
+iter#43, LB=2618.0, UB=4874.0
+iter#44, LB=2618.0, UB=4874.0
+iter#45, LB=2619.0, UB=4874.0
+iter#46, LB=2619.0, UB=4874.0
+iter#47, LB=2619.0, UB=4874.0
+iter#48, LB=2619.0, UB=4874.0
+iter#49, LB=2619.0, UB=4874.0
+iter#50, LB=2619.0, UB=4874.0
+iter#51, LB=2620.0, UB=4874.0
+iter#52, LB=2620.0, UB=4874.0
+iter#53, LB=2620.0, UB=4874.0
+iter#54, LB=2620.0, UB=4874.0
+iter#55, LB=2621.0, UB=4874.0
+iter#56, LB=2621.0, UB=4874.0
+iter#57, LB=2621.0, UB=4874.0
+iter#58, LB=2621.0, UB=4874.0
+iter#59, LB=2622.0, UB=4874.0
+iter#60, LB=2640.0, UB=4874.0
+iter#61, LB=2643.0, UB=4874.0
+iter#62, LB=2643.0, UB=4874.0
+iter#63, LB=2644.0, UB=4874.0
+iter#64, LB=2644.9999999999964, UB=4874.0
+iter#65, LB=2645.0, UB=4874.0
+iter#66, LB=2646.0, UB=4874.0
+iter#67, LB=2646.0, UB=4874.0
+iter#68, LB=2647.0, UB=4874.0
+iter#69, LB=2647.0, UB=4874.0
+iter#70, LB=2647.9999999999973, UB=4874.0
+iter#71, LB=2648.0, UB=4874.0
+iter#72, LB=2649.0, UB=4874.0
+iter#73, LB=2649.0, UB=4874.0
+iter#74, LB=2649.0, UB=4874.0
+iter#75, LB=2651.0, UB=4874.0
+iter#76, LB=2651.0, UB=4874.0
+iter#77, LB=2652.0, UB=4874.0
+iter#78, LB=2652.0, UB=4874.0
+iter#79, LB=2655.9999999999973, UB=4874.0
+iter#80, LB=2657.0000000000005, UB=4874.0
+iter#81, LB=2660.0, UB=4874.0
+iter#82, LB=2660.0, UB=4874.0
+iter#83, LB=2660.0, UB=4874.0
+iter#84, LB=2661.0, UB=4874.0
+iter#85, LB=2662.0, UB=4874.0
+iter#86, LB=2662.0, UB=4874.0
+iter#87, LB=2663.0, UB=4874.0
+iter#88, LB=2663.0, UB=4874.0
+iter#89, LB=2663.0, UB=4874.0
+iter#90, LB=2663.0, UB=4874.0
+iter#91, LB=2663.0, UB=4874.0
+iter#92, LB=2663.0, UB=4874.0
+iter#93, LB=2664.0, UB=4874.0
+iter#94, LB=2664.0, UB=4874.0
+iter#95, LB=2664.0, UB=4874.0
+iter#96, LB=2664.0, UB=4874.0
+iter#97, LB=2664.0, UB=4874.0
+iter#98, LB=2664.0, UB=4874.0
+iter#99, LB=2664.0, UB=4874.0
+iter#100, LB=2666.0, UB=4874.0
+iter#101, LB=2672.0, UB=4874.0
+iter#102, LB=2674.0, UB=4874.0
+iter#103, LB=2673.9999999999973, UB=4874.0
+iter#104, LB=2676.0, UB=4874.0
+iter#105, LB=2677.0, UB=4874.0
+iter#106, LB=2678.0, UB=4874.0
+iter#107, LB=2678.0, UB=4874.0
+iter#108, LB=2677.999999999999, UB=4874.0
+iter#109, LB=2678.0, UB=4874.0
+iter#110, LB=2678.0, UB=4874.0
+iter#111, LB=2677.9999999999995, UB=4874.0
+iter#112, LB=2678.0, UB=4874.0
+iter#113, LB=2678.0, UB=4874.0
+iter#114, LB=2679.0, UB=4874.0
+iter#115, LB=2679.0, UB=4874.0
+iter#116, LB=2680.0, UB=4874.0
+iter#117, LB=2680.0, UB=4874.0
+iter#118, LB=2680.0, UB=4874.0
+iter#119, LB=2680.9999999999995, UB=4874.0
+iter#120, LB=2681.0, UB=4874.0
+iter#121, LB=2681.0, UB=4874.0
+iter#122, LB=2681.0, UB=4874.0
+iter#123, LB=2681.0, UB=4874.0
+iter#124, LB=2681.0, UB=4874.0
+iter#125, LB=2681.0, UB=4874.0
+iter#126, LB=2682.0, UB=4874.0
+iter#127, LB=2682.0, UB=4874.0
+iter#128, LB=2682.0, UB=4874.0
+iter#129, LB=2683.0, UB=4874.0
+iter#130, LB=2683.0, UB=4874.0
+iter#131, LB=2683.0, UB=4874.0
+iter#132, LB=2683.0, UB=4874.0
+iter#133, LB=2683.0, UB=4874.0
+iter#134, LB=2683.0, UB=4874.0
+iter#135, LB=2684.0, UB=4874.0
+iter#136, LB=2685.0, UB=4874.0
+iter#137, LB=2686.0, UB=4874.0
+iter#138, LB=2685.9999999999995, UB=4874.0
+iter#139, LB=2686.0, UB=4874.0
+iter#140, LB=2687.0, UB=4874.0
+iter#141, LB=2687.0, UB=4874.0
+iter#142, LB=2687.0, UB=4874.0
+iter#143, LB=2687.0, UB=4874.0
+iter#144, LB=2687.0, UB=4874.0
+iter#145, LB=2688.0, UB=4874.0
+iter#146, LB=2688.0, UB=4874.0
+iter#147, LB=2688.0, UB=4874.0
+iter#148, LB=2689.0, UB=4874.0
+iter#149, LB=2689.0, UB=4874.0
+iter#150, LB=2689.0, UB=4874.0
+iter#151, LB=2689.0, UB=4874.0
+iter#152, LB=2689.0, UB=4874.0
+iter#153, LB=2690.0, UB=4874.0
+iter#154, LB=2690.0, UB=4874.0
+iter#155, LB=2689.9999999999995, UB=4874.0
+iter#156, LB=2690.0, UB=4874.0
+iter#157, LB=2690.0, UB=4874.0
+iter#158, LB=2690.0, UB=4874.0
+iter#159, LB=2690.0, UB=4874.0
+iter#160, LB=2690.0, UB=4874.0
+iter#161, LB=2691.0, UB=4874.0
+iter#162, LB=2691.0, UB=4874.0
+iter#163, LB=2691.0, UB=4874.0
+iter#164, LB=2691.0, UB=4874.0
+iter#165, LB=2691.0, UB=4874.0
+iter#166, LB=2691.0, UB=4874.0
+iter#167, LB=2692.0, UB=4874.0
+iter#168, LB=2692.0, UB=4874.0
+iter#169, LB=2692.0, UB=4874.0
+iter#170, LB=2692.0, UB=4874.0
+iter#171, LB=2692.0, UB=4874.0
+iter#172, LB=2693.0, UB=4874.0
+iter#173, LB=2694.0, UB=4874.0
+iter#174, LB=2694.0, UB=4874.0
+iter#175, LB=2695.0, UB=4874.0
+iter#176, LB=2695.0, UB=4874.0
+iter#177, LB=2695.0, UB=4874.0
+iter#178, LB=2696.0, UB=4874.0
+iter#179, LB=2696.0, UB=4874.0
+iter#180, LB=2696.0, UB=4874.0
+iter#181, LB=2696.0, UB=4874.0
+iter#182, LB=2696.0, UB=4874.0
+iter#183, LB=2696.0, UB=4874.0
+iter#184, LB=2696.0, UB=4874.0
+iter#185, LB=2697.0, UB=4874.0
+iter#186, LB=2699.9999999999977, UB=4874.0
+iter#187, LB=2701.0, UB=4874.0
+iter#188, LB=2702.0, UB=4874.0
+iter#189, LB=2702.0, UB=4874.0
+iter#190, LB=2702.0, UB=4874.0
+iter#191, LB=2702.0, UB=4874.0
+iter#192, LB=2702.0, UB=4874.0
+iter#193, LB=2703.0, UB=4874.0
+iter#194, LB=2703.0, UB=4874.0
+iter#195, LB=2703.0, UB=4874.0
+iter#196, LB=2703.0, UB=4874.0
+iter#197, LB=2703.0, UB=4874.0
+iter#198, LB=2707.0, UB=4874.0
+iter#199, LB=2707.0, UB=4874.0
+iter#200, LB=2708.0, UB=4874.0
+iter#201, LB=2709.0, UB=4874.0
+iter#202, LB=2709.0, UB=4874.0
+iter#203, LB=2709.9999999999995, UB=4874.0
+iter#204, LB=2711.0, UB=4874.0
+iter#205, LB=2711.0, UB=4874.0
+iter#206, LB=2712.0, UB=4874.0
+iter#207, LB=2713.0, UB=4874.0
+iter#208, LB=2714.0, UB=4874.0
+ybest#209 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 0, 0, 0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [1, 0, 0, 0, 0, 1, 1, 0, 0, 0]]
+iter#209, LB=2715.0, UB=4448.0
+iter#210, LB=2719.0, UB=4448.0
+iter#211, LB=2720.0, UB=4448.0
+iter#212, LB=2721.0, UB=4448.0
+iter#213, LB=2721.0, UB=4448.0
+iter#214, LB=2722.0, UB=4448.0
+iter#215, LB=2722.0, UB=4448.0
+iter#216, LB=2723.0, UB=4448.0
+iter#217, LB=2723.0, UB=4448.0
+iter#218, LB=2723.0, UB=4448.0
+iter#219, LB=2723.0, UB=4448.0
+iter#220, LB=2724.0, UB=4448.0
+iter#221, LB=2724.0, UB=4448.0
+iter#222, LB=2725.0, UB=4448.0
+iter#223, LB=2725.0, UB=4448.0
+iter#224, LB=2725.0, UB=4448.0
+iter#225, LB=2726.0, UB=4448.0
+iter#226, LB=2726.0, UB=4448.0
+iter#227, LB=2726.0, UB=4448.0
+iter#228, LB=2727.0, UB=4448.0
+iter#229, LB=2728.0, UB=4448.0
+iter#230, LB=2729.0, UB=4448.0
+iter#231, LB=2729.0, UB=4448.0
+iter#232, LB=2730.0, UB=4448.0
+iter#233, LB=2731.0, UB=4448.0
+ybest#234 arr: [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+iter#234, LB=2732.0, UB=4291.0
+iter#235, LB=2732.0, UB=4291.0
+iter#236, LB=2733.0, UB=4291.0
+iter#237, LB=2734.0, UB=4291.0
+iter#238, LB=2734.0, UB=4291.0
+iter#239, LB=2734.0, UB=4291.0
+iter#240, LB=2734.0, UB=4291.0
+iter#241, LB=2734.9999999999995, UB=4291.0
+iter#242, LB=2734.9999999999995, UB=4291.0
+iter#243, LB=2735.0, UB=4291.0
+iter#244, LB=2735.0, UB=4291.0
+iter#245, LB=2735.9999999999995, UB=4291.0
+iter#246, LB=2736.0, UB=4291.0
+iter#247, LB=2735.999999999999, UB=4291.0
+ybest#248 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0]]
+iter#248, LB=2736.0, UB=3914.0
+iter#249, LB=2737.0, UB=3914.0
+iter#250, LB=2737.0, UB=3914.0
+iter#251, LB=2738.0, UB=3914.0
+iter#252, LB=2738.9999999999995, UB=3914.0
+iter#253, LB=2740.0, UB=3914.0
+iter#254, LB=2740.0, UB=3914.0
+iter#255, LB=2741.0, UB=3914.0
+iter#256, LB=2741.9999999999995, UB=3914.0
+iter#257, LB=2743.0, UB=3914.0
+iter#258, LB=2744.0, UB=3914.0
+iter#259, LB=2744.0, UB=3914.0
+iter#260, LB=2744.0, UB=3914.0
+iter#261, LB=2744.999999999999, UB=3914.0
+iter#262, LB=2745.0, UB=3914.0
+iter#263, LB=2745.0, UB=3914.0
+iter#264, LB=2746.9999999999995, UB=3914.0
+iter#265, LB=2747.0, UB=3914.0
+iter#266, LB=2747.0, UB=3914.0
+iter#267, LB=2746.9999999999995, UB=3914.0
+iter#268, LB=2747.0, UB=3914.0
+iter#269, LB=2747.0, UB=3914.0
+iter#270, LB=2748.0, UB=3914.0
+iter#271, LB=2748.9999999999986, UB=3914.0
+iter#272, LB=2749.0, UB=3914.0
+ybest#273 arr: [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [1, 0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
+iter#273, LB=2749.0, UB=3852.0
+iter#274, LB=2750.0, UB=3852.0
+ybest#275 arr: [[0, 0, 0, 1, 0, 1, 0, 0, 1, 0], [0, 0, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 1, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 1, 0]]
+iter#275, LB=2750.9999999999995, UB=3791.0
+iter#276, LB=2751.0, UB=3791.0
+iter#277, LB=2751.0, UB=3791.0
+iter#278, LB=2752.0, UB=3791.0
+iter#279, LB=2752.0, UB=3791.0
+iter#280, LB=2751.999999999999, UB=3791.0
+iter#281, LB=2752.0, UB=3791.0
+iter#282, LB=2753.0, UB=3791.0
+iter#283, LB=2752.9999999999995, UB=3791.0
+iter#284, LB=2753.0, UB=3791.0
+iter#285, LB=2753.0, UB=3791.0
+iter#286, LB=2754.0, UB=3791.0
+iter#287, LB=2754.0, UB=3791.0
+iter#288, LB=2756.0, UB=3791.0
+iter#289, LB=2757.0, UB=3791.0
+iter#290, LB=2757.0, UB=3791.0
+iter#291, LB=2757.0, UB=3791.0
+iter#292, LB=2757.0, UB=3791.0
+iter#293, LB=2759.0, UB=3791.0
+iter#294, LB=2759.0, UB=3791.0
+iter#295, LB=2760.0, UB=3791.0
+iter#296, LB=2760.0, UB=3791.0
+iter#297, LB=2761.0, UB=3791.0
+iter#298, LB=2761.0, UB=3791.0
+iter#299, LB=2762.0, UB=3791.0
+iter#300, LB=2762.0, UB=3791.0
+iter#301, LB=2762.0, UB=3791.0
+iter#302, LB=2762.0, UB=3791.0
+iter#303, LB=2762.0, UB=3791.0
+iter#304, LB=2762.0, UB=3791.0
+iter#305, LB=2762.0, UB=3791.0
+iter#306, LB=2763.0, UB=3791.0
+iter#307, LB=2763.0, UB=3791.0
+iter#308, LB=2765.0, UB=3791.0
+ybest#309 arr: [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 1, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
+iter#309, LB=2765.0, UB=3122.0
+iter#310, LB=2766.0, UB=3122.0
+iter#311, LB=2767.0, UB=3122.0
+iter#312, LB=2766.9999999999995, UB=3122.0
+iter#313, LB=2767.0, UB=3122.0
+iter#314, LB=2767.0, UB=3122.0
+iter#315, LB=2767.0, UB=3122.0
+iter#316, LB=2767.0, UB=3122.0
+iter#317, LB=2770.0, UB=3122.0
+iter#318, LB=2770.0, UB=3122.0
+iter#319, LB=2770.0, UB=3122.0
+iter#320, LB=2770.0, UB=3122.0
+iter#321, LB=2770.0, UB=3122.0
+iter#322, LB=2770.0, UB=3122.0
+iter#323, LB=2771.0, UB=3122.0
+iter#324, LB=2771.0, UB=3122.0
+iter#325, LB=2771.0, UB=3122.0
+iter#326, LB=2771.0, UB=3122.0
+iter#327, LB=2772.0, UB=3122.0
+iter#328, LB=2772.0, UB=3122.0
+iter#329, LB=2773.0, UB=3122.0
+iter#330, LB=2773.0, UB=3122.0
+iter#331, LB=2773.0, UB=3122.0
+iter#332, LB=2773.0, UB=3122.0
+iter#333, LB=2774.0, UB=3122.0
+iter#334, LB=2774.0, UB=3122.0
+iter#335, LB=2774.0, UB=3122.0
+iter#336, LB=2774.0, UB=3122.0
+iter#337, LB=2775.0, UB=3122.0
+iter#338, LB=2775.0, UB=3122.0
+iter#339, LB=2775.0, UB=3122.0
+iter#340, LB=2776.0, UB=3122.0
+iter#341, LB=2776.0, UB=3122.0
+iter#342, LB=2776.0, UB=3122.0
+iter#343, LB=2776.0, UB=3122.0
+iter#344, LB=2777.0, UB=3122.0
+iter#345, LB=2777.0, UB=3122.0
+iter#346, LB=2778.0, UB=3122.0
+iter#347, LB=2778.0, UB=3122.0
+iter#348, LB=2778.0, UB=3122.0
+iter#349, LB=2778.0, UB=3122.0
+iter#350, LB=2779.0, UB=3122.0
+iter#351, LB=2779.0, UB=3122.0
+iter#352, LB=2779.0, UB=3122.0
+iter#353, LB=2779.0, UB=3122.0
+iter#354, LB=2779.0, UB=3122.0
+iter#355, LB=2779.0, UB=3122.0
+iter#356, LB=2779.0, UB=3122.0
+iter#357, LB=2780.0, UB=3122.0
+iter#358, LB=2780.0, UB=3122.0
+iter#359, LB=2780.0, UB=3122.0
+iter#360, LB=2780.0, UB=3122.0
+iter#361, LB=2780.0, UB=3122.0
+iter#362, LB=2781.0, UB=3122.0
+iter#363, LB=2781.0, UB=3122.0
+iter#364, LB=2781.0, UB=3122.0
+iter#365, LB=2781.0, UB=3122.0
+iter#366, LB=2781.0, UB=3122.0
+iter#367, LB=2782.0, UB=3122.0
+iter#368, LB=2782.0, UB=3122.0
+iter#369, LB=2783.0, UB=3122.0
+iter#370, LB=2783.0, UB=3122.0
+iter#371, LB=2785.0, UB=3122.0
+iter#372, LB=2784.999999999998, UB=3122.0
+iter#373, LB=2788.0, UB=3122.0
+iter#374, LB=2789.0, UB=3122.0
+iter#375, LB=2790.0, UB=3122.0
+iter#376, LB=2790.0, UB=3122.0
+iter#377, LB=2790.0, UB=3122.0
+iter#378, LB=2790.0, UB=3122.0
+iter#379, LB=2790.0, UB=3122.0
+iter#380, LB=2791.0, UB=3122.0
+iter#381, LB=2792.0, UB=3122.0
+iter#382, LB=2792.9999999999995, UB=3122.0
+iter#383, LB=2794.0, UB=3122.0
+iter#384, LB=2795.0, UB=3122.0
+iter#385, LB=2796.0, UB=3122.0
+ybest#386 arr: [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0]]
+iter#386, LB=2795.9999999999995, UB=2881.0
+iter#387, LB=2798.0, UB=2881.0
+iter#388, LB=2798.0, UB=2881.0
+iter#389, LB=2799.0, UB=2881.0
+iter#390, LB=2799.0, UB=2881.0
+iter#391, LB=2799.0, UB=2881.0
+iter#392, LB=2799.0, UB=2881.0
+iter#393, LB=2799.0, UB=2881.0
+iter#394, LB=2799.0, UB=2881.0
+iter#395, LB=2799.0, UB=2881.0
+iter#396, LB=2800.0, UB=2881.0
+iter#397, LB=2800.0, UB=2881.0
+iter#398, LB=2800.0, UB=2881.0
+iter#399, LB=2801.0, UB=2881.0
+iter#400, LB=2802.0, UB=2881.0
+iter#401, LB=2802.0, UB=2881.0
+iter#402, LB=2802.0, UB=2881.0
+iter#403, LB=2803.0, UB=2881.0
+iter#404, LB=2803.0, UB=2881.0
+iter#405, LB=2803.0, UB=2881.0
+ybest#406 arr: [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0]]
+iter#406, LB=2803.0, UB=2857.0
+iter#407, LB=2803.0, UB=2857.0
+iter#408, LB=2803.0, UB=2857.0
+iter#409, LB=2802.999999999999, UB=2857.0
+iter#410, LB=2803.0, UB=2857.0
+iter#411, LB=2803.0, UB=2857.0
+iter#412, LB=2804.0, UB=2857.0
+iter#413, LB=2804.0, UB=2857.0
+iter#414, LB=2805.0, UB=2857.0
+iter#415, LB=2806.0, UB=2857.0
+iter#416, LB=2807.0, UB=2857.0
+iter#417, LB=2807.0, UB=2857.0
+iter#418, LB=2807.0, UB=2857.0
+iter#419, LB=2807.0, UB=2857.0
+iter#420, LB=2808.0, UB=2857.0
+iter#421, LB=2808.0, UB=2857.0
+iter#422, LB=2808.0, UB=2857.0
+iter#423, LB=2809.0, UB=2857.0
+iter#424, LB=2809.0, UB=2857.0
+iter#425, LB=2809.0, UB=2857.0
+iter#426, LB=2809.0, UB=2857.0
+iter#427, LB=2809.0, UB=2857.0
+iter#428, LB=2809.0, UB=2857.0
+iter#429, LB=2809.0, UB=2857.0
+iter#430, LB=2809.0, UB=2857.0
+iter#431, LB=2810.0, UB=2857.0
+iter#432, LB=2810.0, UB=2857.0
+iter#433, LB=2810.0, UB=2857.0
+iter#434, LB=2809.9999999999995, UB=2857.0
+iter#435, LB=2810.0, UB=2857.0
+iter#436, LB=2810.0, UB=2857.0
+iter#437, LB=2810.0, UB=2857.0
+iter#438, LB=2810.0, UB=2857.0
+iter#439, LB=2809.9999999999995, UB=2857.0
+iter#440, LB=2810.0, UB=2857.0
+iter#441, LB=2810.0, UB=2857.0
+iter#442, LB=2810.0, UB=2857.0
+iter#443, LB=2811.0, UB=2857.0
+iter#444, LB=2811.0, UB=2857.0
+iter#445, LB=2811.0, UB=2857.0
+iter#446, LB=2811.0, UB=2857.0
+iter#447, LB=2811.0, UB=2857.0
+iter#448, LB=2811.0, UB=2857.0
+iter#449, LB=2811.0, UB=2857.0
+iter#450, LB=2811.0, UB=2857.0
+iter#451, LB=2810.9999999999995, UB=2857.0
+iter#452, LB=2811.0, UB=2857.0
+iter#453, LB=2811.0, UB=2857.0
+iter#454, LB=2811.0, UB=2857.0
+iter#455, LB=2811.0, UB=2857.0
+iter#456, LB=2812.0, UB=2857.0
+iter#457, LB=2812.0, UB=2857.0
+iter#458, LB=2812.0, UB=2857.0
+iter#459, LB=2812.0, UB=2857.0
+iter#460, LB=2812.0, UB=2857.0
+iter#461, LB=2812.0, UB=2857.0
+iter#462, LB=2812.0, UB=2857.0
+iter#463, LB=2812.0, UB=2857.0
+iter#464, LB=2813.0, UB=2857.0
+iter#465, LB=2813.0, UB=2857.0
+iter#466, LB=2813.0, UB=2857.0
+iter#467, LB=2813.0, UB=2857.0
+iter#468, LB=2813.0, UB=2857.0
+iter#469, LB=2813.0, UB=2857.0
+iter#470, LB=2812.9999999999995, UB=2857.0
+iter#471, LB=2813.0, UB=2857.0
+iter#472, LB=2813.0, UB=2857.0
+iter#473, LB=2813.0, UB=2857.0
+iter#474, LB=2812.9999999999986, UB=2857.0
+iter#475, LB=2813.0, UB=2857.0
+iter#476, LB=2813.0, UB=2857.0
+iter#477, LB=2813.0, UB=2857.0
+iter#478, LB=2813.999999999999, UB=2857.0
+iter#479, LB=2813.9999999999995, UB=2857.0
+iter#480, LB=2814.0, UB=2857.0
+iter#481, LB=2814.0, UB=2857.0
+iter#482, LB=2815.0, UB=2857.0
+iter#483, LB=2815.0, UB=2857.0
+iter#484, LB=2815.0, UB=2857.0
+iter#485, LB=2816.0, UB=2857.0
+iter#486, LB=2815.999999999999, UB=2857.0
+iter#487, LB=2816.0, UB=2857.0
+iter#488, LB=2816.0, UB=2857.0
+iter#489, LB=2817.0, UB=2857.0
+iter#490, LB=2817.0, UB=2857.0
+iter#491, LB=2817.0, UB=2857.0
+iter#492, LB=2816.999999999999, UB=2857.0
+iter#493, LB=2817.0, UB=2857.0
+iter#494, LB=2817.0, UB=2857.0
+iter#495, LB=2818.0, UB=2857.0
+iter#496, LB=2818.0, UB=2857.0
+iter#497, LB=2818.0, UB=2857.0
+iter#498, LB=2818.0, UB=2857.0
+iter#499, LB=2818.9999999999995, UB=2857.0
+iter#500, LB=2819.0, UB=2857.0
+iter#501, LB=2819.0, UB=2857.0
+iter#502, LB=2819.0, UB=2857.0
+iter#503, LB=2819.0, UB=2857.0
+iter#504, LB=2820.0, UB=2857.0
+iter#505, LB=2820.0, UB=2857.0
+iter#506, LB=2820.0, UB=2857.0
+iter#507, LB=2820.0, UB=2857.0
+iter#508, LB=2821.0, UB=2857.0
+iter#509, LB=2821.0, UB=2857.0
+iter#510, LB=2821.9999999999964, UB=2857.0
+iter#511, LB=2822.0, UB=2857.0
+iter#512, LB=2822.0, UB=2857.0
+iter#513, LB=2823.0, UB=2857.0
+iter#514, LB=2823.0, UB=2857.0
+iter#515, LB=2823.0, UB=2857.0
+iter#516, LB=2824.0, UB=2857.0
+iter#517, LB=2824.0, UB=2857.0
+iter#518, LB=2824.0, UB=2857.0
+iter#519, LB=2825.0, UB=2857.0
+iter#520, LB=2825.0, UB=2857.0
+iter#521, LB=2825.0, UB=2857.0
+iter#522, LB=2825.9999999999945, UB=2857.0
+iter#523, LB=2826.0, UB=2857.0
+iter#524, LB=2825.9999999999995, UB=2857.0
+iter#525, LB=2826.0, UB=2857.0
+iter#526, LB=2826.0, UB=2857.0
+iter#527, LB=2827.0, UB=2857.0
+iter#528, LB=2827.0, UB=2857.0
+iter#529, LB=2827.0, UB=2857.0
+iter#530, LB=2827.0, UB=2857.0
+iter#531, LB=2827.0, UB=2857.0
+iter#532, LB=2827.0, UB=2857.0
+iter#533, LB=2827.0, UB=2857.0
+iter#534, LB=2828.0, UB=2857.0
+iter#535, LB=2828.0, UB=2857.0
+iter#536, LB=2828.0, UB=2857.0
+iter#537, LB=2828.0, UB=2857.0
+iter#538, LB=2828.0, UB=2857.0
+iter#539, LB=2827.9999999999995, UB=2857.0
+iter#540, LB=2828.9999999999995, UB=2857.0
+iter#541, LB=2829.0, UB=2857.0
+iter#542, LB=2829.0, UB=2857.0
+iter#543, LB=2829.0, UB=2857.0
+iter#544, LB=2829.0, UB=2857.0
+iter#545, LB=2829.0, UB=2857.0
+iter#546, LB=2829.0, UB=2857.0
+iter#547, LB=2829.999999999999, UB=2857.0
+iter#548, LB=2830.0, UB=2857.0
+iter#549, LB=2830.0, UB=2857.0
+iter#550, LB=2830.0, UB=2857.0
+iter#551, LB=2830.0, UB=2857.0
+iter#552, LB=2830.0, UB=2857.0
+iter#553, LB=2830.9999999999986, UB=2857.0
+iter#554, LB=2831.0, UB=2857.0
+iter#555, LB=2832.0, UB=2857.0
+iter#556, LB=2831.9999999999995, UB=2857.0
+iter#557, LB=2831.9999999999995, UB=2857.0
+iter#558, LB=2832.0, UB=2857.0
+iter#559, LB=2833.0, UB=2857.0
+iter#560, LB=2833.0, UB=2857.0
+iter#561, LB=2833.0, UB=2857.0
+iter#562, LB=2833.0, UB=2857.0
+iter#563, LB=2833.0, UB=2857.0
+iter#564, LB=2832.9999999999995, UB=2857.0
+iter#565, LB=2834.0, UB=2857.0
+iter#566, LB=2834.0, UB=2857.0
+iter#567, LB=2834.0, UB=2857.0
+iter#568, LB=2834.0, UB=2857.0
+iter#569, LB=2834.0, UB=2857.0
+iter#570, LB=2835.0, UB=2857.0
+iter#571, LB=2835.0, UB=2857.0
+iter#572, LB=2835.0, UB=2857.0
+iter#573, LB=2835.0, UB=2857.0
+iter#574, LB=2835.0, UB=2857.0
+iter#575, LB=2835.0, UB=2857.0
+iter#576, LB=2835.0, UB=2857.0
+iter#577, LB=2835.0, UB=2857.0
+iter#578, LB=2836.0, UB=2857.0
+iter#579, LB=2836.0, UB=2857.0
+iter#580, LB=2836.0, UB=2857.0
+iter#581, LB=2837.0, UB=2857.0
+iter#582, LB=2837.0, UB=2857.0
+iter#583, LB=2837.0, UB=2857.0
+iter#584, LB=2837.0, UB=2857.0
+iter#585, LB=2836.9999999999995, UB=2857.0
+iter#586, LB=2838.0, UB=2857.0
+iter#587, LB=2838.0, UB=2857.0
+iter#588, LB=2838.0, UB=2857.0
+iter#589, LB=2838.0, UB=2857.0
+iter#590, LB=2838.0, UB=2857.0
+iter#591, LB=2838.0, UB=2857.0
+iter#592, LB=2839.0, UB=2857.0
+iter#593, LB=2839.0, UB=2857.0
+iter#594, LB=2839.0, UB=2857.0
+iter#595, LB=2839.0, UB=2857.0
+iter#596, LB=2839.0, UB=2857.0
+iter#597, LB=2839.0, UB=2857.0
+iter#598, LB=2840.0, UB=2857.0
+iter#599, LB=2840.0, UB=2857.0
+iter#600, LB=2841.0, UB=2857.0
+iter#601, LB=2841.0, UB=2857.0
+iter#602, LB=2841.0, UB=2857.0
+iter#603, LB=2842.0, UB=2857.0
+iter#604, LB=2842.0, UB=2857.0
+iter#605, LB=2842.0, UB=2857.0
+iter#606, LB=2842.0, UB=2857.0
+iter#607, LB=2843.0, UB=2857.0
+iter#608, LB=2844.0, UB=2857.0
+iter#609, LB=2845.0, UB=2857.0
+iter#610, LB=2845.0, UB=2857.0
+iter#611, LB=2845.0, UB=2857.0
+iter#612, LB=2845.0, UB=2857.0
+iter#613, LB=2845.0, UB=2857.0
+iter#614, LB=2846.0, UB=2857.0
+iter#615, LB=2846.0, UB=2857.0
+iter#616, LB=2846.0, UB=2857.0
+iter#617, LB=2846.0, UB=2857.0
+iter#618, LB=2846.0, UB=2857.0
+iter#619, LB=2845.9999999999995, UB=2857.0
+iter#620, LB=2846.0, UB=2857.0
+iter#621, LB=2846.0, UB=2857.0
+iter#622, LB=2846.0, UB=2857.0
+iter#623, LB=2846.0, UB=2857.0
+iter#624, LB=2846.0, UB=2857.0
+iter#625, LB=2846.999999999999, UB=2857.0
+iter#626, LB=2847.0, UB=2857.0
+iter#627, LB=2847.0, UB=2857.0
+iter#628, LB=2847.0, UB=2857.0
+iter#629, LB=2848.0, UB=2857.0
+iter#630, LB=2848.0, UB=2857.0
+iter#631, LB=2848.0, UB=2857.0
+iter#632, LB=2849.0, UB=2857.0
+iter#633, LB=2849.0, UB=2857.0
+iter#634, LB=2848.9999999999995, UB=2857.0
+iter#635, LB=2849.0, UB=2857.0
+iter#636, LB=2849.0, UB=2857.0
+iter#637, LB=2849.0, UB=2857.0
+iter#638, LB=2849.0, UB=2857.0
+iter#639, LB=2849.0, UB=2857.0
+iter#640, LB=2849.9999999999995, UB=2857.0
+iter#641, LB=2850.0, UB=2857.0
+iter#642, LB=2850.0, UB=2857.0
+iter#643, LB=2850.0, UB=2857.0
+iter#644, LB=2850.0, UB=2857.0
+iter#645, LB=2850.0, UB=2857.0
+iter#646, LB=2852.0, UB=2857.0
+iter#647, LB=2852.0, UB=2857.0
+iter#648, LB=2852.0, UB=2857.0
+iter#649, LB=2852.0, UB=2857.0
+iter#650, LB=2852.999999999999, UB=2857.0
+iter#651, LB=2853.0, UB=2857.0
+iter#652, LB=2853.0, UB=2857.0
+iter#653, LB=2853.9999999999995, UB=2857.0
+iter#654, LB=2854.0, UB=2857.0
+iter#655, LB=2854.0, UB=2857.0
+iter#656, LB=2854.0, UB=2857.0
+iter#657, LB=2854.0, UB=2857.0
+iter#658, LB=2854.0, UB=2857.0
+iter#659, LB=2854.0, UB=2857.0
+iter#660, LB=2854.0, UB=2857.0
+iter#661, LB=2855.0, UB=2857.0
+iter#662, LB=2855.0, UB=2857.0
+iter#663, LB=2855.0, UB=2857.0
+iter#664, LB=2856.0, UB=2857.0
+iter#665, LB=2856.0, UB=2857.0
+iter#666, LB=2856.0, UB=2857.0
+iter#667, LB=2856.0, UB=2857.0
+iter#668, LB=2856.0, UB=2857.0
+iter#669, LB=2856.0, UB=2857.0
+iter#670, LB=2856.0, UB=2857.0
+iter#671, LB=2857.0, UB=2857.0
+============== took: 4725306613764ns
+============== solution: 
+
+
+TOTAL COSTS: 2857
+SOLUTION:
+Path (0,0) closed.
+Path (0,1) closed.
+Path (0,2) closed.
+Path (0,3) open, transport:
+	24 units for VP: 13.0 and FP: 15.0 to customer 3
+Path (0,4) closed.
+Path (0,5) closed.
+Path (0,6) closed.
+Path (0,7) closed.
+Path (0,8) closed.
+Path (0,9) closed.
+Path (1,0) closed.
+Path (1,1) closed.
+Path (1,2) open, transport:
+	1 units for VP: 4.0 and FP: 8.0 to customer 2
+Path (1,3) closed.
+Path (1,4) closed.
+Path (1,5) open, transport:
+	31 units for VP: 1.0 and FP: 18.0 to customer 5
+Path (1,6) closed.
+Path (1,7) closed.
+Path (1,8) closed.
+Path (1,9) closed.
+Path (2,0) closed.
+Path (2,1) closed.
+Path (2,2) closed.
+Path (2,3) closed.
+Path (2,4) closed.
+Path (2,5) closed.
+Path (2,6) open, transport:
+	23 units for VP: 5.0 and FP: 24.0 to customer 6
+Path (2,7) closed.
+Path (2,8) open, transport:
+	13 units for VP: 7.0 and FP: 14.0 to customer 8
+Path (2,9) closed.
+Path (3,0) closed.
+Path (3,1) closed.
+Path (3,2) closed.
+Path (3,3) closed.
+Path (3,4) closed.
+Path (3,5) closed.
+Path (3,6) closed.
+Path (3,7) open, transport:
+	23 units for VP: 22.0 and FP: 13.0 to customer 7
+Path (3,8) closed.
+Path (3,9) closed.
+Path (4,0) closed.
+Path (4,1) open, transport:
+	20 units for VP: 1.0 and FP: 2.0 to customer 1
+Path (4,2) open, transport:
+	16 units for VP: 3.0 and FP: 15.0 to customer 2
+Path (4,3) closed.
+Path (4,4) closed.
+Path (4,5) closed.
+Path (4,6) closed.
+Path (4,7) open, transport:
+	13 units for VP: 28.0 and FP: 17.0 to customer 7
+Path (4,8) closed.
+Path (4,9) closed.
+Path (5,0) open, transport:
+	17 units for VP: 10.0 and FP: 5.0 to customer 0
+Path (5,1) closed.
+Path (5,2) closed.
+Path (5,3) closed.
+Path (5,4) closed.
+Path (5,5) closed.
+Path (5,6) closed.
+Path (5,7) closed.
+Path (5,8) closed.
+Path (5,9) closed.
+Path (6,0) closed.
+Path (6,1) closed.
+Path (6,2) closed.
+Path (6,3) closed.
+Path (6,4) closed.
+Path (6,5) closed.
+Path (6,6) closed.
+Path (6,7) closed.
+Path (6,8) closed.
+Path (6,9) open, transport:
+	24 units for VP: 12.0 and FP: 21.0 to customer 9
+Path (7,0) closed.
+Path (7,1) closed.
+Path (7,2) closed.
+Path (7,3) closed.
+Path (7,4) closed.
+Path (7,5) closed.
+Path (7,6) closed.
+Path (7,7) closed.
+Path (7,8) open, transport:
+	17 units for VP: 1.0 and FP: 24.0 to customer 8
+Path (7,9) closed.
+Path (8,0) closed.
+Path (8,1) closed.
+Path (8,2) closed.
+Path (8,3) closed.
+Path (8,4) closed.
+Path (8,5) open, transport:
+	18 units for VP: 5.0 and FP: 36.0 to customer 5
+Path (8,6) closed.
+Path (8,7) closed.
+Path (8,8) open, transport:
+	2 units for VP: 7.0 and FP: 4.0 to customer 8
+Path (8,9) closed.
+Path (9,0) open, transport:
+	25 units for VP: 15.0 and FP: 29.0 to customer 0
+Path (9,1) closed.
+Path (9,2) closed.
+Path (9,3) closed.
+Path (9,4) open, transport:
+	17 units for VP: 7.0 and FP: 48.0 to customer 4
+Path (9,5) closed.
+Path (9,6) closed.
+Path (9,7) closed.
+Path (9,8) closed.
+Path (9,9) closed.
+============== file: 20.in
+ybest#0 arr: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+iter#0, LB=900.0, UB=4597.0
+iter#1, LB=905.0, UB=4597.0
+iter#2, LB=911.0, UB=4597.0
+iter#3, LB=913.0, UB=4597.0
+iter#4, LB=915.0, UB=4597.0
+iter#5, LB=919.0, UB=4597.0
+iter#6, LB=919.0, UB=4597.0
+iter#7, LB=923.0, UB=4597.0
+iter#8, LB=926.0, UB=4597.0
+iter#9, LB=927.0, UB=4597.0
+iter#10, LB=929.0, UB=4597.0
+iter#11, LB=929.0, UB=4597.0
+iter#12, LB=929.0, UB=4597.0
+iter#13, LB=930.0, UB=4597.0
+iter#14, LB=931.0, UB=4597.0
+iter#15, LB=931.0, UB=4597.0
+iter#16, LB=932.0, UB=4597.0
+iter#17, LB=932.0, UB=4597.0
+iter#18, LB=932.0, UB=4597.0
+iter#19, LB=932.0, UB=4597.0
+iter#20, LB=932.0, UB=4597.0
+iter#21, LB=934.0, UB=4597.0
+iter#22, LB=934.0, UB=4597.0
+iter#23, LB=935.0, UB=4597.0
+iter#24, LB=935.0, UB=4597.0
+iter#25, LB=935.0, UB=4597.0
+iter#26, LB=936.0, UB=4597.0
+iter#27, LB=936.0, UB=4597.0
+iter#28, LB=937.0, UB=4597.0
+iter#29, LB=937.0, UB=4597.0
+iter#30, LB=937.0, UB=4597.0
+iter#31, LB=938.0, UB=4597.0
+iter#32, LB=939.0, UB=4597.0
+iter#33, LB=939.0, UB=4597.0
+iter#34, LB=939.0, UB=4597.0
+iter#35, LB=939.0, UB=4597.0
+iter#36, LB=940.0, UB=4597.0
+iter#37, LB=940.0, UB=4597.0
+iter#38, LB=940.0, UB=4597.0
+iter#39, LB=940.0, UB=4597.0
+iter#40, LB=940.0, UB=4597.0
+iter#41, LB=941.0, UB=4597.0
+iter#42, LB=942.0, UB=4597.0
+iter#43, LB=943.0, UB=4597.0
+iter#44, LB=943.0, UB=4597.0
+iter#45, LB=943.0, UB=4597.0
+iter#46, LB=944.0, UB=4597.0
+iter#47, LB=944.0, UB=4597.0
+iter#48, LB=944.0, UB=4597.0
+iter#49, LB=947.0, UB=4597.0
+iter#50, LB=947.0, UB=4597.0
+iter#51, LB=947.0, UB=4597.0
+iter#52, LB=948.0, UB=4597.0
+iter#53, LB=948.0, UB=4597.0
+iter#54, LB=948.0, UB=4597.0
+iter#55, LB=948.0, UB=4597.0
+iter#56, LB=948.0, UB=4597.0
+iter#57, LB=949.0, UB=4597.0
+iter#58, LB=949.0, UB=4597.0
+iter#59, LB=949.0, UB=4597.0
+iter#60, LB=949.0, UB=4597.0
+iter#61, LB=949.0, UB=4597.0
+iter#62, LB=949.0, UB=4597.0
+iter#63, LB=949.0, UB=4597.0
+iter#64, LB=950.0, UB=4597.0
+iter#65, LB=950.0, UB=4597.0
+iter#66, LB=950.0, UB=4597.0
+iter#67, LB=950.0, UB=4597.0
+iter#68, LB=951.0, UB=4597.0
+iter#69, LB=951.0, UB=4597.0
+iter#70, LB=951.0, UB=4597.0
+iter#71, LB=951.0, UB=4597.0
+iter#72, LB=951.0, UB=4597.0
+iter#73, LB=951.0, UB=4597.0
+iter#74, LB=952.0, UB=4597.0
+iter#75, LB=952.0, UB=4597.0
+iter#76, LB=952.0, UB=4597.0
+iter#77, LB=952.0, UB=4597.0
+iter#78, LB=952.0, UB=4597.0
+iter#79, LB=952.0, UB=4597.0
+iter#80, LB=952.0, UB=4597.0
+iter#81, LB=952.0, UB=4597.0
+iter#82, LB=952.0, UB=4597.0
+iter#83, LB=952.0, UB=4597.0
+iter#84, LB=952.0, UB=4597.0
+iter#85, LB=953.0, UB=4597.0
+iter#86, LB=953.0, UB=4597.0
+iter#87, LB=953.0, UB=4597.0
+iter#88, LB=953.0, UB=4597.0
+iter#89, LB=953.0, UB=4597.0
+iter#90, LB=953.0, UB=4597.0
+iter#91, LB=953.0, UB=4597.0
+iter#92, LB=953.0, UB=4597.0
+iter#93, LB=953.0, UB=4597.0
+iter#94, LB=953.0, UB=4597.0
+iter#95, LB=953.0, UB=4597.0
+iter#96, LB=953.0, UB=4597.0
+iter#97, LB=953.0, UB=4597.0
+iter#98, LB=953.0, UB=4597.0
+iter#99, LB=953.0, UB=4597.0
+iter#100, LB=953.0, UB=4597.0
+iter#101, LB=953.0, UB=4597.0
+iter#102, LB=953.0, UB=4597.0
+iter#103, LB=953.0, UB=4597.0
+iter#104, LB=953.0, UB=4597.0
+iter#105, LB=953.0, UB=4597.0
+iter#106, LB=954.0, UB=4597.0
+iter#107, LB=954.0, UB=4597.0
+iter#108, LB=954.0, UB=4597.0
+iter#109, LB=954.0, UB=4597.0
+iter#110, LB=954.0, UB=4597.0
+iter#111, LB=954.0, UB=4597.0
+iter#112, LB=954.0, UB=4597.0
+iter#113, LB=954.0, UB=4597.0
+iter#114, LB=955.0, UB=4597.0
+iter#115, LB=955.0, UB=4597.0
+iter#116, LB=955.0, UB=4597.0
+iter#117, LB=955.0, UB=4597.0
+iter#118, LB=955.0, UB=4597.0
+iter#119, LB=955.0, UB=4597.0
+iter#120, LB=955.0, UB=4597.0
+iter#121, LB=955.0, UB=4597.0
+iter#122, LB=955.0, UB=4597.0
+iter#123, LB=955.0, UB=4597.0
+iter#124, LB=955.0, UB=4597.0
+iter#125, LB=955.0, UB=4597.0
+iter#126, LB=955.0, UB=4597.0
+iter#127, LB=955.0, UB=4597.0
+iter#128, LB=955.0, UB=4597.0
+iter#129, LB=955.0, UB=4597.0
+iter#130, LB=956.0, UB=4597.0
+iter#131, LB=956.0, UB=4597.0
+iter#132, LB=956.0, UB=4597.0
+iter#133, LB=956.0, UB=4597.0
+iter#134, LB=956.0, UB=4597.0
+iter#135, LB=956.0, UB=4597.0
+iter#136, LB=956.0, UB=4597.0
+iter#137, LB=956.0, UB=4597.0
+iter#138, LB=956.0, UB=4597.0
+iter#139, LB=956.0, UB=4597.0
+iter#140, LB=956.0, UB=4597.0
+iter#141, LB=956.0, UB=4597.0
+iter#142, LB=956.0, UB=4597.0
+iter#143, LB=956.0, UB=4597.0
+iter#144, LB=965.0, UB=4597.0
+iter#145, LB=965.0, UB=4597.0
+iter#146, LB=965.0, UB=4597.0
+iter#147, LB=967.0, UB=4597.0
+iter#148, LB=967.0, UB=4597.0
+iter#149, LB=968.0, UB=4597.0
+iter#150, LB=968.0, UB=4597.0
+iter#151, LB=968.0, UB=4597.0
+iter#152, LB=968.9999999999999, UB=4597.0
+iter#153, LB=969.0, UB=4597.0
+iter#154, LB=969.0, UB=4597.0
+iter#155, LB=969.0, UB=4597.0
+iter#156, LB=969.0, UB=4597.0
+iter#157, LB=969.0, UB=4597.0
+iter#158, LB=969.0, UB=4597.0
+iter#159, LB=969.0, UB=4597.0
+iter#160, LB=969.0, UB=4597.0
+iter#161, LB=969.0, UB=4597.0
+iter#162, LB=970.0, UB=4597.0
+iter#163, LB=970.0, UB=4597.0
+iter#164, LB=970.0, UB=4597.0
+iter#165, LB=970.0, UB=4597.0
+iter#166, LB=970.0, UB=4597.0
+iter#167, LB=970.0, UB=4597.0
+iter#168, LB=970.0, UB=4597.0
+iter#169, LB=970.0, UB=4597.0
+iter#170, LB=970.0, UB=4597.0
+iter#171, LB=970.0, UB=4597.0
+iter#172, LB=970.0, UB=4597.0
+iter#173, LB=970.0, UB=4597.0
+iter#174, LB=970.0, UB=4597.0
+iter#175, LB=970.0, UB=4597.0
+ybest#176 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#176, LB=978.0, UB=3300.0
+iter#177, LB=978.0, UB=3300.0
+iter#178, LB=979.0, UB=3300.0
+iter#179, LB=979.0, UB=3300.0
+iter#180, LB=979.0, UB=3300.0
+iter#181, LB=979.0, UB=3300.0
+iter#182, LB=979.0, UB=3300.0
+iter#183, LB=979.0, UB=3300.0
+iter#184, LB=979.0, UB=3300.0
+iter#185, LB=979.0, UB=3300.0
+iter#186, LB=979.0, UB=3300.0
+iter#187, LB=979.0, UB=3300.0
+iter#188, LB=980.0, UB=3300.0
+iter#189, LB=980.0, UB=3300.0
+iter#190, LB=980.0, UB=3300.0
+iter#191, LB=980.0, UB=3300.0
+iter#192, LB=980.0, UB=3300.0
+ybest#193 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#193, LB=982.0, UB=2745.0
+iter#194, LB=982.0, UB=2745.0
+iter#195, LB=983.0, UB=2745.0
+iter#196, LB=983.0, UB=2745.0
+iter#197, LB=983.0, UB=2745.0
+iter#198, LB=983.0, UB=2745.0
+iter#199, LB=983.0, UB=2745.0
+iter#200, LB=983.0, UB=2745.0
+iter#201, LB=983.0, UB=2745.0
+iter#202, LB=983.0, UB=2745.0
+iter#203, LB=984.0, UB=2745.0
+iter#204, LB=984.0, UB=2745.0
+iter#205, LB=984.0, UB=2745.0
+iter#206, LB=985.0, UB=2745.0
+iter#207, LB=985.0, UB=2745.0
+iter#208, LB=985.0, UB=2745.0
+iter#209, LB=985.0, UB=2745.0
+iter#210, LB=985.0, UB=2745.0
+iter#211, LB=985.0, UB=2745.0
+iter#212, LB=985.0, UB=2745.0
+iter#213, LB=985.0, UB=2745.0
+iter#214, LB=985.0, UB=2745.0
+iter#215, LB=985.0, UB=2745.0
+iter#216, LB=985.0, UB=2745.0
+iter#217, LB=985.0, UB=2745.0
+iter#218, LB=985.0, UB=2745.0
+iter#219, LB=985.0, UB=2745.0
+iter#220, LB=985.0, UB=2745.0
+iter#221, LB=985.0, UB=2745.0
+iter#222, LB=985.0, UB=2745.0
+iter#223, LB=985.0, UB=2745.0
+iter#224, LB=985.0, UB=2745.0
+iter#225, LB=985.0, UB=2745.0
+iter#226, LB=985.0, UB=2745.0
+iter#227, LB=986.0, UB=2745.0
+iter#228, LB=986.0, UB=2745.0
+iter#229, LB=986.0, UB=2745.0
+iter#230, LB=987.0, UB=2745.0
+iter#231, LB=987.0, UB=2745.0
+iter#232, LB=987.0, UB=2745.0
+iter#233, LB=987.0, UB=2745.0
+iter#234, LB=989.0, UB=2745.0
+iter#235, LB=990.0, UB=2745.0
+iter#236, LB=990.0, UB=2745.0
+iter#237, LB=990.0, UB=2745.0
+iter#238, LB=990.0, UB=2745.0
+iter#239, LB=990.0, UB=2745.0
+iter#240, LB=990.0, UB=2745.0
+iter#241, LB=990.0, UB=2745.0
+iter#242, LB=990.0, UB=2745.0
+iter#243, LB=990.0, UB=2745.0
+iter#244, LB=990.0, UB=2745.0
+iter#245, LB=990.0, UB=2745.0
+iter#246, LB=990.0, UB=2745.0
+iter#247, LB=990.0, UB=2745.0
+iter#248, LB=990.0, UB=2745.0
+iter#249, LB=990.0, UB=2745.0
+ybest#250 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#250, LB=991.0, UB=2460.0
+iter#251, LB=991.0, UB=2460.0
+iter#252, LB=991.0, UB=2460.0
+iter#253, LB=992.0, UB=2460.0
+iter#254, LB=993.0, UB=2460.0
+ybest#255 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#255, LB=996.0, UB=2343.0
+iter#256, LB=997.0, UB=2343.0
+iter#257, LB=997.0, UB=2343.0
+iter#258, LB=997.0, UB=2343.0
+iter#259, LB=997.0, UB=2343.0
+iter#260, LB=997.0, UB=2343.0
+iter#261, LB=998.0, UB=2343.0
+iter#262, LB=998.0, UB=2343.0
+iter#263, LB=998.0, UB=2343.0
+iter#264, LB=998.0, UB=2343.0
+iter#265, LB=998.0, UB=2343.0
+iter#266, LB=998.0, UB=2343.0
+iter#267, LB=998.0, UB=2343.0
+iter#268, LB=998.0, UB=2343.0
+iter#269, LB=998.0, UB=2343.0
+iter#270, LB=998.0, UB=2343.0
+iter#271, LB=998.0, UB=2343.0
+iter#272, LB=998.0, UB=2343.0
+iter#273, LB=998.0, UB=2343.0
+iter#274, LB=999.0, UB=2343.0
+iter#275, LB=999.0, UB=2343.0
+iter#276, LB=999.0, UB=2343.0
+iter#277, LB=999.0, UB=2343.0
+iter#278, LB=999.0, UB=2343.0
+iter#279, LB=999.0, UB=2343.0
+iter#280, LB=999.0, UB=2343.0
+iter#281, LB=999.0, UB=2343.0
+iter#282, LB=999.0, UB=2343.0
+iter#283, LB=999.0, UB=2343.0
+iter#284, LB=999.0, UB=2343.0
+iter#285, LB=1000.0, UB=2343.0
+iter#286, LB=1000.0, UB=2343.0
+iter#287, LB=1000.0, UB=2343.0
+iter#288, LB=1000.0, UB=2343.0
+iter#289, LB=1000.0, UB=2343.0
+iter#290, LB=1001.0, UB=2343.0
+iter#291, LB=1001.0, UB=2343.0
+iter#292, LB=1001.0, UB=2343.0
+iter#293, LB=1001.0, UB=2343.0
+iter#294, LB=1001.0, UB=2343.0
+iter#295, LB=1001.0, UB=2343.0
+iter#296, LB=1001.0, UB=2343.0
+iter#297, LB=1001.0, UB=2343.0
+iter#298, LB=1001.0, UB=2343.0
+iter#299, LB=1001.0, UB=2343.0
+iter#300, LB=1001.0, UB=2343.0
+iter#301, LB=1001.0, UB=2343.0
+iter#302, LB=1001.0, UB=2343.0
+iter#303, LB=1001.0, UB=2343.0
+iter#304, LB=1001.0, UB=2343.0
+iter#305, LB=1001.0, UB=2343.0
+iter#306, LB=1001.0, UB=2343.0
+iter#307, LB=1001.0, UB=2343.0
+iter#308, LB=1001.0, UB=2343.0
+iter#309, LB=1001.0, UB=2343.0
+iter#310, LB=1001.0, UB=2343.0
+iter#311, LB=1001.0, UB=2343.0
+ybest#312 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#312, LB=1002.0, UB=2266.0
+iter#313, LB=1002.0, UB=2266.0
+iter#314, LB=1002.0, UB=2266.0
+iter#315, LB=1002.0, UB=2266.0
+iter#316, LB=1002.0, UB=2266.0
+iter#317, LB=1002.0, UB=2266.0
+iter#318, LB=1002.0, UB=2266.0
+iter#319, LB=1002.0, UB=2266.0
+iter#320, LB=1002.0, UB=2266.0
+iter#321, LB=1002.0, UB=2266.0
+iter#322, LB=1002.0, UB=2266.0
+iter#323, LB=1002.0, UB=2266.0
+iter#324, LB=1002.0, UB=2266.0
+iter#325, LB=1003.0, UB=2266.0
+iter#326, LB=1004.0, UB=2266.0
+iter#327, LB=1004.0, UB=2266.0
+ybest#328 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#328, LB=1004.0, UB=2174.0
+iter#329, LB=1004.0, UB=2174.0
+ybest#330 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#330, LB=1007.0, UB=2099.0
+iter#331, LB=1007.0, UB=2099.0
+iter#332, LB=1007.0, UB=2099.0
+iter#333, LB=1008.0, UB=2099.0
+iter#334, LB=1008.0, UB=2099.0
+iter#335, LB=1008.0, UB=2099.0
+iter#336, LB=1008.0, UB=2099.0
+iter#337, LB=1008.0, UB=2099.0
+iter#338, LB=1009.0, UB=2099.0
+iter#339, LB=1009.0, UB=2099.0
+iter#340, LB=1009.0, UB=2099.0
+iter#341, LB=1009.0, UB=2099.0
+iter#342, LB=1009.0, UB=2099.0
+iter#343, LB=1009.0, UB=2099.0
+iter#344, LB=1009.0, UB=2099.0
+ybest#345 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+iter#345, LB=1011.0, UB=2069.0
+iter#346, LB=1012.0, UB=2069.0
+iter#347, LB=1012.0, UB=2069.0
+iter#348, LB=1012.0, UB=2069.0
+iter#349, LB=1012.0, UB=2069.0
+iter#350, LB=1012.0, UB=2069.0
+iter#351, LB=1012.0, UB=2069.0
+iter#352, LB=1013.0, UB=2069.0
+iter#353, LB=1013.0, UB=2069.0
+iter#354, LB=1013.0, UB=2069.0
+iter#355, LB=1013.0, UB=2069.0
+iter#356, LB=1013.0, UB=2069.0
+iter#357, LB=1013.0, UB=2069.0
+iter#358, LB=1013.0, UB=2069.0
+iter#359, LB=1013.0, UB=2069.0
+iter#360, LB=1013.0, UB=2069.0
+iter#361, LB=1013.0, UB=2069.0
+iter#362, LB=1013.0, UB=2069.0
+iter#363, LB=1013.0, UB=2069.0
+iter#364, LB=1013.0, UB=2069.0
+iter#365, LB=1013.0, UB=2069.0
+iter#366, LB=1013.0, UB=2069.0
+iter#367, LB=1013.0, UB=2069.0
+iter#368, LB=1013.0, UB=2069.0
+iter#369, LB=1013.0, UB=2069.0
+iter#370, LB=1014.0, UB=2069.0
+iter#371, LB=1014.0, UB=2069.0
+iter#372, LB=1014.0, UB=2069.0
+iter#373, LB=1014.0, UB=2069.0
+iter#374, LB=1014.0, UB=2069.0
+iter#375, LB=1014.0, UB=2069.0
+iter#376, LB=1014.0, UB=2069.0
+iter#377, LB=1014.0, UB=2069.0
+iter#378, LB=1014.0, UB=2069.0
+iter#379, LB=1014.0, UB=2069.0
+iter#380, LB=1014.0, UB=2069.0
+iter#381, LB=1014.0, UB=2069.0
+iter#382, LB=1014.0, UB=2069.0
+iter#383, LB=1015.0, UB=2069.0
+iter#384, LB=1015.0, UB=2069.0
+iter#385, LB=1015.0, UB=2069.0
+iter#386, LB=1016.0, UB=2069.0
+iter#387, LB=1016.0, UB=2069.0
+iter#388, LB=1016.0, UB=2069.0
+iter#389, LB=1016.0, UB=2069.0
+iter#390, LB=1016.0, UB=2069.0
+iter#391, LB=1016.0, UB=2069.0
+iter#392, LB=1016.0, UB=2069.0
+iter#393, LB=1016.0, UB=2069.0
+iter#394, LB=1016.0, UB=2069.0
+iter#395, LB=1016.0, UB=2069.0
+iter#396, LB=1017.0, UB=2069.0
+iter#397, LB=1017.0, UB=2069.0
+iter#398, LB=1017.0, UB=2069.0
+iter#399, LB=1017.0, UB=2069.0
+iter#400, LB=1017.0, UB=2069.0
+iter#401, LB=1017.0, UB=2069.0
+iter#402, LB=1017.0, UB=2069.0
+iter#403, LB=1017.0, UB=2069.0
+iter#404, LB=1017.0, UB=2069.0
+iter#405, LB=1018.0, UB=2069.0
+iter#406, LB=1018.0, UB=2069.0
+iter#407, LB=1018.0, UB=2069.0
+iter#408, LB=1018.0, UB=2069.0
+iter#409, LB=1018.0, UB=2069.0
+iter#410, LB=1018.0, UB=2069.0
+iter#411, LB=1018.0, UB=2069.0
+iter#412, LB=1018.0, UB=2069.0
+ybest#413 arr: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0], [0, 0

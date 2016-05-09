@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6644f73-2273-4c0c-b4a5-ba618c8a660f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/out-ilp-HOTOVO.log" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/10x10_benders.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/10x10_ilp.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILP-all-NEMAZAT.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/benders-all.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ilp-all.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out-benders.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out-mip.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Benders.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/LogWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/ProblemGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FCTP-ILP/cz/sange/Solution.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/benders-all.log" afterPath="$PROJECT_DIR$/benders-all.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out-benders.log" afterPath="$PROJECT_DIR$/out-benders.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Benders.java" afterPath="$PROJECT_DIR$/src/cz/sange/Benders.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/LogWriter.java" afterPath="$PROJECT_DIR$/src/cz/sange/LogWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cz/sange/Solution.java" afterPath="$PROJECT_DIR$/src/cz/sange/Solution.java" />
     </list>
     <ignored path="FCTP-ILP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,7 +32,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/FCTP-ILP$Main.coverage" NAME="Main Coverage Results" MODIFIED="1462169840787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FCTP-ILP$Main.coverage" NAME="Main Coverage Results" MODIFIED="1462464809968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -30,52 +42,7 @@
     <favorites_list name="FCTP-ILP" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Benders.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2226">
-              <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-                <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-                <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
-                <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
-                <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-                <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-                <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
-                <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
-                <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-                <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-                <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-                <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out-mip.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out-mip.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="out-benders.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out-benders.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,7 +65,6 @@
         <option value="$PROJECT_DIR$/src/cz/sange/01.in" />
         <option value="$PROJECT_DIR$/../FCTP-correct.mod" />
         <option value="$PROJECT_DIR$/src/cz/sange/02.in" />
-        <option value="$PROJECT_DIR$/src/cz/sange/Solution.java" />
         <option value="$PROJECT_DIR$/src/cz/sange/03.in" />
         <option value="$PROJECT_DIR$/src/cz/sange/04.in" />
         <option value="$PROJECT_DIR$/bendersMasterProblem.log" />
@@ -115,12 +81,16 @@
         <option value="$PROJECT_DIR$/bendersRMP.log" />
         <option value="$PROJECT_DIR$/standardMIP.log" />
         <option value="$PROJECT_DIR$/benders.log" />
-        <option value="$PROJECT_DIR$/src/cz/sange/LogWriter.java" />
-        <option value="$PROJECT_DIR$/ilp-all.log" />
         <option value="$PROJECT_DIR$/out-mip.log" />
+        <option value="$PROJECT_DIR$/src/cz/sange/LogWriter.java" />
+        <option value="$PROJECT_DIR$/src/cz/sange/Solution.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/out-benders-mozna_chyba_NEMAZAT.log" />
+        <option value="$PROJECT_DIR$/ilp-all.log" />
+        <option value="$PROJECT_DIR$/out-ilp.log" />
+        <option value="$PROJECT_DIR$/out-benders.log" />
         <option value="$PROJECT_DIR$/benders-all.log" />
         <option value="$PROJECT_DIR$/src/cz/sange/Benders.java" />
-        <option value="$PROJECT_DIR$/out-benders.log" />
       </list>
     </option>
   </component>
@@ -130,10 +100,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="180" />
     <option name="y" value="23" />
-    <option name="width" value="1712" />
-    <option name="height" value="1044" />
+    <option name="width" value="1612" />
+    <option name="height" value="983" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -160,9 +129,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,15 +139,9 @@
               <option name="myItemId" value="FCTP-ILP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FCTP-ILP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FCTP-ILP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -188,14 +151,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="FCTP-ILP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sange" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -206,8 +161,8 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/cz/sange/test" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/visualvm4idea/lib" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.09276438" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -215,14 +170,17 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/cz/sange/test" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="cz.sange" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/logs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -854,19 +812,22 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration default="false" name="Main" type="Application" factoryName="Application" singleton="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="cz.sange.Benders" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/input/01.in" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENABLE_SWING_INSPECTOR" value="true" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="FCTP-ILP" />
       <envs />
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="WINDOW" value="false" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -907,11 +868,21 @@
       <workItem from="1462291609195" duration="160000" />
       <workItem from="1462339709349" duration="108000" />
       <workItem from="1462350918046" duration="37943000" />
+      <workItem from="1462435355582" duration="2261000" />
+      <workItem from="1462447842401" duration="351000" />
+      <workItem from="1462460041891" duration="4961000" />
+      <workItem from="1462465064765" duration="9000" />
+      <workItem from="1462465101538" duration="204000" />
+      <workItem from="1462465332873" duration="44000" />
+      <workItem from="1462465403604" duration="1043000" />
+      <workItem from="1462466516955" duration="21902000" />
+      <workItem from="1462650100404" duration="1974000" />
+      <workItem from="1462786739809" duration="1344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133745000" />
+    <option name="totallyTimeSpent" value="167838000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -923,35 +894,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="180" y="23" width="1712" height="1044" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1612" height="983" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2049505" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20392585" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.50547945" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2710084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13053893" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1388535" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5010504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5010504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29854098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945207" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31425366" sideWeight="0.49452055" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32659933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -967,7 +939,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="81" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -976,73 +948,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
-            <element signature="method#displaySolution#0;class#Benders#0" expanded="false" />
-            <element signature="method#initRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
-            <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
-            <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
-            <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="59" column="30" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
-          <folding>
-            <element signature="e#491#492#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="3" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in" />
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2338">
@@ -1055,23 +961,16 @@
             <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
+            <element signature="method#read#0;class#Benders#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in" />
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1084,12 +983,11 @@
             <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
+            <element signature="method#read#0;class#Benders#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1106,12 +1004,11 @@
             <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
+            <element signature="method#read#0;class#Benders#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,76 +1017,20 @@
     <entry file="file://$PROJECT_DIR$/../FCTP-ILP.mod" />
     <entry file="file://$PROJECT_DIR$/../FCTP-correct.mod" />
     <entry file="file://$PROJECT_DIR$/05.in" />
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/12.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/12.in" />
     <entry file="file://$PROJECT_DIR$/example.log" />
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/11.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/02.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/11.in" />
     <entry file="file://$PROJECT_DIR$/bendersMasterProblem.log" />
     <entry file="file://$PROJECT_DIR$/bendersSubproblem.log" />
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/60.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#491#492#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/aaa">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/60.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/03.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/01.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/aaa" />
     <entry file="jar:///Library/gurobi651/mac64/lib/gurobi.jar!/gurobi/GRB.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="362" column="8" selection-start-line="362" selection-start-column="8" selection-end-line="362" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,168 +1038,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/30.in">
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/30.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/20.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/50.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/40.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/08.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/07.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/09.in" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/05.in" />
+    <entry file="file://$PROJECT_DIR$/bendersDSP.log" />
+    <entry file="file://$PROJECT_DIR$/bendersRMP.log" />
+    <entry file="file://$PROJECT_DIR$/standardMIP.log" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_benders.out" />
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_ilp.out" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/20.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/50.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/40.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/08.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/07.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/10.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/09.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/05.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bendersDSP.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bendersRMP.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/standardMIP.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="350">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cz/sange/LogWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_benders.out">
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cz/sange/10x10_ilp.out">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="422">
+          <caret line="886" column="70" selection-start-line="886" selection-start-column="70" selection-end-line="886" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ilp-all.log">
+    <entry file="file://$PROJECT_DIR$/src/cz/sange/ProblemGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="238">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benders-all.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out-benders-mozna_chyba_NEMAZAT.log" />
+    <entry file="file://$PROJECT_DIR$/ILP-all-NEMAZAT.log" />
     <entry file="file://$PROJECT_DIR$/src/cz/sange/Benders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2226">
-          <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
+        <state relative-caret-position="700">
+          <caret line="55" column="58" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getInitialY#0;class#Benders#0" expanded="false" />
@@ -1367,17 +1104,27 @@
             <element signature="method#destroyRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersRMP#0;class#Benders#0" expanded="false" />
             <element signature="method#bendersDSP#0;class#Benders#0" expanded="false" />
-            <element signature="method#destroyDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#initDSP#0;class#Benders#0" expanded="false" />
             <element signature="method#prepareUpperbounds#0;class#Benders#0" expanded="false" />
             <element signature="method#checkSuppliesDemandsBalance#0;class#Benders#0" expanded="false" />
             <element signature="method#standardMIP#0;class#Benders#0" expanded="false" />
-            <marker date="1462434856000" expanded="false" signature="22909:24358" placeholder="{...}" />
+            <element signature="method#read#0;class#Benders#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out-mip.log">
+    <entry file="file://$PROJECT_DIR$/logs/all-benders-BEZ-Y.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/all-benders-S-Y.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1385,18 +1132,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ILP-all-NEMAZAT.log">
+    <entry file="file://$PROJECT_DIR$/logs/all-ilp.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out-benders.log">
+    <entry file="file://$PROJECT_DIR$/logs/out-benders-BEZ-Y.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="64">
+          <caret line="1895" column="34" selection-start-line="1895" selection-start-column="21" selection-end-line="1895" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/out-ilp-HOTOVO.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="12457" column="21" selection-start-line="12457" selection-start-column="21" selection-end-line="12457" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10x10_benders.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10x10_ilp.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/out-benders-S-Y.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="1878" column="30" selection-start-line="1878" selection-start-column="30" selection-end-line="1878" selection-end-column="30" />
           <folding />
         </state>
       </provider>

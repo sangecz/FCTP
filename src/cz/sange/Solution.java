@@ -5,6 +5,8 @@ package cz.sange;
  */
 public class Solution {
 
+    private final int numWarehouses;
+    private final int numCustomers;
     private int status;
     private double objVal;
     private int [][] y;
@@ -13,7 +15,15 @@ public class Solution {
     private double [] u;
     private double [] v;
 
-    public Solution() {
+    public Solution(int numWarehouses, int numCustomers) {
+        this.numWarehouses = numWarehouses;
+        this.numCustomers = numCustomers;
+
+        y = new int[numWarehouses][numCustomers];
+        x = new double[numWarehouses][numCustomers];
+        w = new double[numWarehouses][numCustomers];
+        u = new double[numWarehouses];
+        v = new double[numCustomers];
     }
 
     public int getStatus() {
@@ -70,5 +80,20 @@ public class Solution {
 
     public void setV(double[] v) {
         this.v = v;
+    }
+
+    public void reset() {
+        this.status = 0;
+        this.objVal = 0;
+
+        for (int i = 0; i < numWarehouses; i++) {
+            u[i] = 0;
+            for (int j = 0; j < numCustomers; j++) {
+                v[j] = 0;
+                x[i][j] = 0;
+                y[i][j] = 0;
+                w[i][j] = 0;
+            }
+        }
     }
 }

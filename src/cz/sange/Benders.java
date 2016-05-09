@@ -23,9 +23,13 @@ import java.util.Arrays;
  *
  */
 
+// TODO dump pouzite pameti pred a po behu
+
 public class Benders {
 
     private static final boolean BENDERS = true;
+    private static final boolean CONSOLE_OUTPUT = true;
+    private static final boolean USE_YCONDS = true ;
 
     private static int MAX_ITERATIONS = 1000;
     private static double EPS = 0.0001;
@@ -47,12 +51,14 @@ public class Benders {
     private boolean firstRunRMP;
     private boolean firstRunDSP;
     private GRBVar z0;
-    private static final String OUT_MIP_LOG = "out-mip.log";
+    private static final String OUT_MIP_LOG = "out-ilp.log";
     private static final String OUT_BENDERS_LOG = "out-benders.log";
     private static final String BENDERS_LOG = "benders-all.log";
     private static final String MIP_LOG = "ilp-all.log";
     private static final String INPUT_PATH = "/Users/sange/GoogleDrive/FEL-ING/KO/semestralka/FCTP-ILP/input/";
     private LogWriter writer;
+    private Solution solRMP;
+    private Solution solDSP;
 
     public static void main(String[] args) {
         try {
@@ -97,7 +103,7 @@ public class Benders {
                 benders.writer = new LogWriter(OUT_MIP_LOG);
             }
 
-            benders.writer.write("============== file: " + new File(fileName).getName() + "\n");
+            benders.writer.write("============== file: " + new File(fileName).getName());
 
             Solution sol;
             long start = System.nanoTime();
@@ -108,7 +114,7 @@ public class Benders {
                 sol = benders.standardMIP(null);
             }
 
-            benders.writer.write("============== took: " + (System.nanoTime() - start) + "ns\n");
+            benders.writer.write("============== took: " + (System.nanoTime() - start) + "ns");
             benders.writer.write("============== solution: \n");
             // print results
             benders.displaySolution(sol);
@@ -169,7 +175,7 @@ public class Benders {
                     for (int i = 0; i < numWarehouses; i++) {
                         System.arraycopy(y[i], 0, ybest[i], 0, numCustomers);
                     }
-                    System.out.println("ybest#"+iter+ " arr: " + Arrays.deepToString(ybest));
+                    writer.write("ybest#"+iter+ " arr: " + Arrays.deepToString(ybest));
                }
             } else {
                 System.err.println("!UNBOUNDED and !OPTIMAL");
@@ -208,7 +214,7 @@ public class Benders {
             }
 
             LB = masProbSol.getObjVal();
-            System.out.println("iter#" + iter + ", LB=" + LB + ", UB=" + UB);
+            writer.write("iter#" + iter + ", LB=" + LB + ", UB=" + UB);
             converged = (UB - LB) < CONVERGEND_BOUND;
 
             if (iter++ >= MAX_ITERATIONS) {
@@ -251,30 +257,35 @@ public class Benders {
 
     private void displaySolution(Solution fctpSol)  {
         // print result
-        writer.write("\nTOTAL COSTS: " + Math.round(fctpSol.getObjVal()) + "\n");
-        writer.write("SOLUTION:" + "\n");
+        writer.write("\nTOTAL COSTS: " + Math.round(fctpSol.getObjVal()));
+        writer.write("SOLUTION:");
         for (int w = 0; w < numWarehouses; ++w) {
             for (int c = 0; c < numCustomers; ++c) {
                 if (fctpSol.getY()[w][c] == 1) {
-                    writer.write("Path (" + w + "," + c + ") open, transport:" + "\n");
+                    writer.write("Path (" + w + "," + c + ") open, transport:");
                     if (fctpSol.getX()[w][c] > EPS) {
                         writer.write("\t" + Math.round(fctpSol.getX()[w][c])
                                 + " units for VP: " + transportCosts[w][c]
-                                + " and FP: " + fixedTransportCosts[w][c] + " to customer " + c + "\n");
+                                + " and FP: " + fixedTransportCosts[w][c] + " to customer " + c);
                     }
                 } else {
-                    writer.write("Path (" + w + "," + c + ") closed." + "\n");
+                    writer.write("Path (" + w + "," + c + ") closed.");
                 }
             }
         }
     }
 
     private void initRMP()  throws GRBException {
+        solRMP = new Solution(numWarehouses, numCustomers);
+
         //// model
         envRMP = new GRBEnv(BENDERS_LOG);
         modelRMP = new GRBModel(envRMP);
         // method: https://www.gurobi.com/documentation/6.5/refman/method.html
         modelRMP.getEnv().set(GRB.IntParam.Method, 1);
+        if(!CONSOLE_OUTPUT) {
+            modelRMP.getEnv().set(GRB.IntParam.OutputFlag, 0);
+        }
         modelRMP.set(GRB.StringAttr.ModelName, "FCTP");
 
         yRMP = new GRBVar[numWarehouses][numCustomers];
@@ -287,6 +298,25 @@ public class Benders {
         firstRunRMP = true;
 
         z0 = modelRMP.addVar(0, GRB.INFINITY, 0, GRB.CONTINUOUS, "tralala");
+
+        modelRMP.update();
+
+        if(USE_YCONDS) {
+            GRBLinExpr ycond1 = new GRBLinExpr();
+            for (int j = 0; j < numCustomers; j++) {
+                for (int i = 0; i < numWarehouses; i++) {
+                    ycond1.addTerm(supplies[i], yRMP[i][j]);
+                }
+                modelRMP.addConstr(ycond1, GRB.GREATER_EQUAL, demands[j], "-");
+            }
+            GRBLinExpr ycond2 = new GRBLinExpr();
+            for (int i = 0; i < numWarehouses; i++) {
+                for (int j = 0; j < numCustomers; j++) {
+                    ycond2.addTerm(demands[j], yRMP[i][j]);
+                }
+                modelRMP.addConstr(ycond2, GRB.GREATER_EQUAL, supplies[i], "-");
+            }
+        }
     }
 
     private void destroyRMP()  throws GRBException {
@@ -349,46 +379,25 @@ public class Benders {
         obj.addTerm(1.0, z0);
         modelRMP.setObjective(obj, GRB.MINIMIZE);
 
-
-        GRBLinExpr ycond1 = new GRBLinExpr();
-        for (int j = 0; j < numCustomers; j++) {
-            for (int i = 0; i < numWarehouses; i++) {
-                ycond1.addTerm(supplies[i], yRMP[i][j]);
-            }
-            modelRMP.addConstr(ycond1, GRB.GREATER_EQUAL, demands[j], "-");
-        }
-        GRBLinExpr ycond2 = new GRBLinExpr();
-        for (int i = 0; i < numWarehouses; i++) {
-            for (int j = 0; j < numCustomers; j++) {
-                ycond2.addTerm(demands[j], yRMP[i][j]);
-            }
-            modelRMP.addConstr(ycond2, GRB.GREATER_EQUAL, supplies[i], "-");
-        }
-
         // solve
         modelRMP.optimize();
 
+        // retrieve and store solution (reset previous solution)
+        solRMP.reset();
         int status = modelRMP.get(GRB.IntAttr.Status);
-        double objVal = 0;
-        int[][] solY = null;
+        solRMP.setStatus(status);
+
         if (status == GRB.Status.OPTIMAL) {
-            objVal = modelRMP.get(GRB.DoubleAttr.ObjVal);
-            solY = new int[numWarehouses][numCustomers];
+            solRMP.setObjVal(modelRMP.get(GRB.DoubleAttr.ObjVal));
+
             for (int i = 0; i < numWarehouses; i++) {
                 for (int j = 0; j < numCustomers; j++) {
-                    solY[i][j] = (int) yRMP[i][j].get(GRB.DoubleAttr.X);  // 0 or 1
+                    solRMP.getY()[i][j] = (int) yRMP[i][j].get(GRB.DoubleAttr.X);  // 0 or 1
                 }
             }
         }
 
-        // retrieve and store solution
-        Solution sol = new Solution();
-        sol.setStatus(status);
-        if (status == GRB.Status.OPTIMAL) {
-            sol.setObjVal(objVal);
-            sol.setY(solY);
-        }
-        return sol;
+        return solRMP;
     }
 
     /**
@@ -469,30 +478,25 @@ public class Benders {
         modelDSP.optimize();
 
         // retrieve and store solution
+        solDSP.reset();
+
         int status = modelDSP.get(GRB.IntAttr.Status);
         boolean unbounded = status == GRB.Status.UNBOUNDED;
         double objVal = modelDSP.get(GRB.DoubleAttr.ObjVal);
 
         // gets (un)bounded values for u,v,w for use in RMP
         // https://www.gurobi.com/documentation/6.5/refman/unbdray.html#attr:UnbdRay
-        double [][] wSol = new double[numWarehouses][numCustomers];
-        double [] uSol = new double[numWarehouses];
-        double [] vSol = new double[numCustomers];
         for (int i = 0; i < numWarehouses; i++) {
-            uSol[i] = unbounded ? u[i].get(GRB.DoubleAttr.UnbdRay) : u[i].get(GRB.DoubleAttr.X);
+            solDSP.getU()[i] = unbounded ? u[i].get(GRB.DoubleAttr.UnbdRay) : u[i].get(GRB.DoubleAttr.X);
             for (int j = 0; j < numCustomers; j++) {
-                vSol[j] = unbounded ? v[j].get(GRB.DoubleAttr.UnbdRay) : v[j].get(GRB.DoubleAttr.X);
-                wSol[i][j] = unbounded ? w[i][j].get(GRB.DoubleAttr.UnbdRay) : w[i][j].get(GRB.DoubleAttr.X);
+                solDSP.getV()[j] = unbounded ? v[j].get(GRB.DoubleAttr.UnbdRay) : v[j].get(GRB.DoubleAttr.X);
+                solDSP.getW()[i][j] = unbounded ? w[i][j].get(GRB.DoubleAttr.UnbdRay) : w[i][j].get(GRB.DoubleAttr.X);
             }
         }
 
-        Solution z = new Solution();
-        z.setStatus(status);
-        z.setObjVal(objVal);
-        z.setW(wSol);
-        z.setU(uSol);
-        z.setV(vSol);
-        return z;
+        solDSP.setStatus(status);
+        solDSP.setObjVal(objVal);
+        return solDSP;
     }
 
     private void destroyDSP() throws GRBException {
@@ -502,11 +506,16 @@ public class Benders {
     }
 
     private void initDSP() throws GRBException {
+        solDSP = new Solution(numWarehouses, numCustomers);
+
         //// model
         envDSP = new GRBEnv(BENDERS_LOG) ;
         modelDSP = new GRBModel(envDSP) ;
         // To obtain extreme rays for unbounded models: https://www.gurobi.com/documentation/6.0/refman/infunbdinfo.html#parameter:InfUnbdInfo
         modelDSP.getEnv().set(GRB.IntParam.InfUnbdInfo, 1);
+        if(!CONSOLE_OUTPUT) {
+            modelDSP.getEnv().set(GRB.IntParam.OutputFlag, 0);
+        }
         // method: primal simplex: https://www.gurobi.com/documentation/6.5/refman/method.html
         modelDSP.getEnv().set(GRB.IntParam.Method, 0);
         modelDSP.set(GRB.StringAttr.ModelName, "FCTP");
@@ -544,6 +553,9 @@ public class Benders {
         GRBEnv env = new GRBEnv(BENDERS ? BENDERS_LOG : MIP_LOG) ;
         GRBModel model = new GRBModel(env) ;
         model.getEnv().set(GRB.IntParam.Method, 1);
+        if(!CONSOLE_OUTPUT) {
+            model.getEnv().set(GRB.IntParam.OutputFlag, 0);
+        }
         model.set(GRB.StringAttr.ModelName, "FCTP");
 
         //// variables
@@ -615,7 +627,7 @@ public class Benders {
                 }
             }
             // find max fixed cost
-//            writer.write("Initial guess:" + "\n");
+//            writer.write("Initial guess:");
             double maxFixed = -GRB.INFINITY;
             for (int w = 0; w < numWarehouses; ++w) {
                 for (int c = 0; c < numCustomers; ++c) {
@@ -630,7 +642,7 @@ public class Benders {
                 for (int c = 0; c < numCustomers; ++c) {
                     if (fixedTransportCosts[w][c] == maxFixed) {
                         y[w][c].set(GRB.DoubleAttr.Start, 0.0);
-//                        writer.write("Closing path: (" + w + "," + c + ") of FP=" + maxFixed + "\n");
+//                        writer.write("Closing path: (" + w + "," + c + ") of FP=" + maxFixed);
                         break branch;
                     }
                 }
@@ -641,23 +653,20 @@ public class Benders {
         model.optimize();
 
         // retrieve and store solution
-        int[][] ySol = new int[numWarehouses][numCustomers];
-        double[][] xSol = new double[numWarehouses][numCustomers];
+        Solution sol = new Solution(numWarehouses, numCustomers);
+
         for (int i = 0; i < numWarehouses; i++) {
             for (int j = 0; j < numCustomers; j++) {
                 if (!fixedY) {
-                    ySol[i][j] = (int) y[i][j].get(GRB.DoubleAttr.X);
-                    xSol[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
+                    sol.getY()[i][j] = (int) y[i][j].get(GRB.DoubleAttr.X);
+                    sol.getX()[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
                 } else {
-                    ySol[i][j] = y_fx[i][j];
-                    xSol[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
+                    sol.getY()[i][j] = y_fx[i][j];
+                    sol.getX()[i][j] =  x[i][j].get(GRB.DoubleAttr.X);
                 }
             }
         }
 
-        Solution sol = new Solution();
-        sol.setY(ySol);
-        sol.setX(xSol);
         sol.setObjVal(model.get(GRB.DoubleAttr.ObjVal));
         sol.setStatus(model.get(GRB.IntAttr.Status));
 
